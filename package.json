@@ -15,5 +15,8 @@
     "gulp-postcss": "^8.0.0",
     "gulp-sass": "^4.0.2",
     "node-sass": "^4.13.1"
+  },
+  "dependencies": {
+    "sass": "^1.26.2"
   }
 }
