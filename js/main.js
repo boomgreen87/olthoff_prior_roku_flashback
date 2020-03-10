@@ -3,7 +3,6 @@ import LoginComponent from "./components/LoginComponent.js"
 import MoviesComponent from "./components/MoviesComponent.js"
 import TvComponent from "./components/TvComponent.js"
 import MusicComponent from "./components/MusicComponent.js"
-import KidsComponent from "./components/KidsComponent.js"
 import ErrorComponent from "./components/ErrorComponent.js"
 
 (() => {
@@ -14,7 +13,7 @@ import ErrorComponent from "./components/ErrorComponent.js"
       { path: '/login', name: "login", component: LoginComponent },
       { path: '/movies', name: "movies", component: MoviesComponent},
       { path: '/tv', name: "tv shows", component: TvComponent},
-      { path: '/kids', name: "kids", component: MoviesComponent},
+      { path: '/music', name: "music", component: MusicComponent},
       { path: '/error', name: "error", component: ErrorComponent},
     ]
   });
