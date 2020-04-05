@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Mar 10, 2020 at 08:04 AM
+-- Generation Time: Apr 05, 2020 at 01:58 AM
 -- Server version: 5.7.26
 -- PHP Version: 7.2.18
 
@@ -21,6 +21,25 @@ SET time_zone = "+00:00";
 --
 -- Database: `db_roku`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_accounts`
+--
+
+DROP TABLE IF EXISTS `tbl_accounts`;
+CREATE TABLE IF NOT EXISTS `tbl_accounts` (
+  `accounts_id` int(11) NOT NULL AUTO_INCREMENT,
+  `accounts_email` varchar(75) NOT NULL,
+  `accounts_first_name` varchar(50) NOT NULL,
+  `accounts_last_name` varchar(50) NOT NULL,
+  `accounts_birthday` varchar(15) NOT NULL,
+  `accounts_country` varchar(50) NOT NULL,
+  `accounts_username` varchar(50) NOT NULL,
+  `accounts_password` varchar(50) NOT NULL,
+  PRIMARY KEY (`accounts_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -355,6 +374,23 @@ INSERT INTO `tbl_songs_genre_rating` (`songs_genre_rating_id`, `song_id`, `music
 (8, 8, 7, 1),
 (9, 9, 6, 2),
 (10, 10, 8, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_users`
+--
+
+DROP TABLE IF EXISTS `tbl_users`;
+CREATE TABLE IF NOT EXISTS `tbl_users` (
+  `users_id` int(11) NOT NULL AUTO_INCREMENT,
+  `users_accounts_id` int(10) NOT NULL,
+  `users_icon` varchar(100) NOT NULL,
+  `users_permissions` int(1) NOT NULL,
+  `users_display_name` varchar(50) NOT NULL,
+  `users_bg_colour` varchar(50) NOT NULL,
+  PRIMARY KEY (`users_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
