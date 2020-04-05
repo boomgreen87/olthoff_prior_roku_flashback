@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Apr 05, 2020 at 01:58 AM
+-- Generation Time: Apr 05, 2020 at 04:11 AM
 -- Server version: 5.7.26
 -- PHP Version: 7.2.18
 
@@ -34,12 +34,18 @@ CREATE TABLE IF NOT EXISTS `tbl_accounts` (
   `accounts_email` varchar(75) NOT NULL,
   `accounts_first_name` varchar(50) NOT NULL,
   `accounts_last_name` varchar(50) NOT NULL,
-  `accounts_birthday` varchar(15) NOT NULL,
   `accounts_country` varchar(50) NOT NULL,
   `accounts_username` varchar(50) NOT NULL,
   `accounts_password` varchar(50) NOT NULL,
   PRIMARY KEY (`accounts_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `tbl_accounts`
+--
+
+INSERT INTO `tbl_accounts` (`accounts_id`, `accounts_email`, `accounts_first_name`, `accounts_last_name`, `accounts_country`, `accounts_username`, `accounts_password`) VALUES
+(2, 'bob@gmail.com', 'Bob', 'Smith', 'Canada', 'bob', '123');
 
 -- --------------------------------------------------------
 
