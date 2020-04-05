@@ -13,9 +13,7 @@ export default {
             <div class="col-12 order-1 order-md-2 col-md-9 media-container">
                 <img class="albumCover" :src="'images/' + currentMediaDetails.song_cover_art" alt="Album Cover">
                 
-                <audio controls class="audioPlayer"> 
-                    <source :src="'audio/' + currentMediaDetails.song_file" type="audio/mp3">
-                </audio>
+                <audio controls :src="'audio/' + currentMediaDetails.song_file" class="audioPlayer"></audio>
             </div>
         </div>
 
@@ -64,6 +62,7 @@ export default {
 
         // Loads selected song
         loadNewSong(song) {
+            console.log (song);
             this.currentMediaDetails = song;
         }
     }
