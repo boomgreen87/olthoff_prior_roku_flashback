@@ -17,6 +17,7 @@
     "node-sass": "^4.13.1"
   },
   "dependencies": {
-    "sass": "^1.26.2"
+    "sass": "^1.26.3",
+    "vue-gallery": "^2.0.1"
   }
 }
