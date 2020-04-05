@@ -14,5 +14,6 @@ export default {
                 <h4>Go Back</h4>
             </div>
         </div>
+        <router-link class="text-link" to="/confirmmessage">Redirect to Confirm Message</router-link>
     </div>
 `}

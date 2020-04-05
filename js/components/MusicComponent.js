@@ -18,6 +18,14 @@ export default {
                     </div>
             </div>
 
+            <div class="app-nav">
+                    <router-link class="media-link" to="/movies">Movies</router-link>
+                
+                    <router-link class="media-link" to="/tv">TV Shows</router-link>
+                
+                    <router-link class="media-link" to="/music">Music</router-link>
+            </div>
+
             <div class="gallery-sub">
                 <h3 class="gallery-sub-title">Even More Music</h3>
 

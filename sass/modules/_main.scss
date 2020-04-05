@@ -25,7 +25,6 @@ li{
 
 .router-view{
     margin:0 auto;
-    margin-top: 20px;
     max-width:100%;
 }
 
@@ -51,4 +50,14 @@ a{color:white;}
 
 .form-header{
     color:white;
+}
+
+.app-nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    width: 100%;
+
+    background-color: #4a4a4a;
 }
