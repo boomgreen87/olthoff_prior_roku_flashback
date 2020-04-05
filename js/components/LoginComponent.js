@@ -10,7 +10,7 @@ export default {
                         <div class="col-md-3 my-1">
                             <label class="sr-only" for="inlineFormInputName">Name</label>
                             <input v-model="input.username" type="text" class="form-control" id="inlineFormInputName" placeholder="username" required>
-                        </div>
+                        </div> 
 
                         <div class="col-md-3 my-1">
                             <label class="sr-only" for="inlineFormPassword">Name</label>
