@@ -22,9 +22,9 @@ export default {
                         </div>
                     </div>
                 </form> 
-                
-                
             </div>
+            <router-link class="footer-site-links" to="/welcome">Skip To Welcome Page</router-link>
+
         </div>
      `,
 
