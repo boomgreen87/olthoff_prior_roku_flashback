@@ -4,7 +4,6 @@ import MoviesComponent from "./components/MoviesComponent.js"
 import TvComponent from "./components/TvComponent.js"
 import MusicComponent from "./components/MusicComponent.js"
 import ErrorComponent from "./components/ErrorComponent.js"
-import KidsComponent from "./components/KidsComponent.js"
 
 (() => {
   let router = new VueRouter({
@@ -16,7 +15,6 @@ import KidsComponent from "./components/KidsComponent.js"
       { path: '/tv', name: "tv shows", component: TvComponent},
       { path: '/music', name: "music", component: MusicComponent},
       { path: '/error', name: "error", component: ErrorComponent},
-      { path: '/kids', name: "kids", component: KidsComponent},
     ]
   });
 
