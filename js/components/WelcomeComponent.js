@@ -34,11 +34,11 @@ template: `
                     <p class="user-displayname">UserName 4</p>
                 </div>
             </div>
-
             <hr class="my-4">
-    </div>
+        </div>
 
-    <router-link class="footer-site-links" to="/movies">Skip To Movie Page</router-link>
+        <router-link class="footer-site-links" to="/movies">Skip To Movie Page</router-link>
+    </div>
 
 `}
 

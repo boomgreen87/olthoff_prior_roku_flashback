@@ -51,6 +51,7 @@ export default {
 
     `,
 
+    // Sets empty values to hold submitted input
     data() {
         return {
             input: {
@@ -69,6 +70,7 @@ export default {
         signup() {
             let formData = new FormData();
 
+            // Sets the values equal to submitted input
             formData.append("email", this.input.email);
             formData.append("firstname", this.input.firstname);
             formData.append("lastname", this.input.lastname);
@@ -76,8 +78,10 @@ export default {
             formData.append("username", this.input.username);
             formData.append("password", this.input.password);
 
+            // Changes URL to continue signup process
             let url = `./admin/admin_signup.php`;
 
+            // Fetches result of signup
             fetch(url, {
                 method: "POST",
                 body: formData
@@ -85,6 +89,7 @@ export default {
             .then(res => res.json())
             .then(data => {
                 console.log(data)
+                this.$router.replace({ name: "welcome" }); // Redirects to welcome/users page
             })
             .catch((error) => console.log(error))
         }
