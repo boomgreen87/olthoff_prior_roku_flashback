@@ -1,5 +1,6 @@
 <?php
 
+// Gets all information from a povided table
 function getAll($tbl)
 {
     $pdo = Database::getInstance()->getConnection();
