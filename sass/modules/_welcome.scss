@@ -1,9 +1,9 @@
-.welcome-media-button{
+.media-button{
     background-color: #A550CC;
     margin: 15px;
 }
 
-.welcome-media-links{
+.media-link{
     color: white;
     font-size:20px;
 
@@ -13,6 +13,8 @@
     justify-content: center;    
 }
 
-.welcome-admin-links{
+.text-link{
     color: white;
+    display: flex;
+    padding: 5px;
 }
