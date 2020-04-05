@@ -10,72 +10,67 @@
   
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
       integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/main.css">
-  
+
     <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"
       integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ"
       crossorigin="anonymous"></script>
   
     <script src="https://unpkg.com/vue"></script>
     <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+
+    <link rel="stylesheet" href="css/main.css">
+  
   </head>
 
 
 <body>
     <main id="app">
-        <div class="container-fluid">
-            <div id="row">
-                <header class="col-sm-12 fixed-top">
-                    <!-- Site Logo -->
-                    <img src="images/roku_logo.svg" alt="Flashback Logo" id="headerLogo">
-
-                    <!-- Header Navigation -->
-                    <nav class="float-right">
-                        <!-- Navigation Links -->
-                        <ul>
-                            <!-- Blank User Image -->
-                            <li v-if="authenticated"><i class="fas fa-user-circle"></i></li>
-                            <!-- Admin Settings Cog Wheel - only if authenticated-->
-                            <li v-if="administrator"><i class="fas fa-cog"></i></li>
-                            <!-- Log Out button - only if logged in -->
-                            <li v-if="authenticated" v-on:click="logout()"><i class="fas fa-power-off"></i></li>
-                        </ul>
-                    </nav>
-                    <!-- End Header Navigation -->
-                </header> 
-                <!-- End Header -->
-
-                <div id="imageLinks">
-                    <img src="images/movie_icon2.png" alt="Movie Icon" class="icon" id="movieIcon">
-                    <img src="images/tv_icon.png" alt="Tv Show Icon" class="icon" id="tvIcon">
-                    <img src="images/music_icon.png" alt="Music Icon" class="icon" id="musicIcon">
+        <div>
+            <header>
+                <!-- Site Logo -->
+                <img src="images/roku_logo.svg" alt="Flashback Logo" id="header-logo">
+                <!-- Account Navigation -->
+                <div id="header-account-nav">
+                    <!-- Navigation Links -->
+                    <ul id="header-account-links">
+                        <!-- Blank User Image -->
+                        <li v-if="authenticated"><i class="fas fa-user-circle"></i></li>
+                        <!-- Admin Settings Cog Wheel - only if authenticated-->
+                        <li v-if="administrator"><i class="fas fa-cog"></i></li>
+                        <!-- Log Out button - only if logged in -->
+                        <li v-if="authenticated" v-on:click="logout()"><i class="fas fa-power-off"></i></li>
+                    </ul>
                 </div>
+            </header> 
+            <div class="header-site-nav">
+                <router-link class="header-site-links" to="/">Home / Sign In</router-link>
+                <router-link class="header-site-links" to="/movies">Movies</router-link>
+                <router-link class="header-site-links" to="/tv">TV Shows</router-link>
+                <router-link class="header-site-links" to="/music">Music</router-link>
+                <router-link class="header-site-links" to="/kids">Go To Kids</router-link>
             </div>
-            <!-- End Row -->
         </div>
-        <!-- End Container-Fluid -->
 
-    <!-- first thing in component templates should be a container -->
-    <router-view @authenticated="setAuthenticated" />
+        <div class="router-view">
+            <!-- first thing in component templates should be a container -->
+            <router-view @authenticated="setAuthenticated"></router-view>
+        </div>
 
+        <!-- Footer -->
+        <footer>
+            <ul class="footer-site-nav">
+                <router-link class="footer-site-links" to="/">Home / Sign In</router-link>
+                <router-link class="footer-site-links" to="/movies">Movies</router-link>
+                <router-link class="footer-site-links" to="/tv">TV Shows</router-link>
+                <router-link class="footer-site-links" to="/music">Music</router-link>
+                <router-link class="footer-site-links" to="/kids">Go To Kids</router-link>
+            </ul>
+        </footer>
+        <!-- End Footer -->
+        <!-- copright information -->
+        <p class="copy">&copy; 2020<br> Roku Flashback By Scott Olthoff and Michael Prior</p>
     </main>
     <!-- End Main App -->
-
-    <footer>
-        <!-- copright information -->
-        <p class="copy">
-            &copy; 2020 Roku Flashback, By MP and SO
-          </p>
-          
-          <!-- Footer Socials -->
-          <ul class="float-right">
-            <li><i class="fab fa-facebook"></i></li>
-            <li><i class="fab fa-twitter-square"></i></li>
-            <li><i class="fab fa-google-plus-square"></i></li>
-            <li><i class="fab fa-instagram"></i></li>
-          </ul>
-    </footer>
-    <!-- End Footer -->
 
     <!-- Script Tags -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

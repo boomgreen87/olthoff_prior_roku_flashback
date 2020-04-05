@@ -2,15 +2,39 @@ body{
     background-color: #4a4a4a;
 }
 
+.hidden{display:none;}
+
 #app{
-    margin-top: 100px;
+    max-width:100%;
 }
 
 ul{
+    text-decoration: none;
     display: flex;
-    flex-direction: row;
+    color:white;
 }
 
+
+
 li{
+    text-decoration: none;
     list-style: none;
+    color:white;
 }
+
+
+.router-view{
+    margin:0 auto;
+    margin-top: 20px;
+    max-width:100%;
+}
+
+h1{color:white;}
+
+h2{color:white;}
+
+h3{color:white;}
+
+h4{color:white;}
+
+a{color:white;}
