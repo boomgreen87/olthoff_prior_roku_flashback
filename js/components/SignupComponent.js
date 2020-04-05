@@ -87,6 +87,7 @@ export default {
             .then(res => res.json())
             .then(data => {
                 console.log(data)
+                this.$router.replace({ name: "welcome" }); // Redirects to welcome/users page
             })
             .catch((error) => console.log(error))
         }

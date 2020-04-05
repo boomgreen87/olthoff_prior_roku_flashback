@@ -40,31 +40,37 @@ export default {
 
     methods: {
         login() {
-            //console.log(this.$parent.mockAccount.username);
-            if(this.input.username != "" && this.input.password != "") {
+
+            if (this.input.username != "" && this.input.password != "") {
+                // Fetch the account from the DB
+                // Generate the form data
                 let formData = new FormData();
 
                 formData.append("username", this.input.username);
                 formData.append("password", this.input.password);
 
-                let url = "./includes/index.php?user=true";
+                let url = `./admin/admin_login.php`;
 
                 fetch(url, {
-                    method: "POST",
+                    method: 'POST',
                     body: formData
                 })
-                .then(res => res.json())
-                .then(data => {
-                    console.log(data)
-                    // We get a user back, let's set authentication
-                    this.$emit("authenticated", true, data[0]);
-
-                    // Reroute to the users component so we can see all of them
-                    
-                })
-                .catch((error) => console.log(error))
+                    .then(res => res.json()) // Get the data back from PHP file
+                    .then(data => {
+                        if (typeof data != "object") { // Means that we're not getting a user object back
+                            console.warn(data);
+                            // TODO: Replace alert
+                            alert("authentication failed, please try again");
+                        } else {
+                            this.$emit("authenticated", true, data);
+                            this.$router.replace({ name: "welcome" });
+                        }
+                    })
+                    .catch(function (error) {
+                        console.log(error);
+                    });
             } else {
-                console.log("A username and password should be entered")
+                console.log("A username and password must be present");
             }
         }
     }
