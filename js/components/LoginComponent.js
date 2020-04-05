@@ -2,7 +2,7 @@ export default {
     template: `
         <div class="container">
             <div class="jumbotron roku-jumbotron">
-                <h1 class="display-4">Welcome to Flashback!</h1>
+                <h1 class="form-header">Welcome to Flashback!</h1>
                 <p class="lead">Before revisiting your favourite movies, tv shows or music from yesteryear, please log in with a valid username and password.</p>
                 <hr class="my-4">
                 <form @submit.prevent="login">
@@ -21,7 +21,9 @@ export default {
                             <button type="submit" class="btn btn-primary">Go!</button>
                         </div>
                     </div>
-                </form>            
+                </form> 
+                
+                
             </div>
         </div>
      `,

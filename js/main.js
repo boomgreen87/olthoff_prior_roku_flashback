@@ -4,6 +4,7 @@ import MoviesComponent from "./components/MoviesComponent.js"
 import TvComponent from "./components/TvComponent.js"
 import MusicComponent from "./components/MusicComponent.js"
 import SignupComponent from "./components/SignupComponent.js"
+import HomeComponent from "./components/HomeComponent.js"
 
 import ErrorComponent from "./components/ErrorComponent.js"
 
@@ -11,12 +12,13 @@ import ErrorComponent from "./components/ErrorComponent.js"
   let router = new VueRouter({
     // set routes
     routes: [
-      { path: '/', redirect: { name: "login" } },
+      { path: '/', redirect: { name: "home" } },
       { path: '/login', name: "login", component: LoginComponent },
       { path: '/movies', name: "movies", component: MoviesComponent},
       { path: '/tv', name: "tv shows", component: TvComponent},
       { path: '/music', name: "music", component: MusicComponent},
       { path: '/signup', name: "signup", component: SignupComponent},
+      { path: '/home', name: "home", component: HomeComponent},
 
       { path: '/error', name: "error", component: ErrorComponent},
     ]
