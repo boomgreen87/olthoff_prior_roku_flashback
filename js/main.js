@@ -8,7 +8,6 @@ import HomeComponent from "./components/HomeComponent.js"
 import WelcomeComponent from "./components/WelcomeComponent.js"
 import EditProfileComponent from "./components/EditProfileComponent.js"
 import AccountSettingsComponent from "./components/AccountSettingsComponent.js"
-import ManageUsersComponent from "./components/ManageUsersComponent.js"
 import ChangeDisplayNameComponent from "./components/ChangeDisplayNameComponent.js"
 import ChangeDisplayPictureComponent from "./components/ChangeDisplayPictureComponent.js"
 import ChangeBackgroundComponent from "./components/ChangeBackgroundComponent.js"
@@ -16,7 +15,8 @@ import ManageAccountUsersComponent from "./components/ManageAccountUsersComponen
 import ChangePasswordComponent from "./components/ChangePasswordComponent.js"
 import ChangeEmailComponent from "./components/ChangeEmailComponent.js"
 
-
+import ConfirmMessageComponent from "./components/ConfirmMessageComponent.js"
+import CreatedAccountComponent from "./components/CreatedAccountComponent.js"
 
 import ErrorComponent from "./components/ErrorComponent.js"
 
@@ -24,7 +24,8 @@ import ErrorComponent from "./components/ErrorComponent.js"
   let router = new VueRouter({
     // set routes
     routes: [
-      { path: '/', redirect: { name: "home" } },
+      { path: '/', name: "home", component: HomeComponent},
+
       { path: '/login', name: "login", component: LoginComponent },
       { path: '/signup', name: "signup", component: SignupComponent},
 
@@ -32,14 +33,11 @@ import ErrorComponent from "./components/ErrorComponent.js"
       { path: '/tv', name: "tv shows", component: TvComponent},
       { path: '/music', name: "music", component: MusicComponent},
 
-      { path: '/home', name: "home", component: HomeComponent},
-
       { path: '/welcome', name: "welcome", component: WelcomeComponent},
 
       { path: '/editprofile', name: "editprofile", component: EditProfileComponent},
       { path: '/accountsettings', name: "accountsettings", component: AccountSettingsComponent},
 
-      { path: '/manageusers', name: "manageusers", component: ManageUsersComponent},
       { path: '/changedisplayname', name: "changedisplayname", component: ChangeDisplayNameComponent},
       { path: '/changedisplaypicture', name: "changedisplaypicture", component: ChangeDisplayPictureComponent},
       { path: '/changebackground', name: "changebackground", component: ChangeBackgroundComponent},
@@ -47,6 +45,9 @@ import ErrorComponent from "./components/ErrorComponent.js"
       { path: '/manageaccountusers', name: "manageaccountusers", component: ManageAccountUsersComponent},
       { path: '/changepassword', name: "changepassword", component: ChangePasswordComponent},
       { path: '/changeemail', name: "changeemail", component: ChangeEmailComponent},
+
+      { path: '/createdaccount', name: "createdaccount", component: CreatedAccountComponent},
+      { path: '/confirmmessage', name: "confirmmessage", component: ConfirmMessageComponent},
 
       { path: '/error', name: "error", component: ErrorComponent},
     ]

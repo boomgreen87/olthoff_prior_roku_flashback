@@ -4,33 +4,10 @@ header{
     justify-content: center;
     padding-top:20px;
     background-color: white;
+    margin-bottom:20px;
 }
 
 #header-logo{
     max-width:80%;
     margin: 0 auto;
-}
-
-.header-site-nav{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    padding: 10px;
-}
-
-.header-site-links{
-    padding:10px;
-    font-size: 16px;
-}
-
-#imageLinks{
-    margin-bottom: 35px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-
-}
-
-.icon{
-    max-width:15%;
 }

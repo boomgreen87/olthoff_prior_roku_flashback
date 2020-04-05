@@ -3,6 +3,7 @@ export default {
 
     <div class="container">
         <h1 class="hidden">Movies Page Component</h1>
+
         
         <div class="gallery">
             <h3 class="gallery-title">Most Popular Movies</h3>
@@ -17,6 +18,14 @@ export default {
                         <h3 class="hidden">Movie Description</h3>
                         <p>Movie descriptions go here</p>
                     </div>
+            </div>
+
+            <div class="app-nav">
+                <router-link class="media-link" to="/movies">Movies</router-link>
+            
+                <router-link class="media-link" to="/tv">TV Shows</router-link>
+            
+                <router-link class="media-link" to="/music">Music</router-link>
             </div>
 
             <div class="gallery-sub">
