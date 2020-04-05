@@ -1,6 +1,6 @@
 export default {
     template: `
-    <container class="container">
+    <div class="container">
         <h1 class="hidden">Music Page Component</h1>
         
         <div class="gallery">
@@ -146,5 +146,5 @@ export default {
                 </div>
             </div>
         </div>
-    </container>
+    </div>
 `}

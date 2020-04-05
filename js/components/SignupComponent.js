@@ -2,8 +2,7 @@ export default {
     template: `
     <div class="container">
         <div class="jumbotron roku-jumbotron">
-            <h1 class="display-4" id="form-header">Create a New Account!
-            </h1>
+            <h1 class="form-header">Create a New Account!</h1>
             <p class="lead">Create your own flashback account by filling out the form below.</p>
             <hr class="my-4">
             <form @submit.prevent="login">
