@@ -8,13 +8,19 @@ export default {
             <hr class="my-4">
             <form @submit.prevent="login">
                 <div class="form-row align-items-center">
+                
                     <div class="col-md-3 my-1">
-                        <label class="sr-only" for="inlineFormInputName">FirstName</label>
+                        <label class="sr-only" for="inlineFormInputName">Email</label>
+                        <input v-model="input.email" type="email" class="form-control" id="inlineFormInputName" placeholder="Email" required>
+                    </div>
+
+                    <div class="col-md-3 my-1">
+                        <label class="sr-only" for="inlineFormInputName">First Name</label>
                         <input v-model="input.firstname" type="text" class="form-control" id="inlineFormInputName" placeholder="First Name" required>
                     </div>
 
                     <div class="col-md-3 my-1">
-                        <label class="sr-only" for="inlineFormInputName">LastName</label>
+                        <label class="sr-only" for="inlineFormInputName">Last Name</label>
                         <input v-model="input.lastname" type="text" class="form-control" id="inlineFormInputName" placeholder="Last Name" required>
                     </div>
 
@@ -29,17 +35,12 @@ export default {
                     </div>
 
                     <div class="col-md-3 my-1">
-                        <label class="sr-only" for="inlineFormInputName">Email</label>
-                        <input v-model="input.email" type="email" class="form-control" id="inlineFormInputName" placeholder="Email" required>
-                    </div>
-
-                    <div class="col-md-3 my-1">
-                        <label class="sr-only" for="inlineFormInputName">Name</label>
+                        <label class="sr-only" for="inlineFormInputName">Username</label>
                         <input v-model="input.username" type="text" class="form-control" id="inlineFormInputName" placeholder="Username" required>
                     </div>
 
                     <div class="col-md-3 my-1">
-                        <label class="sr-only" for="inlineFormPassword">Name</label>
+                        <label class="sr-only" for="inlineFormPassword">Password</label>
                         <input v-model="input.password" type="password" class="form-control" id="inlineFormPassword" placeholder="Password" required>
                     </div>
 
