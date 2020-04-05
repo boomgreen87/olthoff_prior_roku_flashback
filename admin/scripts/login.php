@@ -26,7 +26,6 @@ function login($username, $password){
         while($found_account = $account_check->fetch(PDO::FETCH_ASSOC)){
             $id = $found_account['accounts_id'];
             //Logged in!
-            $message = 'You just logged in!';
             $_SESSION['accounts_id'] = $id;
             $_SESSION['accounts_name'] = $found_account['accounts_first_name'];
 
@@ -34,17 +33,16 @@ function login($username, $password){
             $account = array();
 
             // Sets account information
-            $account['id'] = $found_account['user_id'];
-            $account['username'] = $found_account['user_name'];
+            $account['id'] = $found_account['accounts_id'];
+            $account['username'] = $found_account['accounts_username'];
 
-            // return the account
+            // Return the account
             return $account;
         }
         
     } else {
         // Account does not exist
-        $message = 'Account does not exist';
-        return $message;
+        return false;
     }
 }
 

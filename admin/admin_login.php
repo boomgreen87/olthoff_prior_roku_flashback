@@ -10,7 +10,7 @@
             //Log account in
             $message = login($username, $password);
         }else{
-            $message = 'Please fill out the required fields.';
+            return false;
         }
 
         echo json_encode($message);

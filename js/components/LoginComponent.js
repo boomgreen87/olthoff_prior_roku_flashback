@@ -59,9 +59,9 @@ export default {
                     .then(data => {
                         if (typeof data != "object") { // Means that we're not getting a user object back
                             console.warn(data);
-                            // TODO: Replace alert
-                            alert("authentication failed, please try again");
+                            alert("Username or password is incorrect. Please try again."); // TODO: Replace alert
                         } else {
+                            // User logged in successfully
                             this.$emit("authenticated", true, data);
                             this.$router.replace({ name: "welcome" });
                         }
