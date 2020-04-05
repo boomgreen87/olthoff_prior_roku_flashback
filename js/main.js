@@ -5,6 +5,7 @@ import TvComponent from "./components/TvComponent.js"
 import MusicComponent from "./components/MusicComponent.js"
 import SignupComponent from "./components/SignupComponent.js"
 import HomeComponent from "./components/HomeComponent.js"
+import WelcomeComponent from "./components/WelcomeComponent.js"
 
 import ErrorComponent from "./components/ErrorComponent.js"
 
@@ -19,7 +20,7 @@ import ErrorComponent from "./components/ErrorComponent.js"
       { path: '/music', name: "music", component: MusicComponent},
       { path: '/signup', name: "signup", component: SignupComponent},
       { path: '/home', name: "home", component: HomeComponent},
-
+      { path: '/welcome', name: "welcome", component: WelcomeComponent},
       { path: '/error', name: "error", component: ErrorComponent},
     ]
   });
