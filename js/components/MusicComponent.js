@@ -3,6 +3,7 @@ export default {
 
     template: `
     <section class="mediaSection">
+        <h1 class="hidden">Music Component</h1>
         <div class="topSection">
             <div class="videoContainer">
                 <img class="selectedAlbum" :src="'images/' + currentMediaDetails.song_cover_art" alt="Album Cover">
@@ -18,6 +19,7 @@ export default {
         </div>
             <div class="bottomSection">
                 <div class="posterSection">
+                <h2 class="mediaTitle">Popular Music</h2>
                     <img class="poster" v-for="item in allRetrievedSongs" :src="'images/' + item.song_cover_art" alt="Album Cover" @click="loadNewSong(item)">
                 </div>
             </div>

@@ -3,6 +3,7 @@ export default {
 
     template: `
     <section class="mediaSection">
+        <h1 class="hidden">Movie Component</h1>
         <div class="topSection">
             <div class="videoContainer">
                 <div class="selectedVideo" v-html="currentMediaDetails.movie_link"></div>
@@ -16,14 +17,13 @@ export default {
                 <span class="media-genre">{{currentMediaDetails.movie_genre}}</span>
             </div>
         </div>
-
-        
+         
         <div class="bottomSection">
             <div class="posterSection">
+            <h2 class="mediaTitle">Popular Movies</h2>
                 <img class="poster" v-for="item in allRetrievedMovies" :src="'images/' + item.movie_poster" alt="Movie Poster" @click="loadNewMovie(item)" class="poster">
             </div>
         </div>
-        
     </section>
     `,
 

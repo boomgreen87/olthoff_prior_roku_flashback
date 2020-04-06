@@ -3,6 +3,7 @@ export default {
 
     template: `
     <section class="mediaSection">
+        <h1 class="hidden">TV Component</h1>
         <div class="topSection">
             <div class="videoContainer">
                 <div class="selectedVideo" v-html="currentMediaDetails.show_link"></div>
@@ -18,6 +19,7 @@ export default {
 
         <div class="bottomSection">
             <div class="posterSection">
+                <h2 class="mediaTitle">Popular TV Shows</h2>
                 <img class="poster" v-for="item in allRetrievedShows" :src="'images/' + item.show_poster" alt="Show Poster" @click="loadNewShow(item)">
             </div>
         </div>

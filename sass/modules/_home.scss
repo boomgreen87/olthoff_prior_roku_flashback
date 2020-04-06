@@ -1,14 +1,26 @@
-.home-button{
-    background-color: $lightPurp;
-    margin: 15px;
+.container{
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 100%;
 }
 
-.home-button-links{
-    color: white;
-    font-size:20px;
+.mediaLinks{
+    display:flex;
+    flex-direction: column;
 
-    display: flex;
-    padding: 15px;
+    margin: 0 auto;
+    width: 100%;
+}
 
-    justify-content: center;    
+.mediaList{
+    display:flex;
+    flex-direction: row;
+    width: 100%;
+
+    justify-content: space-between;
+}
+
+.iconLink{
+    margin: 0 auto;
 }
