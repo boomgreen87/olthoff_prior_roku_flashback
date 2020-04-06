@@ -1,29 +1,31 @@
 <?php 
-function createUser($email, $fname, $lname, $country, $username, $password){
-    $pdo = Database::getInstance()->getConnection();
-    
-    // Sets up create user query
-    $create_user_query = 'INSERT INTO tbl_accounts(accounts_email, accounts_first_name, accounts_last_name, accounts_country, accounts_username, accounts_password)';
-    $create_user_query .= ' VALUES(:email, :fname, :lname, :country, :username, :password)';
+    function getAllUsers($id){
+        $pdo = Database::getInstance()->getConnection();
 
-    // Runs query to create a new user with provided data
-    $create_user_set = $pdo->prepare($create_user_query);
-    $create_user_result = $create_user_set->execute(
-        array(
-            ':email'=>$email,
-            ':fname'=>$fname,
-            ':lname'=>$lname,
-            ':country'=>$country,
-            ':username'=>$username,
-            ':password'=>$password
-        )
-    );
+        // Selects all users of logged in account
+        $get_user_query = "SELECT * FROM tbl_users WHERE users_accounts_id = $id";
+        $get_user_set = $pdo->prepare($get_user_query);
+        $get_user_result = $get_user_set->execute();
 
-    //Redirects to index.php if user is created successfully. Otherwise, returns an error message.
-    if($create_user_result){
-        // redirect_to('index.php');
-        return 'Account created successfully!';
-    }else{
-        return 'The user did not go through';
+        $users = array();
+
+        if($get_user_result) {
+            while($user = $get_user_set->fetch(PDO::FETCH_ASSOC)){
+                $currentuser = array();
+
+                // Set user information
+                $currentuser['id'] = $user['users_id'];
+                $currentuser['icon'] = $user['users_icon'];
+                $currentuser['permissions'] = $user['users_permissions'];
+                $currentuser['name'] = $user['users_display_name'];
+                $currentuser['bgcolour'] = $user['users_bg_colour'];
+                
+
+                $users[] = $currentuser;
+            }
+
+            return json_encode($users);
+        } else {
+            return false;
+        }
     }
-}
