@@ -9,24 +9,18 @@ export default {
 
     template: `
     <div class="container">
-        <component :is="this.activeComponent"></component>
-
         <!-- show media icons here -->
-        <div class="row"> <!-- 2-up for nav and media info -->
+        <nav class="mediaLinks">
+            <ul class="mediaList">
+                <li class="iconLink" v-for="media in mediaTypes" :data-type="media.description" @click="switchMedia(media.component)">
+                    <span class="socialIcon">
+                        <i v-bind:class="[media.iconClass]"></i>
+                    </span>
+                </li>
+            </ul>
+        </nav>
 
-            <nav id="mediaLinks">
-
-                <ul class="media-type">
-                    <li v-for="media in mediaTypes" :data-type="media.description" @click="switchMedia(media.component)">
-
-                        <span class="socialIcon">
-                            <i v-bind:class="[media.iconClass]"></i>
-                        </span>
-                    </li>
-                </ul>
-
-            </nav>
-        </div>
+        <component :is="this.activeComponent"></component>
     </div>
     `,
 
@@ -35,9 +29,9 @@ export default {
             activeComponent: MovieComponent,
 
             mediaTypes: [
-                { iconClass: "fas fa-film", description: "Movies", component: MovieComponent },
-                { iconClass: "fas fa-tv", description: "Television", component: TvComponent },
-                { iconClass: "fas fa-headphones", description: "Music", component: MusicComponent }
+                { iconClass: "fas fa-film fa-3x", description: "Movies", component: MovieComponent },
+                { iconClass: "fas fa-tv fa-3x", description: "Television", component: TvComponent },
+                { iconClass: "fas fa-headphones fa-3x", description: "Music", component: MusicComponent }
             ]
         }
     },
