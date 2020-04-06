@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Apr 05, 2020 at 08:42 AM
+-- Generation Time: Apr 06, 2020 at 03:00 AM
 -- Server version: 5.7.26
 -- PHP Version: 7.2.18
 
@@ -165,12 +165,12 @@ DROP TABLE IF EXISTS `tbl_users`;
 CREATE TABLE IF NOT EXISTS `tbl_users` (
   `users_id` int(11) NOT NULL AUTO_INCREMENT,
   `users_accounts_id` int(10) NOT NULL,
-  `users_icon` varchar(100) NOT NULL,
+  `users_icon` varchar(100) DEFAULT NULL,
   `users_permissions` int(1) NOT NULL,
   `users_display_name` varchar(50) NOT NULL,
-  `users_bg_colour` varchar(50) NOT NULL,
+  `users_bg_colour` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`users_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
