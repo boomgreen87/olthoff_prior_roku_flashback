@@ -10,7 +10,7 @@
         $username = trim($_POST['username']);
         $password = trim($_POST['password']);
 
-        $message = createUser($email, $fname, $lname, $country, $username, $password);
+        $message = createAccount($email, $fname, $lname, $country, $username, $password);
 
         echo json_encode($message);
     }

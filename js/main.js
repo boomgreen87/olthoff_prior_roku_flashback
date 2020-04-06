@@ -1,9 +1,10 @@
-//all components here
+// Import all components here
 import LoginComponent from "./components/LoginComponent.js"
 import SignupComponent from "./components/SignupComponent.js"
 import HomeComponent from "./components/HomeComponent.js"
 import UserHomeComponent from "./components/UserHomeComponent.js"
 import WelcomeComponent from "./components/WelcomeComponent.js"
+import AddUserComponent from "./components/AddUserComponent.js"
 import EditProfileComponent from "./components/EditProfileComponent.js"
 import AccountSettingsComponent from "./components/AccountSettingsComponent.js"
 import ChangeDisplayNameComponent from "./components/ChangeDisplayNameComponent.js"
@@ -20,7 +21,7 @@ import ErrorComponent from "./components/ErrorComponent.js"
 
 (() => {
   let router = new VueRouter({
-    // set routes
+    // Set routes
     routes: [
       { path: '/', name: "home", component: HomeComponent},
 
@@ -28,6 +29,7 @@ import ErrorComponent from "./components/ErrorComponent.js"
       { path: '/signup', name: "signup", component: SignupComponent},
 
       { path: '/welcome', name: "welcome", component: WelcomeComponent},
+      { path: '/adduser', name: "adduser", component: AddUserComponent},
 
       { path: '/userhome', name: "userhome", component: UserHomeComponent, props: true },
 
@@ -54,33 +56,37 @@ import ErrorComponent from "./components/ErrorComponent.js"
     data: {
       authenticated: false,
       administrator: false,
-
-      mockAccount: {
-        username: "user",
-        password: "password"
-      },
-
       user: [],
-
-      //currentUser: {},
     },
 
     created: function () {
-      // do a localstorage session check and set authenticated to true if the session still exists
-      // if the cached user exists, then just navigate to their user home page
+      // Check for a user in localStorage. If there is one, push to home and set authenticated. Otherwise push to login page.
+      if (localStorage.getItem("cachedUser")) {
+        let user = JSON.parse(localStorage.getItem("cachedUser"));
 
-      // the localstorage session will persist until logout
+        this.authenticated = true;
+
+        this.$router.push({ name: "userhome", params: { currentuser: user }});
+      } else {
+        this.$router.push({ name: "home" }).catch(err => { });
+      }
     },
 
     methods: {
-      setAuthenticated(status) {
+      setAuthenticated(status, data) {
         this.authenticated = status;
+        this.user = data;
       },
 
       logout() {
         // Push user back to login page
         this.$router.push({ name: "login" });
         this.authenticated = false;
+
+        // Remove cached accounts
+        if (localStorage.getItem("cachedAccount")) {
+          localStorage.removeItem("cachedAccount");
+        }
 
         // Remove cached users
         if (localStorage.getItem("cachedUser")) {
@@ -106,4 +112,13 @@ import ErrorComponent from "./components/ErrorComponent.js"
 
     router: router
   }).$mount("#app");
+
+  // Redirects user to home page if they try to open a page without logging in first
+  // router.beforeEach((to, from, next) => {
+  //   if (vm.authenticated == false) {
+  //     next("/");
+  //   } else {
+  //     next();
+  //   }
+  // });
 })();

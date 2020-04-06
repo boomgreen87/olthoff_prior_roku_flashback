@@ -1,62 +1,58 @@
+import UserComponent from './UserComponent.js';
+
 export default {
-template: `
-    <div class="container">
-        <h1 class="hidden">Home Page Component</h1>
+    template: `
+        <div class="container">
+            <h1 class="hidden">Home Page Component</h1>
 
-        <div class="jumbotron roku-jumbotron">
-            <h1 class="form-header">Welcome to Flashback by Roku</h1>
+            <div class="jumbotron roku-jumbotron">
+                <h1 class="form-header">{{ header }}</h1>
 
-            <hr class="my-4">
+                <hr class="my-4">
 
-            <h2 class="lead">Who is watching?</h2>
-            <div id="all-account-users">
-                <div class="account-user">
-                    <div class="user-avitar">
-                    </div>
-                    <p class="user-displayname">UserName 1</p>
+                <h2 class="lead">{{ message }}</h2>
+
+                <div id="all-account-users">
+                    <user v-for="(user, index) in userList" :liveuser="user" :key="index"></user>
                 </div>
 
-                <div class="account-user">
-                    <div class="user-avitar">
-                    </div>
-                    <p class="user-displayname">UserName 2</p>
+                <div id="add-user" v-if="userList.length < 4">
+                    <router-link class="add-user-button" to="/adduser">Add User</router-link>
                 </div>
 
-                <div class="account-user">
-                    <div class="user-avitar">
-                    </div>
-                    <p class="user-displayname">UserName 3</p>
-                </div>
-
-                <div class="account-user">
-                    <div class="user-avitar">
-                    </div>
-                    <p class="user-displayname">UserName 4</p>
-                </div>
+                <hr class="my-4">
             </div>
-            <hr class="my-4">
         </div>
+    `,
 
-        <router-link class="footer-site-links" to="/movies">Skip To Movie Page</router-link>
-    </div>
+	created: function () {
+		this.fetchAllUsers();
+	},
 
-`}
+	data() {
+		return {
+            header: `Welcome to Flashback by Roku`,
+            message: `Who's Using Roku?`,
+			userList: []
+		}
+    },
 
-//  <div class="media-button">
-// <router-link class="media-link" to="/movies">Go To Movies</router-link>
-// </div>
-// <div class="media-button">
-//     <router-link class="media-link" to="/tv">Go To TV Shows</router-link>
-// </div>
-// <div class="media-button">
-//     <router-link class="media-link" to="/music">Go To Music</router-link>
-// </div>
+	methods: {
+        // Fetches all the users on the account
+		fetchAllUsers() {
+            let account = JSON.parse(localStorage.getItem("cachedAccount")).id;
+            let url = ("./admin/admin_getusers.php?allusers=" + account);
 
-// <router-link class="text-link" to="/editprofile">Edit Profile </router-link>
+			fetch(url)
+			.then(res => res.json())
+			.then(data => {
+				this.userList = data;
+			})
+			.catch((err) => console.error(err));
+		}
+	},
 
-// <router-link class="text-link" to="/accountsettings">Account Settings </router-link>
-
-// <router-link class="text-link" to="/manageaccountusers">Manage Account Users </router-link>
-
-// <router-link class="text-link" to="/signout">Sign Out</router-link>
-// </div>
+	components: {
+		user: UserComponent
+	}
+}

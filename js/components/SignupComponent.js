@@ -88,8 +88,15 @@ export default {
             })
             .then(res => res.json())
             .then(data => {
-                console.log(data)
-                this.$router.replace({ name: "welcome" }); // Redirects to welcome/users page
+                if (typeof data != "object") { // Means that we're not getting an account object back
+                    console.warn(data);
+                    alert("There was a problem creating your account. Please try again."); // TODO: Replace alert
+                } else {
+                    // User logged in successfully
+                    localStorage.setItem("cachedAccount", JSON.stringify(data)); // Cache account
+                    this.$emit("authenticated", true, data); // Set authentication
+                    this.$router.replace({ name: "welcome" });
+                }
             })
             .catch((error) => console.log(error))
         }
