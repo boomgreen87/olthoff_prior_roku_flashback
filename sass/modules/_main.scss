@@ -1,11 +1,13 @@
 body{
     background-color: #4a4a4a;
+    margin: 0 auto;
 }
 
 .hidden{display:none;}
 
 #app{
     max-width:100%;
+    margin: 0 auto;
 }
 
 ul{
@@ -13,8 +15,6 @@ ul{
     display: flex;
     color:white;
 }
-
-
 
 li{
     text-decoration: none;
@@ -43,7 +43,7 @@ h4{color:white;
 a{color:white;}
 
 .roku-jumbotron{
-    background-color: #662C90;
+    background-color: $darkPurp;
     color: white;
     text-align: center;
 }
