@@ -3,15 +3,6 @@
     margin: 15px;
 }
 
-.media-link{
-    color: white;
-    font-size:20px;
-
-    display: flex;
-    padding: 15px;
-
-    justify-content: center;    
-}
 
 .text-link{
     color: white;
@@ -47,4 +38,11 @@
 .user-displayname{
     text-align: center;
     font-size: 14px;
+}
+
+.mediaLinks{
+    display: flex;
+    flex-direction: row;
+
+    margin: 0 auto;
 }
