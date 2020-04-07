@@ -1,26 +1,16 @@
-.container{
+
+
+.home-button{
     display: flex;
-    flex-direction: column;
-    margin: 0 auto;
-    width: 100%;
+    margin:0 auto;
+
+    padding: 15px;
+
+    text-align: center;
 }
 
-.mediaLinks{
-    display:flex;
-    flex-direction: column;
-
-    margin: 0 auto;
-    width: 100%;
-}
-
-.mediaList{
-    display:flex;
-    flex-direction: row;
-    width: 100%;
-
-    justify-content: space-between;
-}
-
-.iconLink{
-    margin: 0 auto;
+.home-button-links{
+    width:100%;
+    background: $lightPurp;
+    padding: 15px;
 }

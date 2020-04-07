@@ -5,8 +5,9 @@
     margin: 0 auto;
 
     max-width:100%;
-    background-color: $darkPurp;
     color: white;
+
+    margin-top:20px;
 }
 
 .topSection{
@@ -14,7 +15,7 @@
     flex-direction: column;
 
     margin: 0 auto;
-
+    
     max-width:100%;
 
     background-color: $darkPurp;
@@ -29,21 +30,23 @@
 
     max-width:100%;
 
-    padding: 50px;
+    padding: 25px;
 
     background-color: $darkPurp;
+
+    margin-top: 80px;
 }
 
 .posterSection{
     max-width: 95%;
     justify-content: center;
     margin: 0 auto;
-    margin-top: 25px;
+    margin-top: 10px;
 }
 
 .poster{
     max-width: 33%;
-    padding:3px;
+    padding:5px;
 }
 
 .textSection{
@@ -56,13 +59,15 @@
     width: 100%;
     margin: 0 auto;
     justify-content: center;
-
+    background-color: $darkPurp;
     padding:15px;
 }
 
 .selectedVideo{
     display: block;
     width: 100%;
+
+    background-color: $darkPurp;
 }
 
 iframe{

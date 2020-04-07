@@ -1,8 +1,3 @@
-.media-button{
-    background-color: #A550CC;
-    margin: 15px;
-}
-
 
 .text-link{
     color: white;
@@ -39,3 +34,38 @@
     text-align: center;
     font-size: 14px;
 }
+
+.userHomeCon{
+    display: flex;
+    flex-direction: column;
+
+    margin: 0 auto;
+}
+
+#mediaNavCon{
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    max-width:100%;
+    margin: 0 auto;
+}
+
+#mediaNav{
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+    padding:15px;
+}
+
+.mediaIconLink{
+    max-width:50%;
+}
+
+#mediaNav li{
+    display:flex;
+    flex-direction: row;
+    width:100%;
+}
+
+
+

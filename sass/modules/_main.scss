@@ -1,6 +1,10 @@
 body{
+    background-image: linear-gradient( #4a4a4a, #A9A9A9,  #4a4a4a);
     background-color: #4a4a4a;
+    display:flex;
     margin: 0 auto;
+
+    color: white;
 }
 
 .hidden{display:none;}
@@ -18,12 +22,10 @@ ul{
 li{
     text-decoration: none;
     list-style: none;
-    color:white;
 }
 
 
 .router-view{
-    margin:0 auto;
     max-width:100%;
 }
 
@@ -49,14 +51,17 @@ a{color:white;}
 
 .form-header{
     color:white;
+    margin-top: 10px;
 }
 
 .app-nav{
     display: flex;
     flex-direction: row;
     justify-content: center;
-
-    width: 100%;
-
     background-color: #4a4a4a;
+}
+
+.lead{
+    color:white;
+    margin-top: 20px;
 }

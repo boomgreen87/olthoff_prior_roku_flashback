@@ -8,11 +8,11 @@ export default {
             <hr class="my-4">
 
             <div class="home-button">
-                <router-link class="home-button-links" to="/login">Sign In To Account</router-link>
+                <router-link class="home-button-links" to="/login">Log In to Your Account</router-link>
             </div>
 
             <div class="home-button">
-                <router-link class="home-button-links" to="/signup">Create A New Account</router-link>
+                <router-link class="home-button-links" to="/signup">Create a New Account</router-link>
             </div>
         </div>
     </div>

@@ -20,8 +20,8 @@ export default {
          
         <div class="bottomSection">
             <div class="posterSection">
-            <h2 class="mediaTitle">Popular Movies</h2>
-                <img class="poster" v-for="item in allRetrievedMovies" :src="'images/' + item.movie_poster" alt="Movie Poster" @click="loadNewMovie(item)" class="poster">
+            <h2 class="mediaTitle">Most Popular Movies</h2>
+                <img class="poster" v-for="item in allRetrievedMovies" :src="'images/' + item.movie_poster" alt="Movie Poster" @click="loadNewMovie(item)">
             </div>
         </div>
     </section>

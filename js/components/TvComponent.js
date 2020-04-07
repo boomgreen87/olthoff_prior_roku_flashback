@@ -19,7 +19,7 @@ export default {
 
         <div class="bottomSection">
             <div class="posterSection">
-                <h2 class="mediaTitle">Popular TV Shows</h2>
+                <h2 class="mediaTitle">Most Popular TV Shows</h2>
                 <img class="poster" v-for="item in allRetrievedShows" :src="'images/' + item.show_poster" alt="Show Poster" @click="loadNewShow(item)">
             </div>
         </div>
