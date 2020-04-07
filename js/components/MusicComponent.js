@@ -2,24 +2,24 @@ export default {
     name: "TheMusicComponent",
 
     template: `
-    <section class="mediaSection">
+    <section class="media-container">
         <h1 class="hidden">Music Component</h1>
-        <div class="topSection">
-            <div class="videoContainer">
-                <img class="selectedAlbum" :src="'images/' + currentMediaDetails.song_cover_art" alt="Album Cover">
+        <div class="top-section">
+            <div class="music-container">
+                <img class="selected-music" :src="'images/' + currentMediaDetails.song_cover_art" alt="Album Cover">
             
-                <audio controls :src="'audio/' + currentMediaDetails.song_file" class="audioPlayer"></audio>
+                <audio controls :src="'audio/' + currentMediaDetails.song_file" class="audio-player"></audio>
             </div>
 
-            <div class="textSection">
+            <div class="text-section">
                 <h4 class="media-name">{{currentMediaDetails.song_name}}</h4>
                 <span class="media-year">{{currentMediaDetails.song_year}}</span>
                 <span class="media-genre">{{currentMediaDetails.song_genre}}</span>
             </div>
         </div>
-            <div class="bottomSection">
-                <div class="posterSection">
-                <h2 class="mediaTitle">Most Popular Music</h2>
+            <div class="bottom-section">
+                <div class="poster-section">
+                <h2 class="media-title">Most Popular Music</h2>
                     <img class="poster" v-for="item in allRetrievedSongs" :src="'images/' + item.song_cover_art" alt="Album Cover" @click="loadNewSong(item)">
                 </div>
             </div>

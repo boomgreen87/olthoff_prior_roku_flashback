@@ -1,13 +1,14 @@
 @import '_vars.scss';
-@import './modules/_main.scss';
-@import './modules/_footer.scss';
-@import './modules/_header.scss';
-@import './modules/_kids.scss';
-@import './modules/_login.scss';
-@import './modules/_mediaquery.scss';
-@import './modules/_movies.scss';
-@import './modules/_music.scss';
-@import './modules/_tvshows.scss';
-@import './modules/_gallery.scss';
-@import './modules/_home.scss';
-@import './modules/_welcome.scss';
+@import 'modules/_all.scss';
+
+@import 'modules/_home.scss';
+@import 'modules/_header.scss';
+@import 'modules/_footer.scss';
+
+@import 'modules/_userhome.scss';
+
+@import 'modules/_login.scss';
+@import 'modules/_signup.scss';
+@import 'modules/_welcome.scss';
+
+@import 'modules/_media.scss';

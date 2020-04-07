@@ -1,0 +1,108 @@
+.media-container{
+    display: flex;
+    flex-direction: column;
+
+    margin: 0 auto;
+
+    max-width:100%;
+    color: white;
+
+    margin-top:20px;
+
+    padding:25px;
+
+    @include for-tablet{
+        width:80%;
+    }
+
+    @include for-desktop{
+        width: 60%;
+    }
+}
+
+.top-section{
+    display: flex;
+    flex-direction: column;
+
+    margin: 0 auto;
+    
+    width:100%;
+
+    background-color: $darkPurp;
+}
+
+.bottom-section{
+    display: flex;
+    flex-direction: column;
+
+    margin: 0 auto;
+    justify-content: center;
+
+    width:100%;
+
+    padding: 25px;
+
+    background-color: $darkPurp;
+
+    margin-top: 80px;
+
+}
+
+.text-section{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.poster-section{
+    max-width: 95%;
+    justify-content: center;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+
+.poster{
+    max-width: 33%;
+    padding:5px;
+}
+
+//music specific rules
+.music-container{
+    display: flex;
+    flex-direction: column;
+
+    margin: 0 auto;
+
+    max-width:100%;
+    color: white;
+
+    margin-top:20px;
+    @include for-tablet{
+        max-width:80%;
+    }
+
+    @include for-desktop{
+        max-width: 60%;
+    }
+}
+.selected-music{
+    margin: 0 auto;
+    justify-content: center;
+}
+
+.audio-player{
+    margin-top:15px;
+    border-radius: 5px;
+}
+
+iframe{
+    height: 300px;
+
+    @include for-tablet{
+        height: 400px;
+    }
+
+    @include for-desktop{
+        height: 600px;
+    }
+}

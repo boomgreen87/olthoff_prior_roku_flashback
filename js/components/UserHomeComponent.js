@@ -8,16 +8,15 @@ export default {
     props: ['currentuser'],
 
     template: `
-    <div class="userHomeCon">
+    <div class="userhome-container">
         <!-- show media icons here -->
-        <div id="mediaNavCon">
-                <ul id="mediaNav">
-                    <li v-for="media in mediaTypes" :data-type="media.description" @click="switchMedia(media.component)">
-                        <img v-bind:src="[media.iconSrc]" class="mediaIconLink" v-bind:alt="[media.description]">
-                    </li>
-                </ul>
+        <div class="nav-con">
+            <div class="media-nav">
+                <div class="icon-con" v-for="media in mediaTypes" :data-type="media.description" @click="switchMedia(media.component)">
+                    <img v-bind:src="[media.iconSrc]" class="media-icon-link" v-bind:alt="[media.description]">
+                </div>
+            </div>
         </div>
-        
         <component :is="this.activeComponent"></component>
     </div>
     `,

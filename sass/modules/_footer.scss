@@ -1,28 +1,8 @@
-
 footer{
     display: flex;
     flex-direction: column;
-    margin-top: 20px;
-    max-width:90%;
-}
-
-.footer-site-nav{
-    list-style: none;
-    justify-content: space-around;
-
-    display: flex;
-    flex-direction: row;
+    max-width: 80%;
     margin: 0 auto;
-}
-
-.footer-site-links{
-    padding:5px;
-}
-
-.copy{
-    font-size:10px;
-    text-align:center;
+    text-align: center;
     color: white;
-
-    margin-top:20px;
 }

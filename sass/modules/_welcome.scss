@@ -1,71 +1,12 @@
-
-.text-link{
-    color: white;
-    display: flex;
-    padding: 5px;
-}
-
-#all-account-users{
-    display: flex;
-    flex-direction: row;
-
-    justify-content: space-between;
-
+.welcome-container{
+    max-width:80%;
     margin: 0 auto;
+
+    @include for-tablet{
+        max-width:60%;
+    }
+
+    @include for-desktop{
+        max-width: 40%;
+    }
 }
-
-.account-user{
-    width:30%;
-    height:100px;
-    margin: 5px;
-    padding:5px;
-
-    text-align: center;
-}
-
-.user-avitar{
-    background-color: white;
-    width:90px;
-    height:90px;
-    border-radius: 55px;
-}
-
-.user-displayname{
-    text-align: center;
-    font-size: 14px;
-}
-
-.userHomeCon{
-    display: flex;
-    flex-direction: column;
-
-    margin: 0 auto;
-}
-
-#mediaNavCon{
-    display: flex;
-    flex-direction: row;
-    background-color: white;
-    max-width:100%;
-    margin: 0 auto;
-}
-
-#mediaNav{
-    display: flex;
-    flex-direction: row;
-    margin: 0 auto;
-    padding:15px;
-}
-
-.mediaIconLink{
-    max-width:50%;
-}
-
-#mediaNav li{
-    display:flex;
-    flex-direction: row;
-    width:100%;
-}
-
-
-
