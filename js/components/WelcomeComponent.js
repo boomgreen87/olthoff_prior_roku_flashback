@@ -3,6 +3,7 @@ import UserComponent from './UserComponent.js';
 export default {
     template: `
         <div class="welcome-container">
+
             <h1 class="hidden">Home Page Component</h1>
 
             <div class="jumbotron roku-jumbotron">
@@ -20,6 +21,7 @@ export default {
                     <router-link class="home-button-links" to="/adduser">
                         Add a New User
                     </router-link>
+
                 </div>
 
                 <hr class="my-4">
