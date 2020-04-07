@@ -16,8 +16,10 @@ export default {
                     <user v-for="(user, index) in userList" :liveuser="user" :key="index"></user>
                 </div>
 
-                <div id="add-user" v-if="userList.length < 4">
-                    <router-link class="add-user-button" to="/adduser">Add User</router-link>
+                <div class="home-button" v-if="userList.length < 4">
+                    <router-link class="home-button-links" to="/adduser">
+                        Add a New User
+                    </router-link>
                 </div>
 
                 <hr class="my-4">
