@@ -55,12 +55,16 @@
 
         <!-- Footer -->
         <footer>
-            <ul class="footer-site-nav">
-                <a><router-link class="footer-site-links" to="/">Home</router-link></a>
-                <a><router-link class="footer-site-links" to="/userhome">Media</router-link></a>
-                <a v-if="admin == true || admin == 1"><router-link class="footer-site-links" to="/accountSettings">Account Settings</router-link></a>
-                <a href="" v-on:click="logout()">Logout</a>
-            </ul>
+            <nav class="footer-site-nav">
+                <ul>
+                    <li><router-link class="footer-site-links" to="/">Home</router-link></li>
+                    <li><router-link class="footer-site-links" to="/userhome">Media</router-link></li>
+                    <li><a v-if="admin == true || admin == 1"><router-link class="footer-site-links" to="/accountSettings">Account Settings</router-link></a></li>
+                    <li><a href="" v-on:click="logout()">Logout</a></li>
+                </ul>
+            </nav>
+            <p class="copy">&copy; 2020 Roku Flashback App By Scott Olthoff and Michael Prior</p>
+
         </footer>
         <!-- End Footer --> 
     </main>

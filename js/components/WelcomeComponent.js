@@ -16,14 +16,16 @@ export default {
                     <user v-for="(user, index) in userList" :liveuser="user" :key="index" @admin="emitAdmin"></user>
                 </div>
 
-                <div class="home-button" v-if="userList.length < 4">
-                    <router-link class="home-button-links" to="/adduser">
-                        Add a New User
+                <div class="button">
+                    <router-link to="/adduser">
+                         <p class="button-links" >Add a New User</p>
                     </router-link>
 
                 </div>
 
                 <hr class="my-4">
+<<<<<<< HEAD
+=======
 
                 <div class="profile-settings">
                     <h2>Profile Settings</h2>
@@ -60,6 +62,7 @@ export default {
                 </div>
                 <hr class="my-4">
 
+>>>>>>> 9b9a49a4412e0217de8e84acdaab12cf3a404182
             </div>
         </div>
     `,

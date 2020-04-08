@@ -5,7 +5,7 @@
     padding: 15px;
 
     @include for-desktop{
-        width:200px;
+        width:150px;
     }
 }
 
@@ -23,7 +23,7 @@
     }
 
     @include for-desktop{
-        width: 50%;
+        width: 40%;
     }
 }
 
@@ -34,13 +34,17 @@
 }
 
 .icon-con{
-    max-width: 50%;
     margin: 0 auto;
 
     background-color: white;
-    padding:3px;
+    
 
     border-radius: 10px;
+}
+
+.icon-con:hover{
+    opacity:0.8;
+    border: 4px solid $lightPurp;
 }
 
 .userhome-container{
@@ -53,3 +57,12 @@
     color: white;
     padding:25px;
 }
+
+#movie-icon{
+    margin-top:4px;
+}
+
+#music-icon{
+    margin-top:4px;
+}
+

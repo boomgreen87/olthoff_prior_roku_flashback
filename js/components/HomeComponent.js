@@ -9,17 +9,19 @@ export default {
 
             <hr class="my-4">
 
-            <div class="home-button">
-                <router-link class="home-button-links" to="/login">
-                    Log In to Your Account
+            <div class="button">
+                <router-link to="/login">
+                    <p class="button-links" > Log In to Your Account</p>
                 </router-link>
             </div>
 
-            <div class="home-button">
-                <router-link class="home-button-links" to="/signup">
-                    Create a New Account
+            <div class="button">
+                <router-link to="/signup">
+                    <p class="button-links" >Create a New Account</p>
                 </router-link>
             </div>
+            
+            
 
             <hr class="my-4">
             
