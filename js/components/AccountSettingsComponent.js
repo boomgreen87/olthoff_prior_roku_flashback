@@ -1,37 +1,35 @@
 export default {
     template: `
-    <div class="container">
+    <div class="account-settings-container">
         <h1 class="hidden">Edit Profile Component</h1>
 
         <div class="jumbotron roku-jumbotron">
             <h1 class="form-header">Good Time Of Day Username!</h1>
-            
-            <form class="account-settings-form" @submit.prevent="editAccount">
-                <h2 class="form-header">Account Settings</h2>
+            <hr class="my-4">
 
+            <h3 class="lead">Your Account Details</h3>
+            <form class="account-settings-form" @submit.prevent="editAccount">
+                
                 <input class="hidden" v-model="account.id" type="text" name="id" readonly>
 
-                <label>Email: </label><br>
-                <input v-model="account.email" type="email" name="email" required><br><br>
+                <label>Email: </label>
+                <input v-model="account.email" type="email" name="email" required>
 
-                <label>First Name: </label><br>
-                <input v-model="account.firstname" type="text" name="fname" required><br><br>
+                <label>First Name: </label>
+                <input v-model="account.firstname" type="text" name="fname" required>
 
-                <label>Last Name: </label><br>
-                <input v-model="account.lastname" type="text" name="lname" required><br><br>
+                <label>Last Name: </label>
+                <input v-model="account.lastname" type="text" name="lname" required>
 
-                <label>Country: </label><br>
-                <input v-model="account.country" type="text" name="country" required><br><br>
+                <label>Country: </label>
+                <input v-model="account.country" type="text" name="country" required>
 
-                <label>Password: </label><br>
-                <input v-model="account.password" type="text" name="password" required><br><br>
+                <label>Password: </label>
+                <input v-model="account.password" type="text" name="password" required>
 
-                <button type="submit" name="submit">Edit Account</button>
+                <button type="submit" name="submit" class="btn btn-primary">Edit Account</button>
             </form>
-
-            <div class="go-back-button">
-                <h4>Go Back</h4>
-            </div>
+            <hr class="my-4">
         </div>
     </div>
     `,
