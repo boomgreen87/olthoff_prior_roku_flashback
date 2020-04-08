@@ -1,0 +1,21 @@
+.adduser-container
+{display: flex;
+    flex-direction: column;
+
+    margin: 0 auto;
+
+    max-width:100%;
+    color: white;
+
+    margin-top:20px;
+
+    padding:25px;
+
+    @include for-tablet{
+        width:80%;
+    }
+
+    @include for-desktop{
+        width: 60%;
+    }
+}

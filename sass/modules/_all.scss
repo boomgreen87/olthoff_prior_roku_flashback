@@ -1,0 +1,31 @@
+
+body{
+    background-color: #434343;
+}
+
+.hidden{
+    display:none;
+}
+
+ul{
+    list-style:none;
+}
+
+li{
+    text-decoration: none;
+}
+
+.roku-jumbotron{
+    margin-top: 20px;
+    padding:20px;
+    background-color: $darkPurp;
+    color:white;
+}
+
+.form-header{
+    text-align: center;
+}
+
+.lead{
+    padding:20px;
+}

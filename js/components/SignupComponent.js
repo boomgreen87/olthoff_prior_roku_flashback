@@ -1,6 +1,6 @@
 export default {
     template: `
-    <div class="container">
+    <div class="signup-container">
         <div class="jumbotron roku-jumbotron">
             <h1 class="form-header">Create a New Account!</h1>
             <p class="lead">Create your own flashback account by filling out the form below.</p>
