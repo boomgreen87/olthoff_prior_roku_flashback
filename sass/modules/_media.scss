@@ -118,6 +118,32 @@ iframe{
 }
 
 .poster:hover{
-    border: 2px solid $lightPurp;
+    box-shadow: 0 0 1pt 1pt $lightPurp;
     opacity: 0.7;
+}
+
+.media-description{
+    font-size:16px;
+    padding: 5px;
+}
+
+.media-time{
+    font-size:12px;
+    padding:5px;
+}
+
+.media-year{
+    font-size:12px;
+    padding: 5px;
+}
+
+
+.media-time{
+    font-size:12px;
+    padding: 5px;
+}
+
+.media-genre{
+    font-size:12px;
+    padding: 5px;
 }

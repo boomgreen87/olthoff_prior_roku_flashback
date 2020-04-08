@@ -39,7 +39,7 @@ export default {
                     </div>
 
                     <div class="col-auto my-1">
-                        <button type="submit" class="btn btn-primary">Sign Up</button>
+                        <button type="submit" class="button">Sign Up</button>
                     </div>
                 </div>
             </form>            
