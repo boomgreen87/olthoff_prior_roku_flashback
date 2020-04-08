@@ -3,13 +3,13 @@ import UserComponent from './UserComponent.js';
 export default {
     template: `
         <div class="welcome-container">
+
             <h1 class="hidden">Home Page Component</h1>
 
             <div class="jumbotron roku-jumbotron">
                 <h1 class="form-header">{{ header }}</h1>
 
                 <hr class="my-4">
-
                 <h2>{{ message }}</h2>
 
                 <div id="all-account-users">
@@ -58,6 +58,7 @@ export default {
                     </div>
                 </div>
                 <hr class="my-4">
+
             </div>
         </div>
     `,
@@ -70,6 +71,7 @@ export default {
 		return {
             header: `Welcome to Flashback by Roku`,
             message: `Who's Watching?`,
+
 			userList: []
 		}
     },

@@ -7,7 +7,6 @@ import SignupComponent from "./components/SignupComponent.js"
 import UserHomeComponent from "./components/UserHomeComponent.js"
 
 import WelcomeComponent from "./components/WelcomeComponent.js"
-
 import AddUserComponent from "./components/AddUserComponent.js"
 
 import EditProfileComponent from "./components/EditProfileComponent.js"
@@ -49,7 +48,9 @@ import ErrorComponent from "./components/ErrorComponent.js"
       if (localStorage.getItem("cachedUser")) {
         let user = JSON.parse(localStorage.getItem("cachedUser"));
 
+
         this.authenticated = true;
+
 
         this.$router.push({ name: "userhome", params: { currentuser: user }});
       } else {
