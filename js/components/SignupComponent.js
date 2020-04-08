@@ -1,6 +1,6 @@
 export default {
     template: `
-    <div class="container">
+    <div class="signup-container">
         <div class="jumbotron roku-jumbotron">
             <h1 class="form-header">Create a New Account!</h1>
             <p class="lead">Create your own flashback account by filling out the form below.</p>
@@ -45,7 +45,7 @@ export default {
             </form>            
         </div>
 
-        <router-link class="text-link" to="/createdaccount">Redirect to Created Account message</router-link>
+        <router-link class="text-link" to="/welcome">skip to welcome page</router-link>
     </div>
 
 

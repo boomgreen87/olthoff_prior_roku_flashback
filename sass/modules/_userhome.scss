@@ -1,0 +1,55 @@
+.media-icon-link{
+    display: flex;
+    width: 100px;
+
+    padding: 15px;
+
+    @include for-desktop{
+        width:200px;
+    }
+}
+
+.media-nav{
+    display: flex;
+    flex-direction: row;
+
+    margin: 0 auto;
+
+    width:100%;
+    color: white;
+
+    @include for-tablet{
+        width:80%;
+    }
+
+    @include for-desktop{
+        width: 50%;
+    }
+}
+
+.medianav ul{
+    display: block;
+
+    justify-content: space-evenly;
+}
+
+.icon-con{
+    max-width: 50%;
+    margin: 0 auto;
+
+    background-color: white;
+    padding:3px;
+
+    border-radius: 10px;
+}
+
+.userhome-container{
+    display: flex;
+    flex-direction: column;
+
+    margin: 0 auto;
+
+    width:100%;
+    color: white;
+    padding:25px;
+}

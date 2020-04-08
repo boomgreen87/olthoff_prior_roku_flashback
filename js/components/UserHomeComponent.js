@@ -8,18 +8,15 @@ export default {
     props: ['currentuser'],
 
     template: `
-    <div class="container">
+    <div class="userhome-container">
         <!-- show media icons here -->
-        <nav class="mediaLinks">
-            <ul class="mediaList">
-                <li class="iconLink" v-for="media in mediaTypes" :data-type="media.description" @click="switchMedia(media.component)">
-                    <span class="socialIcon">
-                        <i v-bind:class="[media.iconClass]"></i>
-                    </span>
-                </li>
-            </ul>
-        </nav>
-
+        <div class="nav-con">
+            <div class="media-nav">
+                <div class="icon-con" v-for="media in mediaTypes" :data-type="media.description" @click="switchMedia(media.component)">
+                    <img v-bind:src="[media.iconSrc]" class="media-icon-link" v-bind:alt="[media.description]">
+                </div>
+            </div>
+        </div>
         <component :is="this.activeComponent"></component>
     </div>
     `,
@@ -29,9 +26,9 @@ export default {
             activeComponent: MovieComponent,
 
             mediaTypes: [
-                { iconClass: "fas fa-film fa-3x", description: "Movies", component: MovieComponent },
-                { iconClass: "fas fa-tv fa-3x", description: "Television", component: TvComponent },
-                { iconClass: "fas fa-headphones fa-3x", description: "Music", component: MusicComponent }
+                { iconSrc: "./images/movieIcon.png", description: "Movies", component: MovieComponent },
+                { iconSrc: "./images/tvIcon.png", description: "Television", component: TvComponent },
+                { iconSrc: "./images/musicIcon.png", description: "Music", component: MusicComponent }
             ]
         }
     },

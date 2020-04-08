@@ -1,10 +1,14 @@
 // Import all components here
+import HomeComponent from "./components/HomeComponent.js"
+
 import LoginComponent from "./components/LoginComponent.js"
 import SignupComponent from "./components/SignupComponent.js"
-import HomeComponent from "./components/HomeComponent.js"
+
 import UserHomeComponent from "./components/UserHomeComponent.js"
+
 import WelcomeComponent from "./components/WelcomeComponent.js"
 import AddUserComponent from "./components/AddUserComponent.js"
+
 import UserSettingsComponent from "./components/UserSettingsComponent.js"
 import AccountSettingsComponent from "./components/AccountSettingsComponent.js"
 import ManageUsersComponent from "./components/ManageUsersComponent.js"
@@ -30,12 +34,10 @@ import ErrorComponent from "./components/ErrorComponent.js"
 
       { path: '/usersettings', name: "editprofile", component: UserSettingsComponent},
       { path: '/accountsettings', name: "accountsettings", component: AccountSettingsComponent},
-
       { path: '/manageusers', name: "manageusers", component: ManageUsersComponent},
 
       { path: '/createdaccount', name: "createdaccount", component: CreatedAccountComponent},
       { path: '/confirmmessage', name: "confirmmessage", component: ConfirmMessageComponent},
-
       { path: '/error', name: "error", component: ErrorComponent},
     ]
   });
@@ -54,9 +56,10 @@ import ErrorComponent from "./components/ErrorComponent.js"
       if (localStorage.getItem("cachedUser")) {
         let user = JSON.parse(localStorage.getItem("cachedUser"));
 
+
         this.authenticated = true;
         this.admin = user.admin; // Sets admin if user is admin
-
+        
         this.$router.push({ name: "userhome", params: { currentuser: user }}).catch(err => { });
       } else {
         this.$router.push({ name: "home" }).catch(err => { });

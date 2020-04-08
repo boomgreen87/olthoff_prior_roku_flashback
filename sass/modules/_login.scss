@@ -1,3 +1,12 @@
-.display-4{
-    color: #4a4a4a;
+.login-container{
+    max-width:80%;
+    margin: 0 auto;
+
+    @include for-tablet{
+        max-width:60%;
+    }
+
+    @include for-desktop{
+        max-width: 40%;
+    }
 }
