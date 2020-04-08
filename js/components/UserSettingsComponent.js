@@ -6,19 +6,20 @@ export default {
         <div class="jumbotron roku-jumbotron">
             <h1 class="form-header">Good Time Of Day Username!</h1>
 
-            <div class="link-container">
-                <h2 class="form-header">Edit Your Profile</h2>
-
-                <router-link class="text-link" to="/changedisplayname">Change Display Name</router-link>
-
-                <router-link class="text-link" to="/changedisplaypicture">Change Display Photo</router-link>
-
-                <router-link class="text-link" to="/changebackground">Change Background</router-link>
-
+            <hr class="my-4">
+            <div>
+                <h3 class="lead">Change Display Photo:</h3>
             </div>
 
-            <div class="go-back-button">
-                <h4>Go Back</h4>
+            <hr class="my-4">
+            <div>
+                <h3 class="lead">Change Display Name:</h3>
+            </div>
+
+            <div class="button">
+                <router-link to="/userhome">
+                    <p class="button-links" >Back to App</p>
+                </router-link>
             </div>
         </div>
     </div>

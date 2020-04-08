@@ -30,6 +30,12 @@ export default {
                 <button type="submit" name="submit" class="btn btn-primary">Edit Account</button>
             </form>
             <hr class="my-4">
+
+            <div class="button">
+                <router-link to="/userhome">
+                    <p class="button-links" >Back to App</p>
+                </router-link>
+            </div>
         </div>
     </div>
     `,
