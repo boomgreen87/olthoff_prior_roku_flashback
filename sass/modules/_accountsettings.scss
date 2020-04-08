@@ -14,6 +14,9 @@
 .account-settings-form{
     display: flex;
     flex-direction: column;
+
+    max-width:80%;
+    margin: 0 auto;
 }
 
 .account-settings-form button{
@@ -26,4 +29,5 @@
 
 .account-settings-form input{
     border-radius: 3px;
+    padding: 3px;
 }

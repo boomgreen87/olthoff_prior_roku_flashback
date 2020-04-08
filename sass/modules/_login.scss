@@ -10,3 +10,20 @@
         max-width: 40%;
     }
 }
+
+.go-button{
+    width:60%;
+    margin: 0 auto;
+}
+
+.login-form{
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+}
+
+.login-form input{
+    margin: 0 auto;
+    max-width: 80%;
+    margin-top: 10px;
+}

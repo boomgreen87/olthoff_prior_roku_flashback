@@ -5,19 +5,18 @@ export default {
                 <h1 class="form-header">Welcome to Flashback!</h1>
                 <p class="lead">Before revisiting your favourite movies, tv shows or music from yesteryear, please log in with a valid username and password.</p>
                 <hr class="my-4">
-                <form @submit.prevent="login">
+                <form @submit.prevent="login" class="login-form">
                     <div class="form-row align-items-center">
-                        <div class="col-md-3 my-1">
+                        
                             <label class="sr-only" for="inlineFormInputName">Name</label>
                             <input v-model="input.username" type="text" class="form-control" id="inlineFormInputName" placeholder="username" required>
-                        </div> 
+                         
 
-                        <div class="col-md-3 my-1">
                             <label class="sr-only" for="inlineFormPassword">Name</label>
                             <input v-model="input.password" type="password" class="form-control" id="inlineFormPassword" placeholder="password" required>
-                        </div>
+                        
 
-                        <div class="col-auto my-1">
+                        <div class="go-button">
                             <button type="submit" class="button">Go!</button>
                         </div>
                     </div>
