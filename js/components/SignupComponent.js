@@ -45,7 +45,7 @@ export default {
             </form>            
         </div>
 
-        <router-link class="text-link" to="/createdaccount">Redirect to Created Account message</router-link>
+        <router-link class="text-link" to="/welcome">skip to welcome page</router-link>
     </div>
 
 
