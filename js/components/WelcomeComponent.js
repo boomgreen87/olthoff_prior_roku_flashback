@@ -24,45 +24,6 @@ export default {
                 </div>
 
                 <hr class="my-4">
-<<<<<<< HEAD
-=======
-
-                <div class="profile-settings">
-                    <h2>Profile Settings</h2>
-
-                    <div class="edit-username">
-                        <h3  class="lead">Change User Name</h3>
-                    </div>
-
-                    <div class="edit-photo">
-                        <h3 class="lead">Change Display Photo</h3>
-                    </div>
-
-                    <div class="edit-background">
-                        <h3 class="lead">Change Background</h3>
-                    </div>
-                </div>
-
-                <hr class="my-4">
-
-                <div class="account-settings">
-                    <h2>Account Settings</h2>
-
-                    <div class="manage-users">
-                        <h3 class="lead">Manage Account Users</h3>
-                    </div>
-
-                    <div class="manage-email">
-                        <h3 class="lead">Change Email Address</h3>
-                    </div>
-
-                    <div class="manage-password">
-                        <h3 class="lead">Change Account Password</h3>
-                    </div>
-                </div>
-                <hr class="my-4">
-
->>>>>>> 9b9a49a4412e0217de8e84acdaab12cf3a404182
             </div>
         </div>
     `,

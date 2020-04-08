@@ -2,14 +2,13 @@ export default {
     props: ['liveuser'],
 
     template: `
-    <div class="col-xs-12 col-sm-6 col-md-4 mx-auto">
-        <div class="" @click="navToUserHome()">
-            <div class="">
-                <img :src="'images/user/' + liveuser.icon + '.jpg'" class="rounded-circle img-fluid">
-                <p>{{ liveuser.name }}</p>
+        <div class="user-container" @click="navToUserHome()">
+            <div class="user-info">
+                <img :src="'images/user/' + liveuser.icon" class="user-icons">
+                <p class="user-name" >{{ liveuser.name }}</p>
             </div>
         </div>
-    </div>`,
+    `,
 
     created: function() {
         // Sets default icon if none are set
