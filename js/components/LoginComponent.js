@@ -1,4 +1,6 @@
 export default {
+    name: "TheLoginComponent",
+
     template: `
         <div class="login-container">
             <div class="jumbotron roku-jumbotron">

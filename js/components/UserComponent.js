@@ -1,4 +1,6 @@
 export default {
+    name: "TheUserComponent",
+
     props: ['liveuser'],
 
     template: `

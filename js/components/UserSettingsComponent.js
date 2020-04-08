@@ -1,4 +1,6 @@
 export default {
+    name: "TheUserSettingsComponent",
+
     template: `
     <div class="user-settings-container">
         <h1 class="hidden">Edit Profile Component</h1>
@@ -74,7 +76,7 @@ export default {
             let formData = new FormData();
 
             formData.append("id", this.user.id);
-            formData.append("displayName", this.user.displayName);
+            formData.append("displayName", this.user.name);
             formData.append("icon", this.user.icon);
 
             let url = ("./admin/admin_edituser.php");

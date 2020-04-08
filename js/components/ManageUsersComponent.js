@@ -1,4 +1,6 @@
 export default {
+    name: "TheManageUsersComponent",
+
     template: `
     <div class="container">
         <h1 class="hidden">Manage Account Users Component</h1>

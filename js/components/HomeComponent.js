@@ -1,4 +1,6 @@
 export default {
+    name: "TheHomeComponent",
+
     template: `
     <div class="home-container">
         <h1 class="hidden">Home Page Component</h1>

@@ -1,6 +1,8 @@
 import UserComponent from './UserComponent.js';
 
 export default {
+    name: "TheWelcomeComponent",
+
     template: `
         <div class="welcome-container">
 
