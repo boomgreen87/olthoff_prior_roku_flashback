@@ -13,7 +13,7 @@ export default {
                 <h2>{{ message }}</h2>
 
                 <div id="all-account-users">
-                    <user v-for="(user, index) in userList" :liveuser="user" :key="index"></user>
+                    <user v-for="(user, index) in userList" :liveuser="user" :key="index" @admin="emitAdmin"></user>
                 </div>
 
                 <div class="button">
@@ -53,7 +53,11 @@ export default {
 				this.userList = data;
 			})
 			.catch((err) => console.error(err));
-		}
+        },
+        
+        emitAdmin() {
+            this.$emit("admin", true, this);
+        }
 	},
 
 	components: {

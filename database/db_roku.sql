@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Apr 06, 2020 at 03:00 AM
+-- Generation Time: Apr 08, 2020 at 02:41 AM
 -- Server version: 5.7.26
 -- PHP Version: 7.2.18
 
@@ -38,7 +38,7 @@ CREATE TABLE IF NOT EXISTS `tbl_accounts` (
   `accounts_username` varchar(50) NOT NULL,
   `accounts_password` varchar(50) NOT NULL,
   PRIMARY KEY (`accounts_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `tbl_accounts`
@@ -46,8 +46,9 @@ CREATE TABLE IF NOT EXISTS `tbl_accounts` (
 
 INSERT INTO `tbl_accounts` (`accounts_id`, `accounts_email`, `accounts_first_name`, `accounts_last_name`, `accounts_country`, `accounts_username`, `accounts_password`) VALUES
 (3, 'scott@gmail.com', 'Scott', 'Olthoff', 'Canada', 'scott', '123'),
-(4, 'bob@gmail.com', 'Bob', 'Smith', 'Canada', 'bob', '123'),
-(5, 'ian@gmail.com', 'Ian', 'Mick', 'Canada', 'ian', '123');
+(4, 'bob@gmail.com', 'Bob', 'Thebuilder', 'USA', 'bob', '123'),
+(5, 'ian@gmail.com', 'Ian', 'Blue', 'Canada', 'ian', '123'),
+(7, 'liz@gmail.com', 'Liz', 'Ard', 'Canada', 'liz', '123');
 
 -- --------------------------------------------------------
 
@@ -166,11 +167,22 @@ CREATE TABLE IF NOT EXISTS `tbl_users` (
   `users_id` int(11) NOT NULL AUTO_INCREMENT,
   `users_accounts_id` int(10) NOT NULL,
   `users_icon` varchar(100) DEFAULT NULL,
-  `users_permissions` int(1) NOT NULL,
   `users_display_name` varchar(50) NOT NULL,
   `users_bg_colour` varchar(50) DEFAULT NULL,
+  `users_admin` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`users_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `tbl_users`
+--
+
+INSERT INTO `tbl_users` (`users_id`, `users_accounts_id`, `users_icon`, `users_display_name`, `users_bg_colour`, `users_admin`) VALUES
+(2, 3, NULL, 'Scott', NULL, 1),
+(3, 3, NULL, 'Mike', NULL, 0),
+(4, 4, NULL, 'Trevor', NULL, 0),
+(5, 3, NULL, 'Phil', NULL, 0),
+(6, 3, NULL, 'Joe', NULL, 0);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

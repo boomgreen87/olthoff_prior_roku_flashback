@@ -35,8 +35,6 @@
                     <ul id="header-account-links">
                         <!-- Blank User Image -->
                         <li v-if="authenticated"><i class="fas fa-user-circle"></i></li>
-                        <!-- Admin Settings Cog Wheel - only if authenticated-->
-                        <li v-if="administrator"><i class="fas fa-cog"></i></li>
                         <!-- Log Out button - only if logged in -->
                         <li v-if="authenticated" v-on:click="logout()"><i class="fas fa-power-off"></i></li>
                     </ul>
@@ -52,7 +50,7 @@
 
         <div class="router-view">
             <!-- first thing in component templates should be a container -->
-            <router-view @authenticated="setAuthenticated"></router-view>
+            <router-view @authenticated="setAuthenticated" @admin="setAdmin"></router-view>
         </div>
 
         <!-- Footer -->
@@ -61,6 +59,7 @@
                 <ul>
                     <li><router-link class="footer-site-links" to="/">Home</router-link></li>
                     <li><router-link class="footer-site-links" to="/userhome">Media</router-link></li>
+                    <li><a v-if="admin == true || admin == 1"><router-link class="footer-site-links" to="/accountSettings">Account Settings</router-link></a></li>
                     <li><a href="" v-on:click="logout()">Logout</a></li>
                 </ul>
             </nav>

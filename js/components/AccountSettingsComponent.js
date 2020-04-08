@@ -6,18 +6,93 @@ export default {
         <div class="jumbotron roku-jumbotron">
             <h1 class="form-header">Good Time Of Day Username!</h1>
             
-            <div class="link-container">
+            <form class="account-settings-form" @submit.prevent="editAccount">
                 <h2 class="form-header">Account Settings</h2>
 
-                <router-link class="text-link" to="/manageaccountusers">Manage Account Users</router-link>
-                <router-link class="text-link" to="/changepassword">Change Account Password</router-link>
-                <router-link class="text-link" to="/changeemail">Change Connected Email</router-link>
+                <input class="hidden" v-model="account.id" type="text" name="id" readonly>
 
-            </div>
+                <label>Email: </label><br>
+                <input v-model="account.email" type="email" name="email" required><br><br>
+
+                <label>First Name: </label><br>
+                <input v-model="account.firstname" type="text" name="fname" required><br><br>
+
+                <label>Last Name: </label><br>
+                <input v-model="account.lastname" type="text" name="lname" required><br><br>
+
+                <label>Country: </label><br>
+                <input v-model="account.country" type="text" name="country" required><br><br>
+
+                <label>Password: </label><br>
+                <input v-model="account.password" type="text" name="password" required><br><br>
+
+                <button type="submit" name="submit">Edit Account</button>
+            </form>
 
             <div class="go-back-button">
                 <h4>Go Back</h4>
             </div>
         </div>
     </div>
-`}
+    `,
+
+    created: function () {
+		this.fetchAccount();
+	},
+
+	data() {
+		return {
+            account: {}
+		}
+    },
+
+    methods: {
+        // Fetches all the account info
+		fetchAccount() {
+            let accountID = JSON.parse(localStorage.getItem("cachedAccount")).id;
+            let url = ("./admin/admin_getaccount.php?account=" + accountID);
+
+			fetch(url)
+			.then(res => res.json())
+			.then(data => {
+                if (typeof data != "object") {
+                    console.warn(data);
+                    alert("There was a problem accessing your account."); // TODO: Replace alert
+                } else {
+                    this.account = data;
+                }
+			})
+			.catch((err) => console.error(err));
+        },
+
+        editAccount() {
+            // Generate the form data
+            let formData = new FormData();
+
+            formData.append("id", this.account.id);
+            formData.append("email", this.account.email);
+            formData.append("firstname", this.account.firstname);
+            formData.append("lastname", this.account.lastname);
+            formData.append("country", this.account.country);
+            formData.append("password", this.account.password);
+
+            let url = ("./admin/admin_editaccount.php");
+
+            // Submits edited info to database
+			fetch(url, {
+                method: 'POST',
+                body: formData
+            })
+			.then(res => res.json())
+			.then(data => {
+                if(data == false) {
+                    console.warn(data);
+                    alert("There was a problem editing your account."); // TODO: Replace alert
+                } else {
+                    alert("Account successfully edited."); // TODO: Replace alert
+                }
+			})
+			.catch((err) => console.error(err));
+        }
+	}
+}
