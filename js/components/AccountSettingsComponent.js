@@ -27,7 +27,7 @@ export default {
                 <label>Password: </label>
                 <input v-model="account.password" type="text" name="password" required>
 
-                <button type="submit" name="submit" class="btn btn-primary">Edit Account</button>
+                <button type="submit" name="submit" class="button">Edit Account</button>
             </form>
             <hr class="my-4">
 
