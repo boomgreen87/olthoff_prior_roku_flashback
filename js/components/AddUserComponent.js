@@ -1,5 +1,6 @@
 export default {
     template: `
+
     <div class="adduser-container">
         <h1 class="hidden">Add User Component</h1>
 
@@ -11,5 +12,6 @@ export default {
             <hr class="my-4">
         </div>
     </div>
+
     `
 }
