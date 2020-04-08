@@ -13,7 +13,7 @@ export default {
         <div class="nav-con">
             <div class="media-nav">
                 <div class="icon-con" v-for="media in mediaTypes" :data-type="media.description" @click="switchMedia(media.component)">
-                    <img v-bind:src="[media.iconSrc]" class="media-icon-link" v-bind:alt="[media.description]">
+                    <img v-bind:src="[media.iconSrc]" class="media-icon-link" v-bind:alt="[media.description]" v-bind:id="[media.iconId]">
                 </div>
             </div>
         </div>
@@ -26,9 +26,9 @@ export default {
             activeComponent: MovieComponent,
 
             mediaTypes: [
-                { iconSrc: "./images/movieIcon.png", description: "Movies", component: MovieComponent },
-                { iconSrc: "./images/tvIcon.png", description: "Television", component: TvComponent },
-                { iconSrc: "./images/musicIcon.png", description: "Music", component: MusicComponent }
+                { iconSrc: "./images/movieIcon.png", description: "Movies", iconId: "movie-icon", component: MovieComponent },
+                { iconSrc: "./images/tvIcon.png", description: "Television", iconId: "tv-icon", component: TvComponent },
+                { iconSrc: "./images/musicIcon.png", description: "Music", iconId: "music-icon",component: MusicComponent }
             ]
         }
     },

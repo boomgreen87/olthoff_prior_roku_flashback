@@ -9,8 +9,10 @@ import UserHomeComponent from "./components/UserHomeComponent.js"
 import WelcomeComponent from "./components/WelcomeComponent.js"
 import AddUserComponent from "./components/AddUserComponent.js"
 
-import EditProfileComponent from "./components/EditProfileComponent.js"
+import UserSettingsComponent from "./components/UserSettingsComponent.js"
 import AccountSettingsComponent from "./components/AccountSettingsComponent.js"
+
+import ManageUsersComponent from "./components/ManageUsersComponent.js"
 
 import ErrorComponent from "./components/ErrorComponent.js"
 
@@ -28,8 +30,10 @@ import ErrorComponent from "./components/ErrorComponent.js"
 
       { path: '/userhome', name: "userhome", component: UserHomeComponent, props: true },
 
-      { path: '/editprofile', name: "editprofile", component: EditProfileComponent},
+      { path: '/usersettings', name: "usersettings", component: UserSettingsComponent},
       { path: '/accountsettings', name: "accountsettings", component: AccountSettingsComponent},
+
+      { path: '/manageusers', name: "manageusers", component: ManageUsersComponent},
 
       { path: '/error', name: "error", component: ErrorComponent},
     ]
