@@ -68,7 +68,7 @@
                 $currentaccount['password'] = $account['accounts_password'];
             }
 
-            return json_encode($currentaccount);
+            return $currentaccount;
         } else {
             return false;
         }
