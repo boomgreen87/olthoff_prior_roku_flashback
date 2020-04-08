@@ -7,19 +7,24 @@ export default {
             <h1 class="form-header">Good Time Of Day Username!</h1>
             <hr class="my-4">
 
-            <h3 class="lead">Your User Details</h3>
+            <h3 class="lead">Edit Your Profile</h3>
+
             <form class="user-settings-form" @submit.prevent="editUser">
                 
                 <input class="hidden" v-model="user.id" type="text" name="id" readonly>
 
-                <label>Display Name: </label><br>
-                <input v-model="user.name" type="text" name="displayName" required><br><br>
+                <label>Display Name: </label>
+                <input v-model="user.name" type="text" name="displayName" required><br>
 
-                <label>Icon: </label><br>
-                <img id="selectedIcon" :src="'images/user/' + user.icon" alt="User Icon" width="250px"><br>
-                <img v-for="icon in icons" :id="icon.iconID" v-on:click="setIcon" :src="'images/user/' + icon.iconPath" alt="User Icon" width="125px"><br><br>
-
-                <button type="submit" name="submit" class="btn btn-primary">Edit User</button>
+                <label>Your Avitar: </label>
+                <img class="icon-selected" id="selectedIcon" :src="'images/user/' + user.icon" alt="User Icon">
+                <label>Choose New Avitar: </label>
+                <div class="option-con">
+                
+                    <img  class="edit-option" v-for="icon in icons" :id="icon.iconID" v-on:click="setIcon" :src="'images/user/' + icon.iconPath" alt="User Icon" >
+                </div>
+                
+                <button type="submit" name="submit" class="button">Edit User</button>
             </form>
             <hr class="my-4">
         </div>

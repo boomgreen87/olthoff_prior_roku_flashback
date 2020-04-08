@@ -8,6 +8,7 @@ export default {
             <hr class="my-4">
 
             <h3 class="lead">Your Account Details</h3>
+            
             <form class="account-settings-form" @submit.prevent="editAccount">
                 
                 <input class="hidden" v-model="account.id" type="text" name="id" readonly>
