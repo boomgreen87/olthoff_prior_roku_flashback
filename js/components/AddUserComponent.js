@@ -13,9 +13,12 @@ export default {
                 <label>Display Name: </label>
                 <input v-model="input.displayName" type="text" name="displayName" required>
 
-                <label>Icon: </label><br>
-                <img id="selectedIcon" :src="'images/user/' + input.icon" alt="User Icon" width="250px"><br>
-                <img v-for="icon in icons" :id="icon.iconID" v-on:click="setIcon" :src="'images/user/' + icon.iconPath" alt="User Icon" width="125px"><br><br>
+                <label>Icon: </label>
+                <img class="icon-selected" id="selectedIcon" :src="'images/user/' + input.icon" alt="User Icon">
+
+                <div class="option-con">
+                    <img v-for="icon in icons" :id="icon.iconID" v-on:click="setIcon" :src="'images/user/' + icon.iconPath" alt="User Icon" class="icon-option">
+                </div>
 
                 <label>User Type: </label>
                 <select v-model.lazy="input.userType" name="userType" required>
