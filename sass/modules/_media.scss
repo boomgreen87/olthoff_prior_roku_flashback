@@ -29,6 +29,8 @@
     width:100%;
 
     background-color: $darkPurp;
+
+    border-radius: 8px;
 }
 
 .bottom-section{
@@ -45,6 +47,7 @@
     background-color: $darkPurp;
 
     margin-top: 80px;
+    border-radius: 8px;
 
 }
 
@@ -103,6 +106,7 @@
 
 iframe{
     height: 300px;
+    border-radius: 8px 8px 0px 0px;
 
     @include for-tablet{
         height: 400px;
@@ -111,4 +115,9 @@ iframe{
     @include for-desktop{
         height: 600px;
     }
+}
+
+.poster:hover{
+    border: 2px solid $lightPurp;
+    opacity: 0.7;
 }
