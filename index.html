@@ -28,24 +28,26 @@
         <div>
             <header>
                 <!-- Site Logo -->
-                <img src="images/roku_logo.svg" alt="Flashback Logo" id="header-logo">
+                <router-link to="/">
+                    <img src="images/roku_logo.svg" alt="Flashback Logo" id="header-logo">
+                </router-link>
+                
                 <!-- Account Navigation -->
                 <div id="header-account-nav">
                     <!-- Navigation Links -->
-                    <ul id="header-account-links">
                         <!-- Blank User Image -->
-                        <li v-if="authenticated"><i class="fas fa-user-circle"></i></li>
+                        <router-link to="/usersettings">
+                            <a v-if="authenticated"><i class="fas fa-user-circle fa-2x"></i></a>
+                        </router-link>
+
+                        <router-link to="/accountsettings">
+                            <a v-if="authenticated"><i class="fas fa-cog fa-2x"></i></a>
+                        </router-link>
                         <!-- Log Out button - only if logged in -->
-                        <li v-if="authenticated" v-on:click="logout()"><i class="fas fa-power-off"></i></li>
-                    </ul>
+                        <a v-if="authenticated" v-on:click="logout()"><i class="fas fa-power-off fa-2x"></i></a>
+    
                 </div>
             </header> 
-            <!-- <div class="header-site-nav">
-                <router-link class="header-site-links" to="/">Home</router-link>
-                <router-link class="header-site-links" to="/movies">Movies</router-link>
-                <router-link class="header-site-links" to="/tv">TV Shows</router-link>
-                <router-link class="header-site-links" to="/music">Music</router-link>
-            </div> -->
         </div>
 
         <div class="router-view">
@@ -58,6 +60,7 @@
             <nav class="footer-site-nav">
                 <ul>
                     <li><router-link class="footer-site-links" to="/">Home</router-link></li>
+                  
                     <li><router-link class="footer-site-links" to="/userhome">Media</router-link></li>
                     <li><router-link class="footer-site-links" to="/adduser">Add User</router-link></li>
                     <li><router-link class="footer-site-links" to="/usersettings">User Settings</router-link></li>

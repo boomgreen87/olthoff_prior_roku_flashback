@@ -10,34 +10,34 @@ export default {
 
             <form class="add-user-form" @submit.prevent="addUser" method="post" enctype="multipart/form-data">
 
-                <label>Display Name: </label><br>
-                <input v-model="input.displayName" type="text" name="displayName" required><br><br>
+                <label>Display Name: </label>
+                <input v-model="input.displayName" type="text" name="displayName" required>
 
                 <label>Icon: </label><br>
                 <img id="selectedIcon" :src="'images/user/' + input.icon" alt="User Icon" width="250px"><br>
                 <img v-for="icon in icons" :id="icon.iconID" v-on:click="setIcon" :src="'images/user/' + icon.iconPath" alt="User Icon" width="125px"><br><br>
 
-                <label>User Type: </label><br>
+                <label>User Type: </label>
                 <select v-model.lazy="input.userType" name="userType" required>
                     <option v-for="type in userTypes" :value="type.typeValue">{{ type.type }}</option>
-                </select><br><br>
+                </select>
 
-                <label v-if="input.userType == false">Admin Capabilities: </label><br>
+                <label v-if="input.userType == false">Admin Capabilities: </label>
                 <select v-if="input.userType == false" v-model="input.admin" name="adminCapabilities" required>
                     <option v-for="admin in adminCapabilities" :value="admin.adminValue">{{ admin.admin }}</option>
-                </select><br><br>
+                </select>
 
-                <label>Highest Movie/TV Age Rating Allowed: </label><br>
+                <label>Preffered Media Age Rating: </label>
                 <select v-model="input.vidAgeRating" name="vidAgeRating" required>
                     <option v-for="rating in vidAgeRatings" :value="rating.ratingValue">{{ rating.rating }}</option>
-                </select><br><br>
+                </select>
 
-                <label>Explicit Music: </label><br>
+                <label>Explicit Music: </label>
                 <select v-model="input.explicitMusic" name="musicAgeRating" required>
                     <option v-for="rating in musicAgeRatings" :value="rating.ratingValue">{{ rating.rating }}</option>
-                </select><br><br>
+                </select>
 
-                <button type="submit" name="submit">Add User</button>
+                <button type="submit" name="submit" class="button">Add User</button>
             </form>
         </div>
     </div>

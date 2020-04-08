@@ -18,7 +18,7 @@ export default {
                         </div>
 
                         <div class="col-auto my-1">
-                            <button type="submit" class="btn btn-primary">Go!</button>
+                            <button type="submit" class="button">Go!</button>
                         </div>
                     </div>
                 </form> 
