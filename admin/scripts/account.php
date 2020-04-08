@@ -94,8 +94,11 @@
             )
         );
 
+        // Checks to see if query actually worked
+        $affectedRows = $edit_account->rowCount();
+
         // Returns success or fail result
-        if($edit_account_result) {
+        if($edit_account_result && $affectedRows > 0) {
             return true;
         } else {
             return false;

@@ -9,8 +9,7 @@ export default {
             <form class="account-settings-form" @submit.prevent="editAccount">
                 <h2 class="form-header">Account Settings</h2>
 
-                <label>ID: </label><br>
-                <input v-model="account.id" type="text" name="id" readonly><br><br>
+                <input class="hidden" v-model="account.id" type="text" name="id" readonly>
 
                 <label>Email: </label><br>
                 <input v-model="account.email" type="email" name="email" required><br><br>
@@ -70,6 +69,7 @@ export default {
             // Generate the form data
             let formData = new FormData();
 
+            formData.append("id", this.account.id);
             formData.append("email", this.account.email);
             formData.append("firstname", this.account.firstname);
             formData.append("lastname", this.account.lastname);

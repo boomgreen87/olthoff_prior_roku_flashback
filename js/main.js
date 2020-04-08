@@ -13,8 +13,6 @@ import UserSettingsComponent from "./components/UserSettingsComponent.js"
 import AccountSettingsComponent from "./components/AccountSettingsComponent.js"
 import ManageUsersComponent from "./components/ManageUsersComponent.js"
 
-import ManageUsersComponent from "./components/ManageUsersComponent.js"
-
 import ErrorComponent from "./components/ErrorComponent.js"
 
 (() => {
@@ -30,7 +28,7 @@ import ErrorComponent from "./components/ErrorComponent.js"
       { path: '/adduser', name: "adduser", component: AddUserComponent},
 
       { path: '/userhome', name: "userhome", component: UserHomeComponent, props: true },
-      
+
       { path: '/usersettings', name: "usersettings", component: UserSettingsComponent},
       { path: '/accountsettings', name: "accountsettings", component: AccountSettingsComponent},
       { path: '/manageusers', name: "manageusers", component: ManageUsersComponent},
