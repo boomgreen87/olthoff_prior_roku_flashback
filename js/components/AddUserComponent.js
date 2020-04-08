@@ -14,6 +14,7 @@ export default {
                 <input v-model="input.displayName" type="text" name="displayName" required><br><br>
 
                 <label>Icon: </label><br>
+                <img id="selectedIcon" :src="'images/user/' + input.icon" alt="User Icon" width="250px"><br>
                 <img v-for="icon in icons" :id="icon.iconID" v-on:click="setIcon" :src="'images/user/' + icon.iconPath" alt="User Icon" width="125px"><br><br>
 
                 <label>User Type: </label><br>
@@ -46,7 +47,7 @@ export default {
         return {
             input: {
                     displayName: "",
-                    icon: {},
+                    icon: "user1.png",
                     admin: 0,
                     userType: 0,
                     vidAgeRating: 1,
@@ -91,6 +92,7 @@ export default {
     },
 
     methods: {
+        // Sets user icon
         setIcon() {
             this.input.icon = event.target.id + ".png";
         },

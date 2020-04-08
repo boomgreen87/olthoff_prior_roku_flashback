@@ -1,7 +1,7 @@
 <?php
     require_once '../load.php';
 
-    // Edit user info
+    // Edit account info
     if (isset($_POST['id'])) {
         // Trim user input
         $id = trim($_POST['id']);
