@@ -59,7 +59,7 @@ export default {
 			fetch(url)
 			.then(res => res.json())
 			.then(data => {
-                if (typeof data != "object") {
+                if (data == false) {
                     console.warn(data);
                     alert("There was a problem accessing your account."); // TODO: Replace alert
                 } else {
