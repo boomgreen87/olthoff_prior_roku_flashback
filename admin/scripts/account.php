@@ -75,21 +75,26 @@
     }
 
     // Edits an account
-    function editAccount($id) {
+    function editAccount($id, $email, $fname, $lname, $country, $password) {
         // Sets up database connection
         $pdo = Database::getInstance()->getConnection();
 
-        // Fetches the product based on $id
-        $edit_account_query = "SELECT * FROM tbl_accounts WHERE accounts_id = :id";
+        // Edits the selected account with entered info
+        $edit_account_query = "UPDATE tbl_accounts SET accounts_email = :email, accounts_first_name = :fname, accounts_last_name = :lname, ";
+        $edit_account_query .= "accounts_country = :country, accounts_password = :password WHERE accounts_id = :id";
         $edit_account = $pdo->prepare($edit_account_query);
         $edit_account_result = $edit_account->execute(
             array(
-                ':id'=>$id
+                ':id'=>$id,
+                ':email'=>$email,
+                ':fname'=>$fname,
+                ':lname'=>$lname,
+                ':country'=>$country,
+                ':password'=>$password
             )
         );
 
-        // Returns the merch data if the above query went through.
-        // Otherwise, returns some error message.
+        // Returns success or fail result
         if($edit_account_result) {
             return true;
         } else {

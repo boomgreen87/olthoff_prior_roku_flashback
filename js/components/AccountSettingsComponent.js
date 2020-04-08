@@ -9,6 +9,9 @@ export default {
             <form class="account-settings-form" @submit.prevent="editAccount">
                 <h2 class="form-header">Account Settings</h2>
 
+                <label>ID: </label><br>
+                <input v-model="account.id" type="text" name="id" readonly><br><br>
+
                 <label>Email: </label><br>
                 <input v-model="account.email" type="email" name="email" required><br><br>
 
@@ -64,9 +67,22 @@ export default {
         },
 
         editAccount() {
-            let url = ("./admin/admin_editaccount.php?account=" + accountID);
+            // Generate the form data
+            let formData = new FormData();
 
-			fetch(url)
+            formData.append("email", this.account.email);
+            formData.append("firstname", this.account.firstname);
+            formData.append("lastname", this.account.lastname);
+            formData.append("country", this.account.country);
+            formData.append("password", this.account.password);
+
+            let url = ("./admin/admin_editaccount.php");
+
+            // Submits edited info to database
+			fetch(url, {
+                method: 'POST',
+                body: formData
+            })
 			.then(res => res.json())
 			.then(data => {
                 if(data == false) {

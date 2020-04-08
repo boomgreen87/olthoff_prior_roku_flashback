@@ -13,9 +13,6 @@ import UserSettingsComponent from "./components/UserSettingsComponent.js"
 import AccountSettingsComponent from "./components/AccountSettingsComponent.js"
 import ManageUsersComponent from "./components/ManageUsersComponent.js"
 
-import ConfirmMessageComponent from "./components/ConfirmMessageComponent.js"
-import CreatedAccountComponent from "./components/CreatedAccountComponent.js"
-
 import ErrorComponent from "./components/ErrorComponent.js"
 
 (() => {
@@ -36,8 +33,6 @@ import ErrorComponent from "./components/ErrorComponent.js"
       { path: '/accountsettings', name: "accountsettings", component: AccountSettingsComponent},
       { path: '/manageusers', name: "manageusers", component: ManageUsersComponent},
 
-      { path: '/createdaccount', name: "createdaccount", component: CreatedAccountComponent},
-      { path: '/confirmmessage', name: "confirmmessage", component: ConfirmMessageComponent},
       { path: '/error', name: "error", component: ErrorComponent},
     ]
   });
