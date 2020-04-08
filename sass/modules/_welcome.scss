@@ -10,3 +10,29 @@
         max-width: 40%;
     }
 }
+
+.user-container{
+    display: flex;
+    flex-direction: row;
+    max-width:100%;
+}
+
+.user-info{
+    display: flex;
+    flex-direction: column;
+
+    width:300px;
+    padding:20px;
+}
+
+.user-icons{
+    max-width:33%;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.user-name{
+    text-align: left;
+    justify-content: center;
+    margin: 0 auto;
+}
