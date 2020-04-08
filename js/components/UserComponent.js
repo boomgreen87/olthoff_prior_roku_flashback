@@ -20,7 +20,10 @@ export default {
 
     methods: {
         navToUserHome() {
-            // debugger;
+            // Sets admin if user is an admin
+            if(this.liveuser.admin == true) {
+                this.$emit("admin", true, this.liveuser);
+            }
 
             // Caches user
             localStorage.setItem("cachedUser", JSON.stringify(this.liveuser));

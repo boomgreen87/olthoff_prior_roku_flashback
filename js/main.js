@@ -5,14 +5,9 @@ import HomeComponent from "./components/HomeComponent.js"
 import UserHomeComponent from "./components/UserHomeComponent.js"
 import WelcomeComponent from "./components/WelcomeComponent.js"
 import AddUserComponent from "./components/AddUserComponent.js"
-import EditProfileComponent from "./components/EditProfileComponent.js"
+import UserSettingsComponent from "./components/UserSettingsComponent.js"
 import AccountSettingsComponent from "./components/AccountSettingsComponent.js"
-import ChangeDisplayNameComponent from "./components/ChangeDisplayNameComponent.js"
-import ChangeDisplayPictureComponent from "./components/ChangeDisplayPictureComponent.js"
-import ChangeBackgroundComponent from "./components/ChangeBackgroundComponent.js"
-import ManageAccountUsersComponent from "./components/ManageAccountUsersComponent.js"
-import ChangePasswordComponent from "./components/ChangePasswordComponent.js"
-import ChangeEmailComponent from "./components/ChangeEmailComponent.js"
+import ManageUsersComponent from "./components/ManageUsersComponent.js"
 
 import ConfirmMessageComponent from "./components/ConfirmMessageComponent.js"
 import CreatedAccountComponent from "./components/CreatedAccountComponent.js"
@@ -33,16 +28,10 @@ import ErrorComponent from "./components/ErrorComponent.js"
 
       { path: '/userhome', name: "userhome", component: UserHomeComponent, props: true },
 
-      { path: '/editprofile', name: "editprofile", component: EditProfileComponent},
+      { path: '/usersettings', name: "editprofile", component: UserSettingsComponent},
       { path: '/accountsettings', name: "accountsettings", component: AccountSettingsComponent},
 
-      { path: '/changedisplayname', name: "changedisplayname", component: ChangeDisplayNameComponent},
-      { path: '/changedisplaypicture', name: "changedisplaypicture", component: ChangeDisplayPictureComponent},
-      { path: '/changebackground', name: "changebackground", component: ChangeBackgroundComponent},
-
-      { path: '/manageaccountusers', name: "manageaccountusers", component: ManageAccountUsersComponent},
-      { path: '/changepassword', name: "changepassword", component: ChangePasswordComponent},
-      { path: '/changeemail', name: "changeemail", component: ChangeEmailComponent},
+      { path: '/manageusers', name: "manageusers", component: ManageUsersComponent},
 
       { path: '/createdaccount', name: "createdaccount", component: CreatedAccountComponent},
       { path: '/confirmmessage', name: "confirmmessage", component: ConfirmMessageComponent},
@@ -55,8 +44,9 @@ import ErrorComponent from "./components/ErrorComponent.js"
 
     data: {
       authenticated: false,
-      administrator: false,
-      user: [],
+      admin: false,
+      account: [],
+      user: []
     },
 
     created: function () {
@@ -65,8 +55,9 @@ import ErrorComponent from "./components/ErrorComponent.js"
         let user = JSON.parse(localStorage.getItem("cachedUser"));
 
         this.authenticated = true;
+        this.admin = user.admin; // Sets admin if user is admin
 
-        this.$router.push({ name: "userhome", params: { currentuser: user }});
+        this.$router.push({ name: "userhome", params: { currentuser: user }}).catch(err => { });
       } else {
         this.$router.push({ name: "home" }).catch(err => { });
       }
@@ -75,13 +66,19 @@ import ErrorComponent from "./components/ErrorComponent.js"
     methods: {
       setAuthenticated(status, data) {
         this.authenticated = status;
-        this.user = data;
+        this.account = data;
+      },
+
+      setAdmin(status, user) {
+        this.admin = status;
+        this.user = user;
       },
 
       logout() {
         // Push user back to login page
         this.$router.push({ name: "login" });
         this.authenticated = false;
+        this.admin = false;
 
         // Remove cached accounts
         if (localStorage.getItem("cachedAccount")) {
@@ -113,12 +110,12 @@ import ErrorComponent from "./components/ErrorComponent.js"
     router: router
   }).$mount("#app");
 
-  // Redirects user to home page if they try to open a page without logging in first
-  // router.beforeEach((to, from, next) => {
-  //   if (vm.authenticated == false) {
-  //     next("/");
-  //   } else {
-  //     next();
-  //   }
-  // });
+  // Redirects user to home page if they try to open a page without logging in first (not including signup and login pages)
+  router.beforeEach((to, from, next) => {
+    if (vm.authenticated == false && to.name !== "login" && to.name !== "signup" && to.name !== "home") {
+      next("/");
+    } else {
+      next();
+    }
+  });
 })();
