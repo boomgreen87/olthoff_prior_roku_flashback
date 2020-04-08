@@ -6,5 +6,5 @@
         $account = getAccount($_GET['account']);
 
         // Send this (all of the users or an error message) back to JS
-        echo $account;
+        echo json_encode($account);
     }

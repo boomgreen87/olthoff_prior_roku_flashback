@@ -60,3 +60,67 @@
             return false;
         }
     }
+
+    // Gets an account
+    function getSingleUser($id) {
+        // Sets up database connection
+        $pdo = Database::getInstance()->getConnection();
+
+        // Fetches the product based on $id
+        $get_user_query = "SELECT * FROM tbl_users WHERE users_id = :id";
+        $get_user = $pdo->prepare($get_user_query);
+        $get_user_result = $get_user->execute(
+            array(
+                ':id'=>$id
+            )
+        );
+
+        // Returns the merch data if the above query went through.
+        // Otherwise, returns some error message.
+        if($get_user_result && $get_user->rowCount()) {
+            while($user= $get_user->fetch(PDO::FETCH_ASSOC)){
+                $currentuser = array();
+
+                // Set user information
+                $currentuser['id'] = $user['users_id'];
+                $currentuser['icon'] = $user['users_icon'];
+                $currentuser['name'] = $user['users_display_name'];
+                $currentuser['admin'] = $user['users_admin'];
+                $currentuser['accountType'] = $user['users_child_account'];
+                $currentuser['vidRating'] = $user['users_vid_rating'];
+                $currentuser['explicitMusic'] = $user['users_explicit_music'];
+            }
+
+            return $currentuser;
+        } else {
+            return false;
+        }
+    }
+
+    // Edits an user
+    function editUser($id, $icon, $displayName) {
+        // Sets up database connection
+        $pdo = Database::getInstance()->getConnection();
+
+        // Edits the selected user with entered info
+        $edit_user_query = "UPDATE tbl_users SET users_icon = :icon, users_display_name = :displayName ";
+        $edit_user_query .= "WHERE users_id = :id";
+        $edit_user = $pdo->prepare($edit_user_query);
+        $edit_user_result = $edit_user->execute(
+            array(
+                ':id'=>$id,
+                ':icon'=>$icon,
+                ':displayName'=>$displayName
+            )
+        );
+
+        // Checks to see if query actually worked
+        $affectedRows = $edit_user->rowCount();
+
+        // Returns success or fail result
+        if($edit_user_result && $affectedRows > 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
