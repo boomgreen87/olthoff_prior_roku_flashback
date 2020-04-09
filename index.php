@@ -25,43 +25,9 @@
 
 <body>
     <main id="app">
-            <header>
-                <div class="logo-icon-box">
-                    <router-link class="head-logo-link" to="/">
-                        <img src="images/roku_logo.svg" alt="Flashback Logo" id="header-logo">
-                    </router-link>
 
-                    <router-link class="head-user-link" to="/">
-                        <a v-if="authenticated"><i class="fas fa-user-circle fa-3x user-icon"></i></a>
-                    </router-link>
-                </div>
-            </header> 
-
-            <div class="drop-down">
-                <router-link class="drop-down-box" to="/welcome">
-                    <a v-if="authenticated" class="drop-down-link">Switch Users</a>
-                </router-link>
-
-                <router-link class="drop-down-box" to="/usersettings">
-                    <a v-if="authenticated" class="drop-down-link">Edit User Settings</a>
-                </router-link>
-
-                <router-link class="drop-down-box" to="/adduser">
-                    <a v-if="authenticated" class="drop-down-link">Add Account User</a>
-                </router-link>
-
-                <router-link class="drop-down-box" to="/accountsettings">
-                    <a v-if="authenticated" class="drop-down-link">Account Settings</a>
-                </router-link>
-
-                <router-link class="drop-down-box" to="/manageusers">
-                    <a v-if="authenticated" class="drop-down-link">Manage Users</a>
-                </router-link>
-
-                <router-link class="drop-down-box" to="/">
-                    <a v-if="authenticated" v-on:click="logout()" class="drop-down-link">Logout</a>
-                </router-link>
-            </div>
+        <?php include 'templates/header.php'; ?>
+        
 
         <div class="router-view">
             <!-- first thing in component templates should be a container -->
@@ -107,3 +73,32 @@
     
 </body>
 </html>
+
+
+<!-- <router-link class="head-user-link" to="/">
+    <a v-if="authenticated"><i class="fas fa-user-circle fa-3x user-icon"></i></a>
+</router-link> -->
+
+
+
+<!-- <div class="drop-down">
+    <router-link class="drop-down-box" to="/welcome">
+        <a v-if="authenticated" class="drop-down-link">Switch Users</a>
+    </router-link>
+
+    <router-link class="drop-down-box" to="/usersettings">
+        <a v-if="authenticated" class="drop-down-link">User Profile Settings</a>
+    </router-link>
+
+    <router-link class="drop-down-box" to="/accountsettings">
+        <a v-if="authenticated" class="drop-down-link">Account Settings</a>
+    </router-link>
+
+    <router-link class="drop-down-box" to="/manageusers">
+        <a v-if="authenticated" class="drop-down-link">Manage Users</a>
+    </router-link>
+
+    <router-link class="drop-down-box" to="/">
+        <a v-if="authenticated" v-on:click="logout()" class="drop-down-link">Logout</a>
+    </router-link>
+</div> -->
