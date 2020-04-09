@@ -18,6 +18,13 @@ export default {
             </div>
         </div>
             <div class="bottom-section">
+                <label>Song Decade: </label>
+                <select v-model="yearFilter" v-on:change="filterByYear" name="decadeFilter" required>
+                    <option v-for="decade in decades" :value="decade.decadeValue">{{ decade.decade }}</option>
+                </select>
+
+                <div v-if="allRetrievedSongs.length == 0">No Results</div>
+
                 <div class="poster-section">
                 <h2 class="media-title">Most Popular Music</h2>
                     <img class="poster" v-for="item in allRetrievedSongs" :src="'images/' + item.song_cover_art" alt="Album Cover" @click="loadNewSong(item)">
@@ -30,7 +37,20 @@ export default {
     data: function () {
         return {
             currentMediaDetails: {},
-            allRetrievedSongs: []
+            allRetrievedSongs: [],
+
+            decades: [
+                {decadeValue: "1000", decade: "All"},
+                {decadeValue: "50", decade: "1950s"},
+                {decadeValue: "60", decade: "1960s"},
+                {decadeValue: "70", decade: "1970s"},
+                {decadeValue: "80", decade: "1980s"},
+                {decadeValue: "90", decade: "1990s"},
+            ],
+
+            yearFilter: "1000",
+
+            pageLoad: false
         }
     },
 
@@ -69,19 +89,50 @@ export default {
                             }
                         }
 
+                        // Check for year filter
+                        let filterYear = this.yearFilter;
+
+                        // Removes any songs fom allRetrievedSongs that don't fit the filter
+                        i = 0;
+                        while(i < this.allRetrievedSongs.length){
+                            if(filterYear !== "1000") {
+                                if(this.allRetrievedSongs[i].song_year_code !== filterYear){
+                                    this.allRetrievedSongs.splice(i, 1);
+                                } else {
+                                    i++;
+                                }
+                            } else {
+                                break;
+                            }
+                        }
+
                         // Caches shows
                         localStorage.setItem("cachedSong", JSON.stringify(data));
 
-                        // Sets current media
-                        this.currentMediaDetails = this.allRetrievedSongs[0];
+                        // Sets current media on initial page load
+                        if(this.allRetrievedSongs.length !== 0 && this.pageLoad == false) {
+                            this.currentMediaDetails = this.allRetrievedSongs[0];
+                            this.pageLoad = true;
+                        }
                     })    
             }
         },
 
+        // Reloads songs filtered by year
+        filterByYear() {
+            // Remove cached songs
+            if(localStorage.getItem("cachedSong")) {
+                localStorage.removeItem("cachedSong");
+            }
+
+            this.retrieveSongContent();
+        },
+
         // Loads selected song
         loadNewSong(song) {
-            console.log (song);
-            this.currentMediaDetails = song;
+            if(this.allRetrievedSongs.length !== 0) {
+                this.currentMediaDetails = song;
+            }
         }
     }
 }
