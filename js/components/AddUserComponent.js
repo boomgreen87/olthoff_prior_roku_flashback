@@ -62,7 +62,7 @@ export default {
                     admin: 0,
                     userType: 0,
                     vidAgeRating: 1,
-                    explicitMusic: 1
+                    explicitMusic: 0
             },
 
             icons: [
