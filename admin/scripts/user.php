@@ -154,3 +154,28 @@
             return false;
         }
     }
+
+    // Deletes a selected user
+    function deleteUser($id) {
+        // Sets up database connection
+        $pdo = Database::getInstance()->getConnection();
+
+        // Changes the permissions for the selected user to entered info
+        $delete_user_query = "DELETE FROM tbl_users WHERE users_id = :id";
+        $delete_user = $pdo->prepare($delete_user_query);
+        $delete_user_result = $delete_user->execute(
+            array(
+                ':id'=>$id
+            )
+        );
+
+        // Checks to see if query actually worked
+        $affectedRows = $delete_user->rowCount();
+
+        // Returns success or fail result
+        if($delete_user_result && $affectedRows > 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
