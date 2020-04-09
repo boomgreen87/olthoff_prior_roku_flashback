@@ -7,27 +7,23 @@
 
 header{
     display:flex;
-    flex-direction: column;
+    flex-direction: row;
     background-color: white;
-
+    
     margin: 0 auto;
+}
 
-    max-width:100%;
+.logo-icon-box{
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+
+    
+    margin: 0 auto;
 }
 
 #header-logo{
-    display:flex;
-    margin: 0 auto;
-    max-width:50%;
-    padding:20px;
-
-    @include for-tablet{
-        max-width: 40%;
-    }
-
-    @include for-desktop{
-        max-width: 30%;
-    }
+    width: 100%;
 }
 
 #header-account-nav{
@@ -39,4 +35,12 @@ header{
 
 #header-account-nav a{
     padding:10px;
+}
+
+.user-icon{
+    margin-top:15px;
+}
+
+.head-user-link{
+    margin-left:50px;
 }
