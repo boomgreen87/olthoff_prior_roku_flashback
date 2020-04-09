@@ -6,9 +6,8 @@
 
         <div v-if="authenticated"  class="menu head-user-link" :class="{'active': isActive}" @click="showTopMenu = !showTopMenu, isActive = !isActive"><i class="fas fa-user-circle fa-3x user-icon"></i></div>
     </div>
-</header> 
 
-<div id="menu-overlay" v-if="showTopMenu">
+    <div id="menu-overlay" v-if="showTopMenu">
     <div class="drop-down">
         <router-link class="drop-down-box" to="/welcome">
             <a v-if="authenticated" class="drop-down-link">Switch Users</a>
@@ -33,3 +32,4 @@
 </div>
 
 <div v-else> </div>
+</header> 

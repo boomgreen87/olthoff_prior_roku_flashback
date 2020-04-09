@@ -8,6 +8,17 @@
     max-width:100%;
     margin: 0 auto;
     margin-bottom: 5px;
+
+    @include for-tablet{
+        max-width:80%;
+    }
+
+    @include for-desktop{
+        background-color: white;
+        color:$darkPurp;
+        max-width: 40%;
+        font-size: 18px;
+    }
 }
 
 .drop-down-link{
@@ -15,6 +26,10 @@
     text-decoration: none;
     margin: 0 auto;
     padding:8px;
+
+    @include for-desktop{
+        color: $darkPurp;
+    }
 }
 
 .drop-down-box:hover{
@@ -27,4 +42,16 @@
     background-color: white;
     max-width:100%;
     padding: 5px;
+    margin: 0 auto;
+
+    @include for-desktop{
+        max-width:40%;
+        display: flex;
+        flex-direction: row;
+    }
+}
+
+#menu-overlay{
+    background-color: white;
+    padding-top:15px;
 }
