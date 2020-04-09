@@ -80,27 +80,27 @@
     flex-direction: column;
 
     margin: 0 auto;
-
-    max-width:100%;
     color: white;
 
     margin-top:20px;
-    @include for-tablet{
-        max-width:80%;
-    }
+}
+
+.selected-music{
+    width: 300px;
+    margin-bottom: 15px;
+    box-shadow: 0 0 2pt 2pt $lightPurp;
 
     @include for-desktop{
-        max-width: 60%;
+        width: 500px;
+        margin-bottom: 25px;
     }
-}
-.selected-music{
-    margin: 0 auto;
-    justify-content: center;
 }
 
 .audio-player{
     margin-top:15px;
     border-radius: 5px;
+
+    margin: 0 auto;
 }
 
 iframe{

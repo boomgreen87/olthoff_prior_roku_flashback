@@ -7,10 +7,15 @@
 
 header{
     display:flex;
-    flex-direction: row;
+    flex-direction: column;
     background-color: white;
     
     margin: 0 auto;
+
+    position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 
 .logo-icon-box{
@@ -23,8 +28,13 @@ header{
 }
 
 #header-logo{
-    width: 100%;
+    width: 60%;
+
+    @include for-desktop{
+        width:100%;
+    }
 }
+
 
 #header-account-nav{
     display: flex;
@@ -38,9 +48,18 @@ header{
 }
 
 .user-icon{
-    margin-top:15px;
+    margin-top: 2px;
+
+    @include for-desktop{
+        margin-top: 15px;
+    }
 }
+
 
 .head-user-link{
     margin-left:50px;
+
+    @include for-desktop{
+        margin-left: 250px;
+    }
 }
