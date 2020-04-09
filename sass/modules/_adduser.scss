@@ -30,9 +30,24 @@
     padding: 20px;
 }
 
+.add-user-form input{
+    border-radius: 5px;
+    
+}
+
+.add-user-form select{
+    border-radius: 5px;
+    padding: 4px;
+}
+
 .option-con{
     margin: 0 auto;
     margin-left: 15px;
+    margin-bottom:10px;
+
+    @include for-desktop{
+        margin-left: 50px;
+    }
 
 }
 
@@ -45,7 +60,7 @@
     @include for-tablet{
         width: 150px;
         height: 150px;
-        padding: 7px;
+        padding: 15px;
     }
 }
 
@@ -71,11 +86,14 @@
     height: 150px;
     margin: 0 auto;
     border-radius: 50%;
-    padding: 10px;
+    box-shadow: 0 0 1pt 1pt $lightPurp;
+    margin-bottom: 20px;
+    margin-top: 40px;
 
     @include for-tablet{
         width:200px;
         height:200px;
-        padding:15px;
+        margin-bottom: 40px;
+        margin-top: 60px;
     }
 }

@@ -6,7 +6,7 @@ export default {
         <h1 class="hidden">Manage Account Users Component</h1>
 
         <div class="jumbotron roku-jumbotron">
-            <h1 class="form-header">Good Time Of Day Username!</h1>
+            <h1 class="form-header">Manage Account Users</h1>
             <hr class="my-4">
 
             <div class="manage-users-form">
@@ -31,7 +31,6 @@ export default {
                 <router-link to="/userhome">
                     <p class="button-links" >Back to App</p>
                 </router-link>
-            </div>
             </div>
             <hr class="my-4">
         </div>

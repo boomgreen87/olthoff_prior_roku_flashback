@@ -6,10 +6,8 @@ export default {
         <h1 class="hidden">Edit Profile Component</h1>
 
         <div class="jumbotron roku-jumbotron">
-            <h1 class="form-header">Good Time Of Day Username!</h1>
+            <h1 class="form-header">Your Account Details</h1>
             <hr class="my-4">
-
-            <h3 class="lead">Your Account Details</h3>
             
             <form class="account-settings-form" @submit.prevent="editAccount">
                 
@@ -29,7 +27,7 @@ export default {
 
                 <label>Password: </label>
                 <input v-model="account.password" type="text" name="password" required>
-
+                <br>
                 <button type="submit" name="submit" class="button">Edit Account</button>
             
                 <hr class="my-4">

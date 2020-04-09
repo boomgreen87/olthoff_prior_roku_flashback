@@ -42,9 +42,14 @@ export default {
                                 <button type="submit" name="submit" class="button">Change Permissions</button><br>
                             
                         </form>
+                        <hr class="my-4">
+                    </div>
+                    <div class="button" id="manage-users-back">
+                        <router-link to="/userhome">
+                            <p class="button-links" >Back to App</p>
+                        </router-link>
                     </div>
                 </div>
-
                 <hr class="my-4">
             </div>
         </div>

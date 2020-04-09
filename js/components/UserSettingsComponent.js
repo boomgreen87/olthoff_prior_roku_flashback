@@ -6,10 +6,8 @@ export default {
         <h1 class="hidden">Edit Profile Component</h1>
 
         <div class="jumbotron roku-jumbotron">
-            <h1 class="form-header">Good Time Of Day Username!</h1>
+            <h1 class="form-header">Edit Your Profile</h1>
             <hr class="my-4">
-
-            <h3 class="lead">Edit Your Profile</h3>
 
             <form class="user-settings-form" @submit.prevent="editUser">
                 
@@ -21,12 +19,18 @@ export default {
                 <label>Your Avitar: </label>
                 <img class="icon-selected" id="selectedIcon" :src="'images/user/' + user.icon" alt="User Icon">
                 <label>Choose New Avitar: </label>
-                <div class="option-con">
-                
+                <div class="user-option-con">
                     <img  class="edit-option" v-for="icon in icons" :id="icon.iconID" v-on:click="setIcon" :src="'images/user/' + icon.iconPath" alt="User Icon" >
-                </div>
+                </div><hr class="my-4">
                 
                 <button type="submit" name="submit" class="button">Edit User</button>
+            
+                <hr class="my-4">
+            <div class="button">
+                <router-link to="/userhome">
+                    <p class="button-links" >Back to App</p>
+                </router-link>
+            </div>
             </form>
             <hr class="my-4">
         </div>

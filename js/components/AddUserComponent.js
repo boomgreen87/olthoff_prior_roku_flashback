@@ -13,9 +13,10 @@ export default {
                 <label>Display Name: </label>
                 <input v-model="input.displayName" type="text" name="displayName" required>
 
-                <label>Icon: </label>
+               
                 <img class="icon-selected" id="selectedIcon" :src="'images/user/' + input.icon" alt="User Icon">
 
+                <label>Select Avatar:</label>
                 <div class="option-con">
                     <img v-for="icon in icons" :id="icon.iconID" v-on:click="setIcon" :src="'images/user/' + icon.iconPath" alt="User Icon" class="icon-option">
                 </div>
@@ -38,7 +39,7 @@ export default {
                 <label>Explicit Music: </label>
                 <select v-model="input.explicitMusic" name="musicAgeRating" required>
                     <option v-for="rating in musicAgeRatings" :value="rating.ratingValue">{{ rating.rating }}</option>
-                </select>
+                </select><br><br>
 
                 <button type="submit" name="submit" class="button">Add User</button>
             </form>

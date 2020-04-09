@@ -16,10 +16,16 @@ li{
 }
 
 .roku-jumbotron{
+    width: 100%;
     margin-top: 20px;
     padding:20px;
     background-color: $darkPurp;
     color:white;
+
+}
+
+.jumbotron{
+    width: 100%;
 }
 
 .form-header{
@@ -38,5 +44,6 @@ li{
 a{text-decoration: none;}
 
 .router-view{
-    padding-top:10px;
+    padding-top:50px;
+    padding-bottom:50px;
 }

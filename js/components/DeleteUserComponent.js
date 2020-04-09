@@ -17,10 +17,14 @@ export default {
                         <p class="user-name" >{{ user.name }}</p>
                         <button @click="deleteUser" :value="user.id" class="button">Delete User</button>
                     </div>
+                    <hr class="my-4">
+                    <div class="button">
+                        <router-link to="/userhome">
+                            <p class="button-links" >Back to App</p>
+                        </router-link>
+                    </div>
+                    <hr class="my-4">
                 </div>
-
-                <hr class="my-4">
-            </div>
         </div>
     `,
 
