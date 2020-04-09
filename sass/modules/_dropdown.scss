@@ -9,11 +9,15 @@
     margin: 0 auto;
     margin-bottom: 5px;
 
+    @include for-tablet{
+        max-width:80%;
+    }
+
     @include for-desktop{
         background-color: white;
         color:$darkPurp;
         max-width: 40%;
-        font-size: 20px;
+        font-size: 18px;
     }
 }
 
