@@ -1,4 +1,6 @@
 export default {
+    name: "TheAccountSettingsComponent",
+    
     template: `
     <div class="account-settings-container">
         <h1 class="hidden">Edit Profile Component</h1>

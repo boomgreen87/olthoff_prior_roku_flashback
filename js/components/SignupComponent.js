@@ -1,4 +1,6 @@
 export default {
+    name: "TheSignupComponent",
+
     template: `
     <div class="signup-container">
         <div class="jumbotron roku-jumbotron">

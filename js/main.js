@@ -11,7 +11,9 @@ import AddUserComponent from "./components/AddUserComponent.js"
 
 import UserSettingsComponent from "./components/UserSettingsComponent.js"
 import AccountSettingsComponent from "./components/AccountSettingsComponent.js"
+
 import ManageUsersComponent from "./components/ManageUsersComponent.js"
+import ChangePermissionsComponent from "./components/ChangePermissionsComponent.js"
 
 import ErrorComponent from "./components/ErrorComponent.js"
 
@@ -31,9 +33,9 @@ import ErrorComponent from "./components/ErrorComponent.js"
 
       { path: '/usersettings', name: "usersettings", component: UserSettingsComponent},
       { path: '/accountsettings', name: "accountsettings", component: AccountSettingsComponent},
-      { path: '/manageusers', name: "manageusers", component: ManageUsersComponent},
 
       { path: '/manageusers', name: "manageusers", component: ManageUsersComponent},
+      { path: '/changepermissions', name: "changepermissions", component: ChangePermissionsComponent},
 
       { path: '/error', name: "error", component: ErrorComponent},
     ]
@@ -52,7 +54,6 @@ import ErrorComponent from "./components/ErrorComponent.js"
       // Check for a user in localStorage. If there is one, push to home and set authenticated. Otherwise push to login page.
       if (localStorage.getItem("cachedUser")) {
         let user = JSON.parse(localStorage.getItem("cachedUser"));
-
 
         this.authenticated = true;
         this.admin = user.admin; // Sets admin if user is admin

@@ -104,6 +104,11 @@ export default {
             // Gets account ID
             let account = JSON.parse(localStorage.getItem("cachedAccount")).id
 
+            // Changes admin to 0 if child user
+            if(this.input.userType == 1) {
+                this.input.admin = 0;
+            }
+
             // Generate the form data
             let formData = new FormData();
 
@@ -135,6 +140,6 @@ export default {
             .catch(function (error) {
                 console.log(error);
             });
-        }
+        },
     }
 }

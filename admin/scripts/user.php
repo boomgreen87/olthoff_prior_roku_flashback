@@ -124,3 +124,33 @@
             return false;
         }
     }
+
+    // Edits an user
+    function changePermissions($id, $admin, $userType, $vidRating, $explicitMusic) {
+        // Sets up database connection
+        $pdo = Database::getInstance()->getConnection();
+
+        // Changes the permissions for the selected user to entered info
+        $change_permissions_query = "UPDATE tbl_users SET users_admin = :admin, users_child_account = :userType, users_vid_rating = :vidRating, users_explicit_music = :explicitMusic ";
+        $change_permissions_query .= "WHERE users_id = :id";
+        $change_permissions = $pdo->prepare($change_permissions_query);
+        $change_permissions_result = $change_permissions->execute(
+            array(
+                ':id'=>$id,
+                ':admin'=>$admin,
+                ':userType'=>$userType,
+                ':vidRating'=>$vidRating,
+                ':explicitMusic'=>$explicitMusic
+            )
+        );
+
+        // Checks to see if query actually worked
+        $affectedRows = $change_permissions->rowCount();
+
+        // Returns success or fail result
+        if($change_permissions_result && $affectedRows > 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
