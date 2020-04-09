@@ -5,6 +5,12 @@ export default {
     <div class="adduser-container">
         <h1 class="hidden">Add User Component</h1>
 
+        <div class="back-button">
+                <router-link to="/userhome">
+                    <p class="button-links" >Back to App</p>
+                </router-link>
+            </div>
+
         <div class="jumbotron roku-jumbotron">
             <h1 class="form-header">Add a New User to Your Account</h1>
             <hr class="my-4">

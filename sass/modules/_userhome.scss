@@ -15,7 +15,7 @@
     flex-direction: row;
 
     margin: 0 auto;
-    padding-bottom: 15px;
+    padding-bottom: 40px;
 
     width:100%;
     color: white;
@@ -29,7 +29,7 @@
     }
 }
 
-.medianav ul{
+.media-nav ul{
     display: block;
 
     justify-content: space-evenly;
@@ -39,25 +39,21 @@
     margin: 0 auto;
 
     background-color: white;
-    
-
     border-radius: 10px;
 }
 
 .icon-con:hover{
     opacity:0.8;
     box-shadow: 0 0 2pt 2pt $lightPurp;
+    cursor: pointer;
 }
 
 .userhome-container{
     display: flex;
     flex-direction: column;
-
     margin: 0 auto;
-
     max-width:100%;
     color: white;
-    padding:25px;
 }
 
 #movie-icon{

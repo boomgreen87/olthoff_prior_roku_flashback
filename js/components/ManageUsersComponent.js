@@ -5,6 +5,12 @@ export default {
     <div class="manage-users-container">
         <h1 class="hidden">Manage Account Users Component</h1>
 
+        <div class="back-button">
+                <router-link to="/userhome">
+                    <p class="button-links" >Back to App</p>
+                </router-link>
+            </div>
+            
         <div class="jumbotron roku-jumbotron">
             <h1 class="form-header">Manage Account Users</h1>
             <hr class="my-4">
@@ -25,13 +31,6 @@ export default {
                         <p class="button-links">Delete Account User</p>
                     </router-link>
                 </div>
-
-                <hr class="my-4">
-            <div class="button">
-                <router-link to="/userhome">
-                    <p class="button-links" >Back to App</p>
-                </router-link>
-            </div>
             <hr class="my-4">
         </div>
     </div>

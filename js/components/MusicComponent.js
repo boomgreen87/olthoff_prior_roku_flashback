@@ -11,7 +11,7 @@ export default {
                 <audio controls :src="'audio/' + currentMediaDetails.song_file" class="audio-player"></audio>
             </div>
 
-            <div class="text-section">
+            <div class="text-section music-text">
                 <h4 class="media-name">{{currentMediaDetails.song_name}}</h4>
                 <span class="media-year">{{currentMediaDetails.song_year}}</span>
                 <span class="media-genre">{{currentMediaDetails.song_genre}}</span>
@@ -19,7 +19,7 @@ export default {
         </div>
 
         <div class="bottom-section">
-            <label>Song Decade: </label>
+            <label class="decade-label">Sort By Decade:</label>
             <select v-model="yearFilter" v-on:change="filterByYear" name="decadeFilter" required>
                 <option v-for="decade in decades" :value="decade.decadeValue">{{ decade.decade }}</option>
             </select>
