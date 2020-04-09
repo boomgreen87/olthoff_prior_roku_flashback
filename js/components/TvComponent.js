@@ -55,7 +55,25 @@ export default {
                         localStorage.setItem("cachedShow", JSON.stringify(data));
 
                         this.allRetrievedShows = data;
-                        this.currentMediaDetails = data[0];
+
+                        // Check for content restrictions
+                        let restriction = JSON.parse(localStorage.getItem("cachedUser")).vidrating;
+                        
+                        // Removes any shows fom allRetrievedShows that don't fit the restrictions
+                        let i = 0;
+                        while(i < this.allRetrievedShows.length){
+                            if(this.allRetrievedShows[i].show_age_rating_code > restriction){
+                                this.allRetrievedShows.splice(i, 1);
+                            } else {
+                                i++;
+                            }
+                        }
+
+                        // Caches shows
+                        localStorage.setItem("cachedShow", JSON.stringify(data));
+
+                        // Sets current media
+                        this.currentMediaDetails = this.allRetrievedShows[0];
                     })    
             }
         },

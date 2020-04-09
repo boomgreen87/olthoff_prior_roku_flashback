@@ -30,7 +30,7 @@ export default {
     data: function () {
         return {
             currentMediaDetails: {},
-            allRetrievedMovies: []
+            allRetrievedMovies: [],
         }
     },
 
@@ -52,10 +52,26 @@ export default {
                 fetch(url)
                     .then(res => res.json())
                     .then(data => {
+                        this.allRetrievedMovies = data;
+
+                        // Check for content restrictions
+                        let restriction = JSON.parse(localStorage.getItem("cachedUser")).vidrating;
+                        
+                        // Removes any movies fom allRetrievedMovies that don't fit the restrictions
+                        let i = 0;
+                        while(i < this.allRetrievedMovies.length){
+                            if(this.allRetrievedMovies[i].movie_age_rating_code > restriction){
+                                this.allRetrievedMovies.splice(i, 1);
+                            } else {
+                                i++;
+                            }
+                        }
+
+                        // Caches movies
                         localStorage.setItem("cachedMovie", JSON.stringify(data));
 
-                        this.allRetrievedMovies = data;
-                        this.currentMediaDetails = data[0];
+                        // Sets current media
+                        this.currentMediaDetails = this.allRetrievedMovies[0];
                     })    
             }
         },
