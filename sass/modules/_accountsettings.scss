@@ -1,13 +1,13 @@
 .account-settings-container{
-    max-width:80%;
+    max-width:100%;
     margin: 0 auto;
 
     @include for-tablet{
-        max-width:60%;
+        max-width:80%;
     }
 
     @include for-desktop{
-        max-width: 40%;
+        max-width: 60%;
     }
 }
 
@@ -25,9 +25,11 @@
 
 .account-settings-form label{
     margin-top:15px;
+    border-radius: 5px;
 }
 
 .account-settings-form input{
-    border-radius: 3px;
+    border-radius: 5px;
     padding: 3px;
+
 }

@@ -11,25 +11,26 @@ export default {
                 <audio controls :src="'audio/' + currentMediaDetails.song_file" class="audio-player"></audio>
             </div>
 
-            <div class="text-section">
+            <div class="text-section music-text">
                 <h4 class="media-name">{{currentMediaDetails.song_name}}</h4>
                 <span class="media-year">{{currentMediaDetails.song_year}}</span>
                 <span class="media-genre">{{currentMediaDetails.song_genre}}</span>
             </div>
         </div>
-            <div class="bottom-section">
-                <label>Song Decade: </label>
-                <select v-model="yearFilter" v-on:change="filterByYear" name="decadeFilter" required>
-                    <option v-for="decade in decades" :value="decade.decadeValue">{{ decade.decade }}</option>
-                </select>
 
-                <div v-if="allRetrievedSongs.length == 0">No Results</div>
+        <div class="bottom-section">
+            <label class="decade-label">Sort By Decade:</label>
+            <select v-model="yearFilter" v-on:change="filterByYear" name="decadeFilter" required>
+                <option v-for="decade in decades" :value="decade.decadeValue">{{ decade.decade }}</option>
+            </select>
 
-                <div class="poster-section">
-                <h2 class="media-title">Most Popular Music</h2>
-                    <img class="poster" v-for="item in allRetrievedSongs" :src="'images/' + item.song_cover_art" alt="Album Cover" @click="loadNewSong(item)">
-                </div>
+            <div v-if="allRetrievedSongs.length == 0">No Results</div>
+
+            <div class="poster-section">
+            <h2 class="media-title">Most Popular Music</h2>
+                <img class="poster" v-for="item in allRetrievedSongs" :src="'images/' + item.song_cover_art" alt="Album Cover" @click="loadNewSong(item)">
             </div>
+        </div>
         </div>
     </section>
     `,

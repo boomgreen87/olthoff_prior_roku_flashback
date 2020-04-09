@@ -1,13 +1,13 @@
 .user-settings-container{
-    max-width:80%;
+    max-width:100%;
     margin: 0 auto;
 
     @include for-tablet{
-        max-width:60%;
+        max-width:80%;
     }
 
     @include for-desktop{
-        max-width: 40%;
+        max-width: 60%;
     }
 }
 
@@ -26,11 +26,13 @@
 }
 .user-settings-form input{
     padding: 5px;
+    border-radius: 5px;
 }
 
 .user-settings-form select{
     margin-top:5px;
-    padding: 3px;
+    border-radius: 5px;
+    padding: 4px;
 }
 
 .edit-option{
@@ -49,4 +51,8 @@
 .edit-option:hover{
     box-shadow: 0 0 1pt 1pt white;
     opacity:0.7;
+}
+
+.user-option-con{
+    margin-bottom: 15px;
 }
