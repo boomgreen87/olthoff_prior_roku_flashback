@@ -55,7 +55,25 @@ export default {
                         localStorage.setItem("cachedSong", JSON.stringify(data));
 
                         this.allRetrievedSongs = data;
-                        this.currentMediaDetails = data[0];
+                        
+                        // Check for content restrictions
+                        let restriction = JSON.parse(localStorage.getItem("cachedUser")).explicitmusic;
+                        
+                        // Removes any songs fom allRetrievedShows that don't fit the restrictions
+                        let i = 0;
+                        while(i < this.allRetrievedSongs.length){
+                            if(this.allRetrievedSongs[i].song_explicit > restriction){
+                                this.allRetrievedSongs.splice(i, 1);
+                            } else {
+                                i++;
+                            }
+                        }
+
+                        // Caches shows
+                        localStorage.setItem("cachedSong", JSON.stringify(data));
+
+                        // Sets current media
+                        this.currentMediaDetails = this.allRetrievedSongs[0];
                     })    
             }
         },

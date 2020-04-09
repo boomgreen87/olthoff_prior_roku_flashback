@@ -35,9 +35,14 @@ function login($username, $password){
             // Sets account information
             $account['id'] = $found_account['accounts_id'];
             $account['username'] = $found_account['accounts_username'];
+        }
 
+        // Determines whether to return account (if login is successful) or display a message (if login is unsuccessful)
+        if(isset($id)) {
             // Return the account
             return $account;
+        } else {
+            return false;
         }
         
     } else {

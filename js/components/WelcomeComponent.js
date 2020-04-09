@@ -31,7 +31,8 @@ export default {
     `,
 
 	created: function () {
-		this.fetchAllUsers();
+        this.fetchAllUsers();
+        this.clearCache();
 	},
 
 	data() {
@@ -55,6 +56,23 @@ export default {
 				this.userList = data;
 			})
 			.catch((err) => console.error(err));
+        },
+
+        clearCache() {
+            // Remove cached movies
+            if(localStorage.getItem("cachedMovie")) {
+                localStorage.removeItem("cachedMovie");
+            }
+    
+            // Remove cached shows
+            if(localStorage.getItem("cachedShow")) {
+                localStorage.removeItem("cachedShow");
+            }
+    
+            // Remove cached songs
+            if(localStorage.getItem("cachedSong")) {
+                localStorage.removeItem("cachedSong");
+            }
         },
         
         emitAdmin() {
