@@ -19,6 +19,13 @@ export default {
         </div>
          
         <div class="bottom-section">
+            <label>Movie Decade: </label>
+            <select v-model="yearFilter" v-on:change="filterByYear" name="decadeFilter" required>
+                <option v-for="decade in decades" :value="decade.decadeValue">{{ decade.decade }}</option>
+            </select>
+
+            <div v-if="allRetrievedMovies.length == 0">No Results</div>
+
             <div class="poster-section">
                 <h2 class="media-title">Most Popular Movies</h2>
                 <img class="poster" v-for="item in allRetrievedMovies" :src="'images/' + item.movie_poster" alt="Movie Poster" @click="loadNewMovie(item)">
@@ -31,6 +38,19 @@ export default {
         return {
             currentMediaDetails: {},
             allRetrievedMovies: [],
+
+            decades: [
+                {decadeValue: "1000", decade: "All"},
+                {decadeValue: "50", decade: "1950s"},
+                {decadeValue: "60", decade: "1960s"},
+                {decadeValue: "70", decade: "1970s"},
+                {decadeValue: "80", decade: "1980s"},
+                {decadeValue: "90", decade: "1990s"},
+            ],
+
+            yearFilter: "1000",
+
+            pageLoad: false
         }
     },
 
@@ -67,18 +87,50 @@ export default {
                             }
                         }
 
+                        // Check for year filter
+                        let filterYear = this.yearFilter;
+
+                        // Removes any movies fom allRetrievedMovies that don't fit the filter
+                        i = 0;
+                        while(i < this.allRetrievedMovies.length){
+                            if(filterYear !== "1000") {
+                                if(this.allRetrievedMovies[i].movie_year_code !== filterYear){
+                                    this.allRetrievedMovies.splice(i, 1);
+                                } else {
+                                    i++;
+                                }
+                            } else {
+                                break;
+                            }
+                        }
+
                         // Caches movies
                         localStorage.setItem("cachedMovie", JSON.stringify(data));
 
-                        // Sets current media
-                        this.currentMediaDetails = this.allRetrievedMovies[0];
+                        // Sets current media on initial page load
+                        if(this.allRetrievedMovies.length !== 0 && this.pageLoad == false) {
+                            this.currentMediaDetails = this.allRetrievedMovies[0];
+                            this.pageLoad = true;
+                        }
                     })    
             }
         },
 
+        // Reloads movies filtered by year
+        filterByYear() {
+            // Remove cached movies
+            if(localStorage.getItem("cachedMovie")) {
+                localStorage.removeItem("cachedMovie");
+            }
+
+            this.retrieveMovieContent();
+        },
+
         // Loads selected movie
         loadNewMovie(movie) {
-            this.currentMediaDetails = movie;
+            if(this.allRetrievedMovies.length !== 0) {
+                this.currentMediaDetails = movie;
+            }
         }
     }
 }

@@ -18,6 +18,13 @@ export default {
         </div>
 
         <div class="bottom-section">
+            <label>Show Decade: </label>
+            <select v-model="yearFilter" v-on:change="filterByYear" name="decadeFilter" required>
+                <option v-for="decade in decades" :value="decade.decadeValue">{{ decade.decade }}</option>
+            </select>
+
+            <div v-if="allRetrievedShows.length == 0">No Results</div>
+
             <div class="poster-section">
                 <h2 class="media-title">Most Popular TV Shows</h2>
                 <img class="poster" v-for="item in allRetrievedShows" :src="'images/' + item.show_poster" alt="Show Poster" @click="loadNewShow(item)">
@@ -30,7 +37,20 @@ export default {
     data: function () {
         return {
             currentMediaDetails: {},
-            allRetrievedShows: []
+            allRetrievedShows: [],
+
+            decades: [
+                {decadeValue: "1000", decade: "All"},
+                {decadeValue: "50", decade: "1950s"},
+                {decadeValue: "60", decade: "1960s"},
+                {decadeValue: "70", decade: "1970s"},
+                {decadeValue: "80", decade: "1980s"},
+                {decadeValue: "90", decade: "1990s"},
+            ],
+
+            yearFilter: "1000",
+
+            pageLoad: false
         }
     },
 
@@ -69,18 +89,50 @@ export default {
                             }
                         }
 
+                        // Check for year filter
+                        let filterYear = this.yearFilter;
+
+                        // Removes any shows fom allRetrievedShows that don't fit the filter
+                        i = 0;
+                        while(i < this.allRetrievedShows.length){
+                            if(filterYear !== "1000") {
+                                if(this.allRetrievedShows[i].show_year_code !== filterYear){
+                                    this.allRetrievedShows.splice(i, 1);
+                                } else {
+                                    i++;
+                                }
+                            } else {
+                                break;
+                            }
+                        }
+
                         // Caches shows
                         localStorage.setItem("cachedShow", JSON.stringify(data));
 
-                        // Sets current media
-                        this.currentMediaDetails = this.allRetrievedShows[0];
+                        // Sets current media on initial page load
+                        if(this.allRetrievedShows.length !== 0 && this.pageLoad == false) {
+                            this.currentMediaDetails = this.allRetrievedShows[0];
+                            this.pageLoad = true;
+                        }
                     })    
             }
         },
 
+        // Reloads shows filtered by year
+        filterByYear() {
+            // Remove cached shows
+            if(localStorage.getItem("cachedShow")) {
+                localStorage.removeItem("cachedShow");
+            }
+
+            this.retrieveShowContent();
+        },
+
         // Loads selected show
         loadNewShow(show) {
-            this.currentMediaDetails = show;
+            if(this.allRetrievedShows.length !== 0) {
+                this.currentMediaDetails = show;
+            }
         }
     }
 }
