@@ -49,7 +49,10 @@ import ErrorComponent from "./components/ErrorComponent.js"
       authenticated: false,
       admin: false,
       account: [],
-      user: []
+      user: [],
+
+      showTopMenu: false,
+      isActive: false,
     },
 
     created: function () {
@@ -67,6 +70,10 @@ import ErrorComponent from "./components/ErrorComponent.js"
     },
 
     methods: {
+      closeMenu(){
+        this.showTopMenu = false;
+        this.isActive = false;
+    },
       setAuthenticated(status, data) {
         this.authenticated = status;
         this.account = data;

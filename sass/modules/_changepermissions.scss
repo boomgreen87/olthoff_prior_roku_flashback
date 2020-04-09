@@ -37,6 +37,13 @@
     flex-direction: column;
     margin: 0 auto;
 }
+.change-permissions-form{
+    display: flex;
+    flex-direction: column;
+
+    max-width:80%;
+    margin: 0 auto;
+}
 
 .all-account-users{
     max-width:70%;
@@ -47,4 +54,25 @@
     margin: 0 auto;
     margin-top: 15px;
     margin-bottom: 25px;
+}
+
+.manage-users-form{
+    display: flex;
+    flex-direction: column;
+
+    width:80%;
+    margin: 0 auto;
+}
+
+.manage-users-container{
+    max-width:80%;
+    margin: 0 auto;
+
+    @include for-tablet{
+        max-width:60%;
+    }
+
+    @include for-desktop{
+        max-width: 40%;
+    }
 }
