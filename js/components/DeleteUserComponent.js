@@ -68,7 +68,7 @@ export default {
                     // Removes deleted user from userList
                     for(let i=0; i < this.userList.length; i++) {
                         if(this.userList[i].id == userID) {
-                           this.userList.splice(i);
+                           this.userList.splice(i, 1);
                         }
                     }
                 }
