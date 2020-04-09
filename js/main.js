@@ -14,6 +14,7 @@ import AccountSettingsComponent from "./components/AccountSettingsComponent.js"
 
 import ManageUsersComponent from "./components/ManageUsersComponent.js"
 import ChangePermissionsComponent from "./components/ChangePermissionsComponent.js"
+import DeleteUserComponent from "./components/DeleteUserComponent.js"
 
 import ErrorComponent from "./components/ErrorComponent.js"
 
@@ -36,6 +37,7 @@ import ErrorComponent from "./components/ErrorComponent.js"
 
       { path: '/manageusers', name: "manageusers", component: ManageUsersComponent},
       { path: '/changepermissions', name: "changepermissions", component: ChangePermissionsComponent},
+      { path: '/deleteuser', name: "deleteuser", component: DeleteUserComponent},
 
       { path: '/error', name: "error", component: ErrorComponent},
     ]
