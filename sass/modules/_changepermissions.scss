@@ -1,13 +1,13 @@
 .change-permissions-container{
-    max-width:80%;
+    max-width:100%;
     margin: 0 auto;
 
     @include for-tablet{
-        max-width:60%;
+        max-width:80%;
     }
 
     @include for-desktop{
-        max-width: 40%;
+        max-width: 60%;
     }
 }
 
@@ -15,21 +15,27 @@
     display: flex;
     flex-direction: column;
 
-    max-width:80%;
     margin: 0 auto;
 }
 
 .change-permissions-form button{
-    margin-top:15px;
+    margin-top:25px;
 }
 
 .change-permissions-form label{
     margin-top:15px;
+    border-radius: 5px;
 }
 
-.change-premissions-form input{
-    border-radius: 3px;
+.change-permissions-form input{
+    border-radius: 5px;
     padding: 3px;
+}
+
+.change-permissions-form select{
+    margin-top:5px;
+    border-radius: 5px;
+    padding: 4px;
 }
 
 .edit-info{
@@ -37,16 +43,19 @@
     flex-direction: column;
     margin: 0 auto;
 }
-.change-permissions-form{
-    display: flex;
-    flex-direction: column;
 
-    max-width:80%;
+#manage-users-back{
     margin: 0 auto;
+    max-width:60%;
 }
 
+
+
+
+
+
 .all-account-users{
-    max-width:70%;
+    max-width:90%;
     margin: 0 auto;
 }
 
@@ -56,23 +65,30 @@
     margin-bottom: 25px;
 }
 
+.manage-users-form select{
+    margin-top:5px;
+    border-radius: 5px;
+    padding: 4px;
+}
+
 .manage-users-form{
     display: flex;
     flex-direction: column;
 
     width:80%;
     margin: 0 auto;
+
 }
 
 .manage-users-container{
-    max-width:80%;
+    max-width:100%;
     margin: 0 auto;
 
     @include for-tablet{
-        max-width:60%;
+        max-width:80%;
     }
 
     @include for-desktop{
-        max-width: 40%;
+        max-width: 60%;
     }
 }

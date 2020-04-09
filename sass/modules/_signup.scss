@@ -1,13 +1,13 @@
 .signup-container{
-    max-width:80%;
+    max-width:100%;
     margin: 0 auto;
 
     @include for-tablet{
-        max-width:60%;
+        max-width:80%;
     }
 
     @include for-desktop{
-        max-width: 40%;
+        max-width: 60%;
     }
 }
 

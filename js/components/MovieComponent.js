@@ -11,15 +11,19 @@ export default {
 
             <div class="text-section">
                 <h4 class="media-name">{{currentMediaDetails.movie_name}}</h4>
+
+                <div class="extra-info">
+                    <span class="media-time">{{currentMediaDetails.movie_runtime}}</span>
+                    <span class="media-year">{{currentMediaDetails.movie_year}}</span>
+                    <span class="media-genre">{{currentMediaDetails.movie_genre}}</span>
+                </div>
+
                 <span class="media-description">{{currentMediaDetails.movie_description}}</span>
-                <span class="media-time">{{currentMediaDetails.movie_runtime}}</span>
-                <span class="media-year">{{currentMediaDetails.movie_year}}</span>
-                <span class="media-genre">{{currentMediaDetails.movie_genre}}</span>
             </div>
         </div>
          
         <div class="bottom-section">
-            <label>Movie Decade: </label>
+            <label class="decade-label">Sort By Decade:</label>
             <select v-model="yearFilter" v-on:change="filterByYear" name="decadeFilter" required>
                 <option v-for="decade in decades" :value="decade.decadeValue">{{ decade.decade }}</option>
             </select>

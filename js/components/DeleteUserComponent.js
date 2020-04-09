@@ -6,6 +6,12 @@ export default {
 
             <h1 class="hidden">Change Permissions Component</h1>
 
+            <div class="back-button">
+                <router-link to="/userhome">
+                    <p class="button-links" >Back to App</p>
+                </router-link>
+            </div>
+            
             <div class="jumbotron roku-jumbotron">
                 <h1 class="form-header">{{ header }}</h1>
 
@@ -17,10 +23,8 @@ export default {
                         <p class="user-name" >{{ user.name }}</p>
                         <button @click="deleteUser" :value="user.id" class="button">Delete User</button>
                     </div>
+                    <hr class="my-4">
                 </div>
-
-                <hr class="my-4">
-            </div>
         </div>
     `,
 

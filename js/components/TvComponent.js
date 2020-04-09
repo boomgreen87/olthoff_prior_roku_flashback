@@ -11,14 +11,18 @@ export default {
 
             <div class="text-section">
                 <h4 class="media-name">{{currentMediaDetails.show_name}}</h4>
+
+                <div class="extra-info">
+                    <span class="media-year">{{currentMediaDetails.show_year}}</span>
+                    <span class="media-genre">{{currentMediaDetails.show_genre}}</span>
+                </div>
+                
                 <span class="media-description">{{currentMediaDetails.show_description}}</span>
-                <span class="media-year">{{currentMediaDetails.show_year}}</span>
-                <span class="media-genre">{{currentMediaDetails.show_genre}}</span>
             </div>
         </div>
 
         <div class="bottom-section">
-            <label>Show Decade: </label>
+            <label class="decade-label">Sort By Decade:</label>
             <select v-model="yearFilter" v-on:change="filterByYear" name="decadeFilter" required>
                 <option v-for="decade in decades" :value="decade.decadeValue">{{ decade.decade }}</option>
             </select>
@@ -27,7 +31,7 @@ export default {
 
             <div class="poster-section">
                 <h2 class="media-title">Most Popular TV Shows</h2>
-                <img class="poster" v-for="item in allRetrievedShows" :src="'images/' + item.show_poster" alt="Show Poster" @click="loadNewShow(item)">
+                <img class="poster"  v-for="item in allRetrievedShows" :src="'images/' + item.show_poster" alt="Show Poster" @click="loadNewShow(item)">
             </div>
         </div>
         

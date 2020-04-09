@@ -1,13 +1,15 @@
 .welcome-container{
-    max-width:80%;
-    margin: 0 auto;
+    max-width:100%;
+    
 
     @include for-tablet{
-        max-width:60%;
+        max-width:80%;
+        margin: 0 auto;
     }
 
     @include for-desktop{
-        max-width: 40%;
+        max-width: 60%;
+        margin: 0 auto;
     }
 }
 
@@ -38,13 +40,26 @@
     border-radius: 50%;
 }
 
+.user-icons:hover{
+    box-shadow: 0 0 1pt 1pt white;
+    opacity:0.7;
+}
+
 .user-name{
     text-align: left;
     justify-content: center;
     margin: 0 auto;
 
+    font-size: 22px;
+    padding-top: 10px;
+
     @include for-desktop{
         flex-direction: row;
         padding-top:20px;
     }
+}
+
+#add-new-user{
+    margin: 0 auto;
+    max-width:60%;
 }

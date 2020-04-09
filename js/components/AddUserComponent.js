@@ -5,6 +5,12 @@ export default {
     <div class="adduser-container">
         <h1 class="hidden">Add User Component</h1>
 
+        <div class="back-button">
+                <router-link to="/userhome">
+                    <p class="button-links" >Back to App</p>
+                </router-link>
+            </div>
+
         <div class="jumbotron roku-jumbotron">
             <h1 class="form-header">Add a New User to Your Account</h1>
             <hr class="my-4">
@@ -13,9 +19,10 @@ export default {
                 <label>Display Name: </label>
                 <input v-model="input.displayName" type="text" name="displayName" required>
 
-                <label>Icon: </label>
+               
                 <img class="icon-selected" id="selectedIcon" :src="'images/user/' + input.icon" alt="User Icon">
 
+                <label>Select Avatar:</label>
                 <div class="option-con">
                     <img v-for="icon in icons" :id="icon.iconID" v-on:click="setIcon" :src="'images/user/' + icon.iconPath" alt="User Icon" class="icon-option">
                 </div>
@@ -38,7 +45,7 @@ export default {
                 <label>Explicit Music: </label>
                 <select v-model="input.explicitMusic" name="musicAgeRating" required>
                     <option v-for="rating in musicAgeRatings" :value="rating.ratingValue">{{ rating.rating }}</option>
-                </select>
+                </select><br><br>
 
                 <button type="submit" name="submit" class="button">Add User</button>
             </form>

@@ -8,39 +8,36 @@ export default {
             <p class="lead">Create your own flashback account by filling out the form below.</p>
             <hr class="my-4">
             <form @submit.prevent="login" class="login-form">
-                <div class="form-row align-items-center">
                 
-                        <label class="sr-only" for="inlineFormInputName">Email</label>
-                        <input v-model="input.email" type="email" class="form-control" id="signupEmail" placeholder="Email" required>
-                   
+                        <label for="inlineFormInputName">Email</label>
+                        <input v-model="input.email" type="email"  id="signupEmail" placeholder="Email" required>
+                        <br>  
 
-                        <label class="sr-only" for="inlineFormInputName">First Name</label>
-                        <input v-model="input.firstname" type="text" class="form-control" id="signupFirstName" placeholder="First Name" required>
-                   
+                        <label for="inlineFormInputName">First Name</label>
+                        <input v-model="input.firstname" type="text"id="signupFirstName" placeholder="First Name" required>
+                        <br>  
 
-                        <label class="sr-only" for="inlineFormInputName">Last Name</label>
-                        <input v-model="input.lastname" type="text" class="form-control" id="signupLastName" placeholder="Last Name" required>
-                    
+                        <label for="inlineFormInputName">Last Name</label>
+                        <input v-model="input.lastname" type="text"  id="signupLastName" placeholder="Last Name" required>
+                        <br>  
 
-                        <label class="sr-only" for="inlineFormInputName">Country</label>
-                        <input v-model="input.country" type="text" class="form-control" id="signupCountry" placeholder="Country" required>
-                   
+                        <label for="inlineFormInputName">Country</label>
+                        <input v-model="input.country" type="text"  id="signupCountry" placeholder="Country" required>
+                        <br>  
 
-                        <label class="sr-only" for="inlineFormInputName">Username</label>
-                        <input v-model="input.username" type="text" class="form-control" id="signupUsername" placeholder="Username" required>
-                   
-                        <label class="sr-only" for="inlineFormPassword">Password</label>
-                        <input v-model="input.password" type="password" class="form-control" id="signupPassword" placeholder="Password" required>
-                    
-
+                        <label for="inlineFormInputName">Username</label>
+                        <input v-model="input.username" type="text"  id="signupUsername" placeholder="Username" required>
+                        <br>  
+                        <label for="inlineFormPassword">Password</label>
+                        <input v-model="input.password" type="password"  id="signupPassword" placeholder="Password" required>
+                       
+                        <hr class="my-4"> 
                     <div class="go-button">
                         <button type="submit" class="button">Sign Up</button>
                     </div>
-                </div>
-            </form>            
+            </form>         
+            <hr class="my-4">   
         </div>
-
-        <router-link class="text-link" to="/welcome">skip to welcome page</router-link>
     </div>
 
 

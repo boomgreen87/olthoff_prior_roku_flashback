@@ -9,6 +9,12 @@
     margin: 0 auto;
     margin-bottom: 5px;
 
+    animation: fadeIn ease 1s;
+    -webkit-animation: fadeIn ease 1s;
+    -moz-animation: fadeIn ease 1s;
+    -o-animation: fadeIn ease 1s;
+    -ms-animation: fadeIn ease 1s;
+
     @include for-tablet{
         max-width:80%;
     }
@@ -16,7 +22,7 @@
     @include for-desktop{
         background-color: white;
         color:$darkPurp;
-        max-width: 40%;
+        max-width: 60%;
         font-size: 18px;
     }
 }
@@ -26,6 +32,8 @@
     text-decoration: none;
     margin: 0 auto;
     padding:8px;
+    margin-left:10px;
+    margin-right:10px;
 
     @include for-desktop{
         color: $darkPurp;
@@ -55,3 +63,48 @@
     background-color: white;
     padding-top:15px;
 }
+
+
+@keyframes fadeIn {
+    0% {
+      opacity:0.3;
+    }
+    100% {
+      opacity:1;
+    }
+  }
+  
+  @-moz-keyframes fadeIn {
+    0% {
+      opacity:0.3;
+    }
+    100% {
+      opacity:1;
+    }
+  }
+  
+  @-webkit-keyframes fadeIn {
+    0% {
+      opacity:0.3;
+    }
+    100% {
+      opacity:1;
+    }
+  }
+  
+  @-o-keyframes fadeIn {
+    0% {
+      opacity:0.3;
+    }
+    100% {
+      opacity:1;
+    }
+  }
+  
+  @-ms-keyframes fadeIn {
+    0% {
+      opacity:0.3;
+    }
+    100% {
+      opacity:1;
+  }}
