@@ -16,26 +16,30 @@ export default {
                         <img :src="'images/user/' + user.icon" class="user-icons">
                         <p class="user-name" >{{ user.name }}</p>
                         
-                        <form class="change-permissions-form" @submit.prevent="changePermissions">
-                            <label>User Type: </label>
-                            <select v-model="user.userType" name="userType" required>
+                        <form class="change-permissions-form" :id="user.id" @submit.prevent="changePermissions">
+                            <input v-model="user.id" type="text" name="idField" readonly>
+
+                            <label>User Type: </label><br>
+                            <select v-model="user.usertype" name="userType" required>
                                 <option v-for="type in userTypes" :value="type.typeValue">{{ type.type }}</option>
-                            </select>
+                            </select><br><br>
             
-                            <label>Admin Capabilities: </label>
-                            <select v-model="user.admin" name="adminCapabilities" required>
+                            <label v-if="user.usertype == false">Admin Capabilities: </label><br>
+                            <select v-if="user.usertype == false" v-model="user.admin" name="adminCapabilities" required>
                                 <option v-for="admin in adminCapabilities" :value="admin.adminValue">{{ admin.admin }}</option>
-                            </select>
+                            </select><br><br>
             
-                            <label>Preffered Media Age Rating: </label>
-                            <select v-model="user.vidAgeRating" name="vidAgeRating" required>
+                            <label>Preffered Media Age Rating: </label><br>
+                            <select v-model="user.vidrating" name="vidAgeRating" required>
                                 <option v-for="rating in vidAgeRatings" :value="rating.ratingValue">{{ rating.rating }}</option>
-                            </select>
+                            </select><br><br>
             
-                            <label>Explicit Music: </label>
-                            <select v-model="user.explicitMusic" name="musicAgeRating" required>
+                            <label>Explicit Music: </label><br>
+                            <select v-model="user.explicitmusic" name="musicAgeRating" required>
                                 <option v-for="rating in musicAgeRatings" :value="rating.ratingValue">{{ rating.rating }}</option>
-                            </select>
+                            </select><br><br>
+
+                            <button type="submit" name="submit" class="button">Change Permissions</button>
                         </form>
                     </div>
                 </div>
@@ -95,8 +99,48 @@ export default {
 			.catch((err) => console.error(err));
         },
 
-        fetchUser() {
-            console.log("Working");
+        changePermissions() {
+            // Determine which user in userList to use
+            let userID = event.target.id;
+            let targetUser;
+
+            for(let i=0; i < this.userList.length; i++) {
+                if(this.userList[i].id == userID) {
+                    targetUser = i;
+
+                    // Changes admin to 0 if child account
+                    if(this.userList[i].usertype == 1) {
+                        this.userList[i].admin = 0;
+                    }
+                }
+            }
+
+            // Generate the form data
+            let formData = new FormData();
+
+            formData.append("id", this.userList[targetUser].id);
+            formData.append("admin", this.userList[targetUser].admin);
+            formData.append("userType", this.userList[targetUser].usertype);
+            formData.append("vidRating", this.userList[targetUser].vidrating);
+            formData.append("explicitMusic", this.userList[targetUser].explicitmusic);
+
+            let url = ("./admin/admin_changepermissions.php");
+
+            // Submits edited info to database
+			fetch(url, {
+                method: 'POST',
+                body: formData
+            })
+			.then(res => res.json())
+			.then(data => {
+                if(data == false) {
+                    console.warn(data);
+                    alert("There was a problem changing permissions."); // TODO: Replace alert
+                } else {
+                    alert("User permissions successfully edited."); // TODO: Replace alert
+                }
+			})
+			.catch((err) => console.error(err));
         }
 	}
 }
