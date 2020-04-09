@@ -73,7 +73,8 @@ import ErrorComponent from "./components/ErrorComponent.js"
       closeMenu(){
         this.showTopMenu = false;
         this.isActive = false;
-    },
+      },
+      
       setAuthenticated(status, data) {
         this.authenticated = status;
         this.account = data;

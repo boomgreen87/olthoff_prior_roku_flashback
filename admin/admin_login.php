@@ -6,12 +6,7 @@
         $username = trim($_POST['username']);
         $password = trim($_POST['password']);
 
-        if(!empty($username) && !empty($password)){
-            //Log account in
-            $message = login($username, $password);
-        }else{
-            return false;
-        }
+        $message = login($username, $password);
 
         echo json_encode($message);
     }
