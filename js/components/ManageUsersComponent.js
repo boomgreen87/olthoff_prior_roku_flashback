@@ -7,14 +7,25 @@ export default {
 
         <div class="jumbotron roku-jumbotron">
             <h1 class="form-header">Good Time Of Day Username!</h1>
+            <hr class="my-4">
 
-            <div class="link-container">
-                <h2 class="form-header">Change Your Account Users</h2>
+            <div class="button">
+                <router-link to="/adduser">
+                    <p class="button-links">Add Account User</p>
+                </router-link>
             </div>
-
-            <div class="go-back-button">
-                <h4>Go Back</h4>
+            <div class="button">
+                <router-link to="/changepermissions">
+                    <p class="button-links">Change Permissions</p>
+                </router-link>
+                </div>
+            <div class="button">
+                <router-link to="/deleteuser">
+                    <p class="button-links">Delete Account User</p>
+                </router-link>
             </div>
+            
+            <hr class="my-4">
         </div>
         <router-link class="text-link" to="/confirmmessage">Redirect to Confirm Message</router-link>
     </div>

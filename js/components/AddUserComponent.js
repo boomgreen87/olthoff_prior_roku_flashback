@@ -7,7 +7,7 @@ export default {
 
         <div class="jumbotron roku-jumbotron">
             <h1 class="form-header">Add a New User to Your Account</h1>
-
+            <hr class="my-4">
             <form class="add-user-form" @submit.prevent="addUser" method="post" enctype="multipart/form-data">
 
                 <label>Display Name: </label>
@@ -43,6 +43,7 @@ export default {
                 <button type="submit" name="submit" class="button">Add User</button>
             </form>
         </div>
+        <hr class="my-4">
     </div>
     `,
 

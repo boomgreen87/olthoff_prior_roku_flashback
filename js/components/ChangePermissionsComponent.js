@@ -8,38 +8,39 @@ export default {
 
             <div class="jumbotron roku-jumbotron">
                 <h1 class="form-header">{{ header }}</h1>
-
                 <hr class="my-4">
 
                 <div id="all-account-users">
-                    <div class="user-info" v-for="user in userList">
-                        <img :src="'images/user/' + user.icon" class="user-icons">
+                    <div class="edit-info" v-for="user in userList">
+                        <img :src="'images/user/' + user.icon" class="icon-selected"><br>
+
                         <p class="user-name" >{{ user.name }}</p>
                         
                         <form class="change-permissions-form" :id="user.id" @submit.prevent="changePermissions">
-                            <input v-model="user.id" type="text" name="idField" readonly>
+                            <input class="hidden" v-model="user.id" type="text" name="idField" readonly>
 
-                            <label>User Type: </label><br>
+                            <label>User Type: </label>
                             <select v-model="user.usertype" name="userType" required>
                                 <option v-for="type in userTypes" :value="type.typeValue">{{ type.type }}</option>
-                            </select><br><br>
+                            </select>
             
-                            <label v-if="user.usertype == false">Admin Capabilities: </label><br>
+                            <label v-if="user.usertype == false">Admin Capabilities: </label>
                             <select v-if="user.usertype == false" v-model="user.admin" name="adminCapabilities" required>
                                 <option v-for="admin in adminCapabilities" :value="admin.adminValue">{{ admin.admin }}</option>
-                            </select><br><br>
+                            </select>
             
-                            <label>Preffered Media Age Rating: </label><br>
+                            <label>Preffered Media Age Rating: </label>
                             <select v-model="user.vidrating" name="vidAgeRating" required>
                                 <option v-for="rating in vidAgeRatings" :value="rating.ratingValue">{{ rating.rating }}</option>
-                            </select><br><br>
+                            </select>
             
-                            <label>Explicit Music: </label><br>
+                            <label>Explicit Music: </label>
                             <select v-model="user.explicitmusic" name="musicAgeRating" required>
                                 <option v-for="rating in musicAgeRatings" :value="rating.ratingValue">{{ rating.rating }}</option>
-                            </select><br><br>
+                            </select>
 
-                            <button type="submit" name="submit" class="button">Change Permissions</button>
+                                <button type="submit" name="submit" class="button">Change Permissions</button><br>
+                            
                         </form>
                     </div>
                 </div>
