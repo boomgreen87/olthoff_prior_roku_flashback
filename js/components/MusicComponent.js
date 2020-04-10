@@ -16,26 +16,15 @@ export default {
                 <span class="media-year">{{currentMediaDetails.song_year}}</span>
                 <span class="media-genre">{{currentMediaDetails.song_genre}}</span>
 
-                <div v-if="currentMediaDetails.song_id == '1'"></div>
-                <div v-if="currentMediaDetails.song_id == '2'"></div>
-                <div v-if="currentMediaDetails.song_id == '3'"></div>
-                <div v-if="currentMediaDetails.song_id == '4'"></div>
-                <div v-if="currentMediaDetails.song_id == '5'"></div>
-                <div v-if="currentMediaDetails.song_id == '11'"></div>
-                <div v-if="currentMediaDetails.song_id == '12'"></div>
-                <div v-if="currentMediaDetails.song_id == '13'"></div>
-                <div v-if="currentMediaDetails.song_id == '14'"></div>
-                <div v-if="currentMediaDetails.song_id == '15'"></div>
+                <a target="_blank" :href="'https://www.facebook.com/sharer/sharer.php?u=' + currentMediaDetails.song_youtube + ';src=sdkpreparse'" class="fb-xfbml-parse-ignore">Share</a>
             </div>
         </div>
 
         <div class="bottom-section">
-            <div class="filter-con">
-                    <label class="decade-label">Decade:</label>
-                    <select v-model="yearFilter" v-on:change="filterByYear" name="decadeFilter" required>
-                        <option v-for="decade in decades" :value="decade.decadeValue">{{ decade.decade }}</option>
-                    </select>
-            </div>
+            <label class="decade-label">Sort By Decade:</label>
+            <select v-model="yearFilter" v-on:change="filterByYear" name="decadeFilter" required>
+                <option v-for="decade in decades" :value="decade.decadeValue">{{ decade.decade }}</option>
+            </select>
 
             <div v-if="allRetrievedSongs.length == 0">No Results</div>
 

@@ -12,33 +12,22 @@ export default {
             <div class="text-section">
                 <h4 class="media-name">{{currentMediaDetails.show_name}}</h4>
 
-                <div v-if="currentMediaDetails.show_id == '1'"></div>
-                <div v-if="currentMediaDetails.show_id == '2'"></div>
-                <div v-if="currentMediaDetails.show_id == '3'"></div>
-                <div v-if="currentMediaDetails.show_id == '4'"></div>
-                <div v-if="currentMediaDetails.show_id == '5'"></div>
-                <div v-if="currentMediaDetails.show_id == '6'"></div>
-                <div v-if="currentMediaDetails.show_id == '7'"></div>
-                <div v-if="currentMediaDetails.show_id == '8'"></div>
-                <div v-if="currentMediaDetails.show_id == '9'"></div>
-                <div v-if="currentMediaDetails.show_id == '10'"></div>
-
                 <div class="extra-info">
                     <span class="media-year">{{currentMediaDetails.show_year}}</span>
                     <span class="media-genre">{{currentMediaDetails.show_genre}}</span>
                 </div>
                 
                 <span class="media-description">{{currentMediaDetails.show_description}}</span>
+
+                <a target="_blank" :href="'https://www.facebook.com/sharer/sharer.php?u=' + currentMediaDetails.show_youtube + ';src=sdkpreparse'" class="fb-xfbml-parse-ignore">Share</a>
             </div>
         </div>
 
         <div class="bottom-section">
-        <div class="filter-con">
-        <label class="decade-label">Decade:</label>
-        <select v-model="yearFilter" v-on:change="filterByYear" name="decadeFilter" required>
-            <option v-for="decade in decades" :value="decade.decadeValue">{{ decade.decade }}</option>
-        </select>
-</div>
+            <label class="decade-label">Sort By Decade:</label>
+            <select v-model="yearFilter" v-on:change="filterByYear" name="decadeFilter" required>
+                <option v-for="decade in decades" :value="decade.decadeValue">{{ decade.decade }}</option>
+            </select>
 
             <div v-if="allRetrievedShows.length == 0">No Results</div>
 

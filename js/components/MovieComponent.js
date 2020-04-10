@@ -11,7 +11,7 @@ export default {
 
             <div class="text-section">
                 <h4 class="media-name">{{currentMediaDetails.movie_name}}</h4>
-                
+
                 <div class="extra-info">
                     <span class="media-time">{{currentMediaDetails.movie_runtime}}</span>
                     <span class="media-year">{{currentMediaDetails.movie_year}}</span>
@@ -19,16 +19,16 @@ export default {
                 </div>
 
                 <span class="media-description">{{currentMediaDetails.movie_description}}</span>
+
+                <a target="_blank" :href="'https://www.facebook.com/sharer/sharer.php?u=' + currentMediaDetails.movie_youtube + ';src=sdkpreparse'" class="fb-xfbml-parse-ignore">Share</a>
             </div>
         </div>
          
         <div class="bottom-section">
-        <div class="filter-con">
-        <label class="decade-label">Decade:</label>
-        <select v-model="yearFilter" v-on:change="filterByYear" name="decadeFilter" required>
-            <option v-for="decade in decades" :value="decade.decadeValue">{{ decade.decade }}</option>
-        </select>
-</div>
+            <label class="decade-label">Sort By Decade:</label>
+            <select v-model="yearFilter" v-on:change="filterByYear" name="decadeFilter" required>
+                <option v-for="decade in decades" :value="decade.decadeValue">{{ decade.decade }}</option>
+            </select>
 
             <div v-if="allRetrievedMovies.length == 0">No Results</div>
 
@@ -56,9 +56,7 @@ export default {
 
             yearFilter: "1000",
 
-            pageLoad: false,
-
-            fbLink: "https://www.youtube.com/watch?v=wJ1TOratCTo"
+            pageLoad: false
         }
     },
 
@@ -119,8 +117,6 @@ export default {
                         if(this.allRetrievedMovies.length !== 0 && this.pageLoad == false) {
                             this.currentMediaDetails = this.allRetrievedMovies[0];
                             this.pageLoad = true;
-
-                            this.fbID = this.allRetrievedMovies[0].movie_id;
                         }
                     })    
             }

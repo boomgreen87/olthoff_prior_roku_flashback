@@ -23,7 +23,6 @@
 
 <body>
 
-    <!-- Facebook JS SDK -->
     <div id="fb-root"></div>
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v6.0"></script>
 
@@ -38,7 +37,6 @@
         <!-- Footer -->
         <footer>
             <p class="copy">&copy; 2020 Roku Flashback App By Scott Olthoff and Michael Prior</p>
-            <div class="fb-share-button" data-href="https://www.youtube.com/watch?v=qtRKdVHc-cE" data-layout="button_count" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DqtRKdVHc-cE&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
         </footer>
         <!-- End Footer --> 
     </main>
