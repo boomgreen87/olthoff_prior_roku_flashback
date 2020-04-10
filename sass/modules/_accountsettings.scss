@@ -25,11 +25,12 @@
 
 .account-settings-form label{
     margin-top:15px;
-    border-radius: 5px;
+    @include for-tablet{
+        border-radius: 5px;
+    }
 }
 
 .account-settings-form input{
-    border-radius: 5px;
     padding: 3px;
-
+        border-radius: 5px;
 }

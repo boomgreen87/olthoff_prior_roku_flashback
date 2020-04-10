@@ -16,7 +16,7 @@
         </router-link>
 
         <router-link class="drop-down-box" @click.native="closeMenu"   to="/usersettings">
-            <a v-if="authenticated" class="drop-down-link">User Profile Settings</a>
+            <a v-if="authenticated" class="drop-down-link">User Settings</a>
         </router-link>
 
         <router-link class="drop-down-box" @click.native="closeMenu"  to="/accountsettings">

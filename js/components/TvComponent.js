@@ -22,10 +22,12 @@ export default {
         </div>
 
         <div class="bottom-section">
-            <label class="decade-label">Sort By Decade:</label>
-            <select v-model="yearFilter" v-on:change="filterByYear" name="decadeFilter" required>
-                <option v-for="decade in decades" :value="decade.decadeValue">{{ decade.decade }}</option>
-            </select>
+        <div class="filter-con">
+        <label class="decade-label">Decade:</label>
+        <select v-model="yearFilter" v-on:change="filterByYear" name="decadeFilter" required>
+            <option v-for="decade in decades" :value="decade.decadeValue">{{ decade.decade }}</option>
+        </select>
+</div>
 
             <div v-if="allRetrievedShows.length == 0">No Results</div>
 
