@@ -1,4 +1,11 @@
 
+  @mixin for-tablet {
+    @media (min-width: 600px) { @content; }
+  }
+  @mixin for-desktop{
+    @media (min-width: 1200px) { @content; }
+  }
+
 body{
     
     background-color: #a1a1a1;
@@ -25,11 +32,11 @@ li{
     background-color: $darkPurp;
     color:white;
 
+    @include for-tablet{
+        border-radius: 5px;
+    }
 }
 
-.jumbotron{
-    width: 100%;
-}
 
 .form-header{
     text-align: center;

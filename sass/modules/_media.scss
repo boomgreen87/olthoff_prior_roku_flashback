@@ -1,13 +1,13 @@
 .media-container{
-    max-width:100%;
+    width:100%;
     margin: 0 auto;
 
     @include for-tablet{
-        max-width:80%;
+        width:80%;
     }
 
     @include for-desktop{
-        max-width: 60%;
+        width: 60%;
     }
 }
 
@@ -16,9 +16,12 @@
     flex-direction: column;
     margin: 0 auto;
     background-color: $darkPurp;
-    border-radius: 8px;
     width: 100%;
-    margin: 0 auto;
+
+    @include for-tablet{
+        border-radius: 5px;
+    }
+
 }
 
 
@@ -27,16 +30,17 @@
     flex-direction: column;
     margin: 0 auto;
     background-color: $darkPurp;
-    border-radius: 8px;
     width: 100%;
-    margin: 0 auto;
     padding: 25px;
     margin-top:80px;
+
+    @include for-tablet{
+        border-radius: 5px;
+    }
 }
 
 .bottom-section select{
     margin-top:10px;
-    border-radius: 5px;
     padding: 4px;
     width: 80%;
     margin: 0 auto;
@@ -52,7 +56,7 @@
 }
 
 .poster-section{
-    max-width: 95%;
+    width: 100%;
     justify-content: center;
     margin: 0 auto;
     padding:5px;
@@ -65,51 +69,39 @@
 
 //music specific rules
 .music-container{
+    display: flex;
+    flex-direction: column;
     color: white;
 
     margin-top:20px;
 
-    max-width:100%;
-    margin: 0 auto;
-
-    @include for-tablet{
-        max-width:80%;
-    }
-
-    @include for-desktop{
-        max-width: 60%;
-    }
+    width:100%;
 }
 
 .selected-music{
-    width: 350px;
-    margin-bottom: 15px;
-    margin-top:20px;
+    width: 80%;
+    margin: 0 auto;
     box-shadow: 0 0 2pt 2pt $lightPurp;
 
-    @include for-tablet{
-        width:550px;
-    }
-
-    @include for-desktop{
-        width: 650px;
-        margin-bottom: 25px;
-    }
+    margin-top:20px;
+    margin-bottom: 40px;
 }
 
 .audio-player{
     margin-top:15px;
-    border-radius: 5px;
-
     margin: 0 auto;
+
+    @include for-tablet{
+        border-radius: 5px;
+    }
 }
 
 iframe{
     height: 300px;
-    border-radius: 8px 8px 0px 0px;
 
     @include for-tablet{
         height: 400px;
+        border-radius: 8px 8px 0px 0px;
     }
 
     @include for-desktop{
@@ -172,6 +164,11 @@ iframe{
 }
 
 .decade-label{
-    padding-left:20px;
-    margin-bottom: 20px;
+    padding:5px;
+    margin-right:10px;
+}
+
+.filter-con{
+    display: flex;
+    flex-direction: row;
 }

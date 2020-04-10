@@ -1,5 +1,6 @@
 .adduser-container
-{display: flex;
+{
+    display: flex;
     flex-direction: column;
 
     margin: 0 auto;
@@ -13,7 +14,7 @@
     }
 
     @include for-desktop{
-        width: 50%;
+        width: 60%;
     }
 }
 
@@ -24,37 +25,39 @@
     margin: 0 auto;
 
     max-width:70%;
-    padding: 20px;
 }
 
 .add-user-form input{
-    border-radius: 5px;
+    @include for-tablet{
+        border-radius: 5px;
+    }
     
 }
 
 .add-user-form select{
-    border-radius: 5px;
     padding: 4px;
+    @include for-tablet{
+        border-radius: 5px;
+    }
 }
 
 .option-con{
     margin: 0 auto;
-    margin-left: 15px;
-    margin-bottom:10px;
-
-    @include for-desktop{
-        margin-left: 50px;
-    }
-
+    max-width: 100%;
+    padding-bottom: 10px;
 }
 
 .icon-option{
-    width: 33%;
-    border-radius: 50%;
-    padding: 5px;
+    width:100px;
+    padding: 10px;
 
     @include for-tablet{
-        padding: 15px;
+        width:200px;
+        padding: 20px;
+    }
+
+    @include for-desktop{
+        width:250px;
     }
 }
 
@@ -89,5 +92,10 @@
         height:200px;
         margin-bottom: 40px;
         margin-top: 60px;
+    }
+
+    @include for-desktop{
+        width:300px;
+        height:300px;
     }
 }

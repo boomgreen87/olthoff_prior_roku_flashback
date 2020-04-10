@@ -11,7 +11,7 @@ export default {
                 </router-link>
             </div>
 
-        <div class="jumbotron roku-jumbotron">
+        <div class="roku-jumbotron">
             <h1 class="form-header">Edit Your Profile</h1>
             <hr class="my-4">
 
@@ -25,8 +25,9 @@ export default {
                 <label class="hidden">Your Avatar: </label>
                 <img class="icon-selected" id="selectedIcon" :src="'images/user/' + user.icon" alt="User Icon">
                 <label>Choose New Avatar: </label>
-                <div class="user-option-con">
-                    <img  class="edit-option" v-for="icon in icons" :id="icon.iconID" v-on:click="setIcon" :src="'images/user/' + icon.iconPath" alt="User Icon" >
+
+                <div class="option-con">
+                    <img  class="icon-option" v-for="icon in icons" :id="icon.iconID" v-on:click="setIcon" :src="'images/user/' + icon.iconPath" alt="User Icon" >
                 </div><hr class="my-4">
                 
                 <button type="submit" name="submit" class="button">Edit User</button>

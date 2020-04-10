@@ -11,7 +11,7 @@ export default {
                 </router-link>
         </div>
             
-        <div class="jumbotron roku-jumbotron">
+        <div class="roku-jumbotron">
             <h1 class="form-header">Manage Account Users</h1>
             <hr class="my-4">
 
@@ -31,8 +31,8 @@ export default {
                         <p class="button-links">Delete Account User</p>
                     </router-link>
                 </div>
-            <hr class="my-4">
             </div>
+            <hr class="my-4">
         </div>
     </div>
 `}

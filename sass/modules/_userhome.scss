@@ -1,14 +1,5 @@
 .media-icon-link{
-    display: flex;
-    width: 90px;
-
-    padding: 8px;
-
-    @include for-desktop{
-        width:100px;
-        padding: 10px;
-   
-    }
+    width: 80px;
 }
 
 .media-nav{
@@ -16,10 +7,12 @@
     flex-direction: row;
 
     margin: 0 auto;
-    padding-bottom: 40px;
+    padding: 20px;
 
     width:100%;
     color: white;
+
+    justify-content: space-between;
 
     @include for-tablet{
         width:80%;
@@ -38,15 +31,17 @@
 
 .icon-con{
     margin: 0 auto;
-
-    background-color: white;
-    border-radius: 10px;
+    padding:2px;
 }
 
 .icon-con:hover{
     opacity:0.8;
     box-shadow: 0 0 2pt 2pt $lightPurp;
     cursor: pointer;
+
+    @include for-tablet{
+        border-radius: 5px;
+    }
 }
 
 
@@ -58,11 +53,24 @@
     color: white;
 }
 
+.nav-con{
+    background-color: white;
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 50px;
+
+    @include for-tablet{
+        width: 80%;
+        border-radius: 5px;
+    }
+}
+
 #movie-icon{
-    margin-top:4px;
+    margin-top:5px;
+    margin-bottom: 5px;
 }
 
 #music-icon{
-    margin-top:4px;
+    margin-top:5px;
+    margin-bottom: 5px;
 }
-

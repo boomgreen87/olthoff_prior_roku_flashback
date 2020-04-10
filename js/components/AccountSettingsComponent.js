@@ -10,7 +10,7 @@ export default {
                     <p class="button-links" >Back to App</p>
                 </router-link>
             </div>
-        <div class="jumbotron roku-jumbotron">
+        <div class="roku-jumbotron">
             <h1 class="form-header">Your Account Details</h1>
             <hr class="my-4">
             
