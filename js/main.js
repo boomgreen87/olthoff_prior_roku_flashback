@@ -73,7 +73,8 @@ import ErrorComponent from "./components/ErrorComponent.js"
       closeMenu(){
         this.showTopMenu = false;
         this.isActive = false;
-    },
+      },
+      
       setAuthenticated(status, data) {
         this.authenticated = status;
         this.account = data;
@@ -86,7 +87,7 @@ import ErrorComponent from "./components/ErrorComponent.js"
 
       logout() {
         // Push user back to login page
-        this.$router.push({ name: "login" });
+        this.$router.push({ name: "home" });
         this.authenticated = false;
         this.admin = false;
 

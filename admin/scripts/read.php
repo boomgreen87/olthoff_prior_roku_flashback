@@ -10,6 +10,6 @@ function getAll($tbl)
     if ($results) {
         return $results->fetchAll(PDO::FETCH_ASSOC);
     } else {
-        return 'There was a problem accessing this info';
+        return false;
     }
 }

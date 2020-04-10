@@ -25,9 +25,6 @@ function login($username, $password){
 
         while($found_account = $account_check->fetch(PDO::FETCH_ASSOC)){
             $id = $found_account['accounts_id'];
-            //Logged in!
-            $_SESSION['accounts_id'] = $id;
-            $_SESSION['accounts_name'] = $found_account['accounts_first_name'];
 
             // Sets up an array for account information
             $account = array();
@@ -49,17 +46,4 @@ function login($username, $password){
         // Account does not exist
         return false;
     }
-}
-
-// Confirms that account is logged in
-function confirm_logged_in(){
-    if(!isset($_SESSION['accounts_id'])){
-        redirect_to('admin_login.php');
-    }
-}
-
-// Logs user out
-function logout(){
-    session_destroy();
-    redirect_to('admin_login.php');
 }

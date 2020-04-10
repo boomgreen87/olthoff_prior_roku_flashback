@@ -18,7 +18,7 @@ export default {
                 <hr class="my-4">
 
                 <div class="all-account-users">
-                    <div class="edit-info" v-for="user in userList">
+                    <div class="edit-info" v-for="user in userList" v-if="user.id !== currentUser">
                         <img :src="'images/user/' + user.icon" class="icon-selected">
                         <p class="user-name" >{{ user.name }}</p>
                         <button @click="deleteUser" :value="user.id" class="button">Delete User</button>
@@ -36,7 +36,9 @@ export default {
 	data() {
 		return {
             header: `Delete User`,
-			userList: []
+            userList: [],
+            
+            currentUser: ""
 		}
     },
 
@@ -51,7 +53,10 @@ export default {
 			.then(data => {
 				this.userList = data;
 			})
-			.catch((err) => console.error(err));
+            .catch((err) => console.error(err));
+
+            // Sets current user ID so that it isn't available to delete
+            this.currentUser = JSON.parse(localStorage.getItem("cachedUser")).id;
         },
 
         deleteUser() {
