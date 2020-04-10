@@ -12,7 +12,7 @@ export default {
                 </router-link>
             </div>
             
-            <div class="jumbotron roku-jumbotron">
+            <div class="roku-jumbotron">
                 <h1 class="form-header">{{ header }}</h1>
 
                 <hr class="my-4">

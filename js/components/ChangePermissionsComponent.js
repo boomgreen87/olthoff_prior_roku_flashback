@@ -6,7 +6,7 @@ export default {
 
             <h1 class="hidden">Change Permissions Component</h1>
 
-            <div class="jumbotron roku-jumbotron">
+            <div class="roku-jumbotron">
                 <h1 class="form-header">{{ header }}</h1>
                 <hr class="my-4">
 
@@ -42,12 +42,6 @@ export default {
                                 <button type="submit" name="submit" class="button">Change Permissions</button><br>
                             
                         </form>
-                        <hr class="my-4">
-                    </div>
-                    <div class="button" id="manage-users-back">
-                        <router-link to="/userhome">
-                            <p class="button-links" >Back to App</p>
-                        </router-link>
                     </div>
                 </div>
                 <hr class="my-4">

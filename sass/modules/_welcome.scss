@@ -5,6 +5,7 @@
     @include for-tablet{
         max-width:80%;
         margin: 0 auto;
+        border-radius: 5px;
     }
 
     @include for-desktop{
@@ -65,5 +66,5 @@
 
 #add-new-user{
     margin: 0 auto;
-    max-width:60%;
+    max-width:50%;
 }

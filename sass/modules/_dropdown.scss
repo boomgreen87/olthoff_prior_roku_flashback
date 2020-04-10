@@ -2,9 +2,8 @@
 .drop-down-box{
     display: flex;
     flex-direction: row;
-    background-color: $lightPurp;
-    border-radius: 5px;
-    color: white;
+    background-color: white;
+        color:$darkPurp;
     margin: 0 auto;
     margin-bottom: 5px;
     margin-top: 5px;
@@ -19,34 +18,27 @@
     -ms-animation: fadeIn ease 1s;
 
 
-    @include for-desktop{
-        background-color: white;
-        color:$darkPurp;
+    @include for-tablet{
         font-size: 16px;
+        border-radius: 5px;
     }
+    
 }
 
 .drop-down-link{
-    color:white;
+  color: $darkPurp;
     text-decoration: none;
     margin: 0 auto;
     padding:10px;
     max-width:100%;
 
-    @include for-desktop{
-        color: $darkPurp;
-    }
 }
+
 .drop-down-box:hover{
     box-shadow: 0 0 1pt 1pt $darkPurp;
-    color: white;
+    color: $darkPurp;
     text-decoration: none;
     opacity:0.8;
-    color: white;
-
-    @include for-desktop{
-      color: $darkPurp;
-    }
 }
 
 .drop-down{
@@ -55,13 +47,17 @@
     background-color: white;
     margin: 0 auto;
     max-width:100%;
-    opacity: 0.8;
 
+    @include for-tablet{
+        position: absolute;
+        right: 0;
+        width: 200px;
+        padding:5px;
+        border-radius: 0 0 0 5px;
+    }
 
     @include for-desktop{
-        display: flex;
-        flex-direction: row;
-        max-width:70%;
+      width:350px;
     }
 }
 

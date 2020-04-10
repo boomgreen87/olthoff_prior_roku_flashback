@@ -36,13 +36,20 @@ header{
     margin-top:15px;
     margin-bottom: 15px;
     margin-right:10px;
-
+    
+    @include for-tablet{
+        margin-right:30px;
+    }
 }
 
 .head-logo-link{
     position: relative;
     left: 0;
     top: 0;
+
+    @include for-tablet{
+        margin-left:30px;
+    }
 }
 
 #header-logo{

@@ -11,13 +11,7 @@ export default {
             </router-link>
         </div>
 
-        <div class="back-button" else>
-            <router-link to="/welcome">
-                <p class="button-links" >Back</p>
-            </router-link>
-        </div>
-
-        <div class="jumbotron roku-jumbotron">
+        <div class="roku-jumbotron">
             <h1 class="form-header">Add a New User to Your Account</h1>
             <hr class="my-4">
             <form class="add-user-form" @submit.prevent="addUser" method="post" enctype="multipart/form-data">
@@ -55,8 +49,8 @@ export default {
 
                 <button type="submit" name="submit" class="button">Add User</button>
             </form>
+            <hr class="my-4">
         </div>
-        <hr class="my-4">
     </div>
     `,
 
