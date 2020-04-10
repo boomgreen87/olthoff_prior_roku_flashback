@@ -38,6 +38,10 @@
     justify-content: center;
     margin: 0 auto;
     border-radius: 50%;
+
+    @include for-tablet{
+        max-width:70%;
+    }
 }
 
 .user-icons:hover{
