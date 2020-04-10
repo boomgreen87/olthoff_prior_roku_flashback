@@ -15,6 +15,17 @@ export default {
                 <h4 class="media-name">{{currentMediaDetails.song_name}}</h4>
                 <span class="media-year">{{currentMediaDetails.song_year}}</span>
                 <span class="media-genre">{{currentMediaDetails.song_genre}}</span>
+
+                <div v-if="currentMediaDetails.song_id == '1'"></div>
+                <div v-if="currentMediaDetails.song_id == '2'"></div>
+                <div v-if="currentMediaDetails.song_id == '3'"></div>
+                <div v-if="currentMediaDetails.song_id == '4'"></div>
+                <div v-if="currentMediaDetails.song_id == '5'"></div>
+                <div v-if="currentMediaDetails.song_id == '11'"></div>
+                <div v-if="currentMediaDetails.song_id == '12'"></div>
+                <div v-if="currentMediaDetails.song_id == '13'"></div>
+                <div v-if="currentMediaDetails.song_id == '14'"></div>
+                <div v-if="currentMediaDetails.song_id == '15'"></div>
             </div>
         </div>
 

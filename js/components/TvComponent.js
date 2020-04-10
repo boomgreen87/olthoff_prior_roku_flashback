@@ -12,6 +12,17 @@ export default {
             <div class="text-section">
                 <h4 class="media-name">{{currentMediaDetails.show_name}}</h4>
 
+                <div v-if="currentMediaDetails.show_id == '1'"></div>
+                <div v-if="currentMediaDetails.show_id == '2'"></div>
+                <div v-if="currentMediaDetails.show_id == '3'"></div>
+                <div v-if="currentMediaDetails.show_id == '4'"></div>
+                <div v-if="currentMediaDetails.show_id == '5'"></div>
+                <div v-if="currentMediaDetails.show_id == '6'"></div>
+                <div v-if="currentMediaDetails.show_id == '7'"></div>
+                <div v-if="currentMediaDetails.show_id == '8'"></div>
+                <div v-if="currentMediaDetails.show_id == '9'"></div>
+                <div v-if="currentMediaDetails.show_id == '10'"></div>
+
                 <div class="extra-info">
                     <span class="media-year">{{currentMediaDetails.show_year}}</span>
                     <span class="media-genre">{{currentMediaDetails.show_genre}}</span>
