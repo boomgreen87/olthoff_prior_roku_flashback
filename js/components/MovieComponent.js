@@ -20,7 +20,9 @@ export default {
 
                 <span class="media-description">{{currentMediaDetails.movie_description}}</span>
 
-                <a target="_blank" :href="'https://www.facebook.com/sharer/sharer.php?u=' + currentMediaDetails.movie_youtube + ';src=sdkpreparse'" class="fb-xfbml-parse-ignore">Share</a>
+                <div class="share-btn">
+                    <a target="_blank" :href="'https://www.facebook.com/sharer/sharer.php?u=' + currentMediaDetails.movie_youtube + ';src=sdkpreparse'" class="fb-xfbml-parse-ignore"> <i class="fab fa-facebook-square fb-icon"></i>Share</a>
+                </div>
             </div>
         </div>
          
