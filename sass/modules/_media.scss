@@ -17,8 +17,7 @@
     margin: 0 auto;
     background-color: $darkPurp;
     border-radius: 8px;
-
-    max-width:100%;
+    width: 100%;
     margin: 0 auto;
 }
 
@@ -26,17 +25,13 @@
 .bottom-section{
     display: flex;
     flex-direction: column;
-
     margin: 0 auto;
-    justify-content: center;
-
-
-    padding: 25px;
-
     background-color: $darkPurp;
-
-    margin-top: 80px;
     border-radius: 8px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 25px;
+    margin-top:80px;
 }
 
 .bottom-section select{
@@ -60,37 +55,44 @@
     max-width: 95%;
     justify-content: center;
     margin: 0 auto;
-    margin-top: 10px;
+    padding:5px;
 }
 
 .poster{
-    justify-content: center;
-    max-width: 33%;
-    padding:5px;
-
-    @include for-desktop{
-        padding: 15px;
-    }
+    width:50%;
+    padding:10px;
 }
 
 //music specific rules
 .music-container{
-    display: flex;
-    flex-direction: column;
-
-    margin: 0 auto;
     color: white;
 
     margin-top:20px;
+
+    max-width:100%;
+    margin: 0 auto;
+
+    @include for-tablet{
+        max-width:80%;
+    }
+
+    @include for-desktop{
+        max-width: 60%;
+    }
 }
 
 .selected-music{
-    width: 300px;
+    width: 350px;
     margin-bottom: 15px;
+    margin-top:20px;
     box-shadow: 0 0 2pt 2pt $lightPurp;
 
+    @include for-tablet{
+        width:550px;
+    }
+
     @include for-desktop{
-        width: 500px;
+        width: 650px;
         margin-bottom: 25px;
     }
 }

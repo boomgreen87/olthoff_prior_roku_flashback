@@ -28,7 +28,7 @@ export default {
 
             <div class="poster-section">
             <h2 class="media-title">Most Popular Music</h2>
-                <img class="poster" v-for="item in allRetrievedSongs" :src="'images/' + item.song_cover_art" alt="Album Cover" @click="loadNewSong(item)">
+                <img onclick="window.scrollTo(0, 0);" class="poster" v-for="item in allRetrievedSongs" :src="'images/' + item.song_cover_art" alt="Album Cover" @click="loadNewSong(item)">
             </div>
         </div>
         </div>

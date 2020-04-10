@@ -25,6 +25,7 @@ export default {
                     </div>
                     <hr class="my-4">
                 </div>
+            </div>
         </div>
     `,
 
