@@ -32,6 +32,7 @@ export default {
                     </router-link>
                 </div>
             <hr class="my-4">
+            </div>
         </div>
     </div>
 `}
