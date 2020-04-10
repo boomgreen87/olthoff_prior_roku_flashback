@@ -1,5 +1,9 @@
 .media-icon-link{
     width: 80px;
+
+    @include for-desktop{
+        width:100px;
+    }
 }
 
 .media-nav{
@@ -11,22 +15,13 @@
 
     width:100%;
     color: white;
-
-    justify-content: space-between;
-
-    @include for-tablet{
-        width:80%;
-    }
-
-    @include for-desktop{
-        width: 40%;
-    }
 }
 
 .media-nav ul{
     display: block;
-
     justify-content: space-evenly;
+
+
 }
 
 .icon-con{
@@ -36,12 +31,9 @@
 
 .icon-con:hover{
     opacity:0.8;
-    box-shadow: 0 0 2pt 2pt $lightPurp;
+    box-shadow: 0 0 2pt 2pt white;
     cursor: pointer;
-
-    @include for-tablet{
-        border-radius: 5px;
-    }
+    border-radius: 5px;
 }
 
 
@@ -54,14 +46,18 @@
 }
 
 .nav-con{
-    background-color: white;
+    background-color: $darkPurp;
     width: 100%;
     margin: 0 auto;
-    margin-bottom: 50px;
+    padding:10px;
 
     @include for-tablet{
         width: 80%;
-        border-radius: 5px;
+        border-radius:  5px 5px 0 0;
+    }
+
+    @include for-desktop{
+        width:60%;
     }
 }
 

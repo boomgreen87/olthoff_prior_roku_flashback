@@ -53,6 +53,13 @@
     opacity:0.7;
 }
 
-.user-option-con{
-    margin-bottom: 15px;
+.icon-option{
+    width:33%;
+    padding: 8px;
+}
+
+.option-con{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
 }

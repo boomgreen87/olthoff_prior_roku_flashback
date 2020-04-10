@@ -12,7 +12,7 @@ export default {
             </div>
 
         <div class="roku-jumbotron">
-            <h1 class="form-header">Edit Your Profile</h1>
+            <h1 class="form-header">Edit User Settings</h1>
             <hr class="my-4">
 
             <form class="user-settings-form" @submit.prevent="editUser">

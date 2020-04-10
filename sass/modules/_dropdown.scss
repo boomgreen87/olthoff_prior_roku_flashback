@@ -52,17 +52,12 @@
         position: absolute;
         right: 0;
         width: 200px;
-        padding:5px;
         border-radius: 0 0 0 5px;
     }
 
     @include for-desktop{
       width:350px;
     }
-}
-
-#menu-overlay{
-    padding-top:15px;
 }
 
 

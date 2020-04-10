@@ -101,7 +101,6 @@ iframe{
 
     @include for-tablet{
         height: 400px;
-        border-radius: 8px 8px 0px 0px;
     }
 
     @include for-desktop{
