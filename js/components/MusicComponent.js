@@ -15,16 +15,16 @@ export default {
                 <h4 class="media-name">{{currentMediaDetails.song_name}}</h4>
                 <span class="media-year">{{currentMediaDetails.song_year}}</span>
                 <span class="media-genre">{{currentMediaDetails.song_genre}}</span>
+
+                <a target="_blank" :href="'https://www.facebook.com/sharer/sharer.php?u=' + currentMediaDetails.song_youtube + ';src=sdkpreparse'" class="fb-xfbml-parse-ignore">Share</a>
             </div>
         </div>
 
         <div class="bottom-section">
-            <div class="filter-con">
-                    <label class="decade-label">Decade:</label>
-                    <select v-model="yearFilter" v-on:change="filterByYear" name="decadeFilter" required>
-                        <option v-for="decade in decades" :value="decade.decadeValue">{{ decade.decade }}</option>
-                    </select>
-            </div>
+            <label class="decade-label">Sort By Decade:</label>
+            <select v-model="yearFilter" v-on:change="filterByYear" name="decadeFilter" required>
+                <option v-for="decade in decades" :value="decade.decadeValue">{{ decade.decade }}</option>
+            </select>
 
             <div v-if="allRetrievedSongs.length == 0">No Results</div>
 

@@ -18,16 +18,16 @@ export default {
                 </div>
                 
                 <span class="media-description">{{currentMediaDetails.show_description}}</span>
+
+                <a target="_blank" :href="'https://www.facebook.com/sharer/sharer.php?u=' + currentMediaDetails.show_youtube + ';src=sdkpreparse'" class="fb-xfbml-parse-ignore">Share</a>
             </div>
         </div>
 
         <div class="bottom-section">
-        <div class="filter-con">
-        <label class="decade-label">Decade:</label>
-        <select v-model="yearFilter" v-on:change="filterByYear" name="decadeFilter" required>
-            <option v-for="decade in decades" :value="decade.decadeValue">{{ decade.decade }}</option>
-        </select>
-</div>
+            <label class="decade-label">Sort By Decade:</label>
+            <select v-model="yearFilter" v-on:change="filterByYear" name="decadeFilter" required>
+                <option v-for="decade in decades" :value="decade.decadeValue">{{ decade.decade }}</option>
+            </select>
 
             <div v-if="allRetrievedShows.length == 0">No Results</div>
 
