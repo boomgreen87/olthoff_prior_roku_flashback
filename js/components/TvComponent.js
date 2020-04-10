@@ -31,7 +31,7 @@ export default {
 
             <div class="poster-section">
                 <h2 class="media-title">Most Popular TV Shows</h2>
-                <img class="poster"  v-for="item in allRetrievedShows" :src="'images/' + item.show_poster" alt="Show Poster" @click="loadNewShow(item)">
+                <img onclick="window.scrollTo(0, 0);" class="poster"  v-for="item in allRetrievedShows" :src="'images/' + item.show_poster" alt="Show Poster" @click="loadNewShow(item)">
             </div>
         </div>
         
