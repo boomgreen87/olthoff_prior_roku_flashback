@@ -57,7 +57,7 @@ export default {
                 .then(data => {
                     if (typeof data != "object") { // Means that we're not getting an account object back
                         console.warn(data);
-                        alert("Username or password is incorrect. Please try again."); // TODO: Replace alert
+                        swal("Error!", "Username or Password is incorrect. Please try again", "error");
                     } else {
                         // User logged in successfully
                         localStorage.setItem("cachedAccount", JSON.stringify(data)); // Cache account
