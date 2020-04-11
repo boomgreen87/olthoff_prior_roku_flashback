@@ -61,8 +61,7 @@ export default {
 			.then(data => {
                 if (data == false) {
                     console.warn(data);
-                    alert("There was a problem accessing your account."); // TODO: Replace alert
-                } else {
+                    swal("Oops!", "There was a proplem accessing your account!", "error");                } else {
                     this.account = data;
                 }
 			})
@@ -91,9 +90,11 @@ export default {
 			.then(data => {
                 if(data == false) {
                     console.warn(data);
-                    alert("There was a problem editing your account."); // TODO: Replace alert
+                    swal("Oops!", "There was a proplem editing your account!", "error");    
+
                 } else {
-                    alert("Account successfully edited."); // TODO: Replace alert
+
+                    swal("Success!", "Your account has been edited!", "success");                
                 }
 			})
 			.catch((err) => console.error(err));

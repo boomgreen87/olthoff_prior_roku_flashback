@@ -82,7 +82,7 @@ export default {
             .then(data => {
                 if (typeof data != "object") { // Means that we're not getting an account object back
                     console.warn(data);
-                    alert("There was a problem creating your account. Please try again."); // TODO: Replace alert
+                    swal("Oops!", "There w a problem creating your account!", "error"); // TODO: Replace alert
                 } else {
                     // User logged in successfully
                     localStorage.setItem("cachedAccount", JSON.stringify(data)); // Cache account

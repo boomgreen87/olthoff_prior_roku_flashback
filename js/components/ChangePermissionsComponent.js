@@ -141,9 +141,10 @@ export default {
 			.then(data => {
                 if(data == false) {
                     console.warn(data);
-                    alert("There was a problem changing permissions."); // TODO: Replace alert
+                    swal("Oops!", "We couldn't save your changes! Please try again.", "error"); // TODO: Replace alert
                 } else {
-                    alert("User permissions successfully edited."); // TODO: Replace alert
+                    swal("Success!", "Your Changes have been saved!", "success");
+                    // TODO: Replace alert
                 }
 			})
 			.catch((err) => console.error(err));

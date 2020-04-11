@@ -147,10 +147,10 @@ export default {
             .then(data => {
                 if (data == false) {
                     console.warn(data);
-                    alert("There was a problem adding the user."); // TODO: Replace alert
+                    swal("Oops!", "There was a problem adding the user!", "error"); // TODO: Replace alert
                 } else {
                     this.user = data;
-                    alert("User added."); // TODO: Replace alert
+                    swal("Success!", "The user has been added!", "success");
                 }
             })
             .catch(function (error) {
