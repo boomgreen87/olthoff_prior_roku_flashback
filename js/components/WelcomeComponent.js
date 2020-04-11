@@ -15,7 +15,7 @@ export default {
                 <h2>{{ message }}</h2>
 
                 <div id="all-account-users">
-                    <user v-for="(user, index) in userList" :liveuser="user" :key="index" @admin="emitAdmin"></user>
+                    <user v-for="(user, index) in userList" :liveuser="user" :key="index" @user-authenticated="emitUserAuthenticated" @admin="emitAdmin"></user>
                 </div><br>
                 <div class="button" id="add-new-user" v-if="userList.length < 4">
                     <router-link to="/adduser">
@@ -32,6 +32,10 @@ export default {
 	created: function () {
         this.fetchAllUsers();
         this.clearCache();
+
+        // Resets user-authenticated and admin so icon button doesn't appear on welcome page
+        this.$emit("user-authenticated", false)
+        this.$emit("admin", false);
 	},
 
 	data() {
@@ -72,10 +76,21 @@ export default {
             if(localStorage.getItem("cachedSong")) {
                 localStorage.removeItem("cachedSong");
             }
+
+            // Remove cached users
+            if (localStorage.getItem("cachedUser")) {
+                localStorage.removeItem("cachedUser");
+            }
+        },
+
+        // Emits user-authenticated to set true
+        emitUserAuthenticated() {
+            this.$emit("user-authenticated", true);
         },
         
+        // Emits admin to set true
         emitAdmin() {
-            this.$emit("admin", true, this);
+            this.$emit("admin", true);
         }
 	},
 

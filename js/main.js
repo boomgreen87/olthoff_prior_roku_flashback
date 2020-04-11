@@ -47,6 +47,7 @@ import ErrorComponent from "./components/ErrorComponent.js"
 
     data: {
       authenticated: false,
+      userAuthenticated: false,
       admin: false,
       account: [],
       user: [],
@@ -61,6 +62,8 @@ import ErrorComponent from "./components/ErrorComponent.js"
         let user = JSON.parse(localStorage.getItem("cachedUser"));
 
         this.authenticated = true;
+        this.userAuthenticated = true;
+        this.user = JSON.parse(localStorage.getItem("cachedUser"));
         this.admin = user.admin; // Sets admin if user is admin
         
         this.$router.push({ name: "userhome", params: { currentuser: user }}).catch(err => { });
@@ -80,9 +83,13 @@ import ErrorComponent from "./components/ErrorComponent.js"
         this.account = data;
       },
 
-      setAdmin(status, user) {
+      setUserAuthenticated(status) {
+        this.userAuthenticated = status;
+        this.user = JSON.parse(localStorage.getItem("cachedUser"));
+      },
+
+      setAdmin(status) {
         this.admin = status;
-        this.user = user;
       },
 
       logout() {
@@ -90,6 +97,7 @@ import ErrorComponent from "./components/ErrorComponent.js"
         this.$router.push({ name: "home" });
         this.authenticated = false;
         this.admin = false;
+        this.userAuthenticated = false;
 
         // Remove cached accounts
         if (localStorage.getItem("cachedAccount")) {

@@ -30,8 +30,8 @@
         <?php include 'templates/header.php'; ?>
 
         <div class="router-view">
-            <!-- first thing in component templates should be a container -->
-            <router-view @authenticated="setAuthenticated" @admin="setAdmin"></router-view>
+            <!-- Rendered router view -->
+            <router-view @authenticated="setAuthenticated" @user-authenticated="setUserAuthenticated" @admin="setAdmin"></router-view>
         </div>
 
         <!-- Footer -->
