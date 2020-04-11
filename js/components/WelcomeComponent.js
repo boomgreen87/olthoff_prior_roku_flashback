@@ -14,9 +14,10 @@ export default {
                 <hr class="my-4">
                 <h2>{{ message }}</h2>
 
-                <div id="all-account-users">
+                <div class="all-account-users">
                     <user v-for="(user, index) in userList" :liveuser="user" :key="index" @user-authenticated="emitUserAuthenticated" @admin="emitAdmin"></user>
                 </div><br>
+                
                 <div class="button" id="add-new-user" v-if="userList.length < 4">
                     <router-link to="/adduser">
                          <p class="button-links" >Add a New User</p>
