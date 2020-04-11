@@ -21,7 +21,6 @@
     @include for-tablet{
         border-radius:0 0 5px 5px;
     }
-
 }
 
 
@@ -167,9 +166,17 @@ iframe{
     margin-right:10px;
 }
 
+.genre-selector{
+    border-radius: 5px;
+}
+
 .filter-con{
     display: flex;
     flex-direction: row;
+    padding-bottom: 20px;
+    padding-top:20px;
+    width: 80%;
+    margin: 0 auto;
 }
 
 .share-btn{
