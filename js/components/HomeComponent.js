@@ -7,7 +7,7 @@ export default {
         <div class="roku-jumbotron">
             <h1 class="form-header">Welcome to Flashback!</h1>
 
-            <p class="lead">Flashback by Roku is a curated list of the best media from the 1970's and 80's. Re-watch your old favourites or discover something new to you! Flashback has something for everybody!</p>
+            <p class="lead">Flashback by Roku is a curated list of the best movies, shows, and music from the 50's to the 90's. Satisfy your nostalgia by re-visiting old favourites or discover something new to you! Flashback has something for everybody!</p>
 
             <hr class="my-4">
 

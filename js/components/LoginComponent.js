@@ -3,6 +3,12 @@ export default {
 
     template: `
         <div class="login-container">
+            <div class="back-button">
+                <router-link tag="li" to="/home">
+                    <p class="button-links" >Back</p>
+                </router-link>
+            </div>
+
             <div class="roku-jumbotron">
                 <h1 class="form-header">Welcome to Flashback!</h1>
                 <p class="lead">Before revisiting your favourite movies, tv shows or music from yesteryear, please log in with a valid username and password.</p>
