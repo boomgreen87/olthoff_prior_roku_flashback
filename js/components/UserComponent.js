@@ -21,13 +21,16 @@ export default {
 
     methods: {
         navToUserHome() {
-            // Sets admin if user is an admin
-            if(this.liveuser.admin == true) {
-                this.$emit("admin", true, this.liveuser);
-            }
-
             // Caches user
             localStorage.setItem("cachedUser", JSON.stringify(this.liveuser));
+            
+            // Set user authentication
+            this.$emit("user-authenticated", true);
+
+            // Sets admin if user is an admin
+            if(this.liveuser.admin == true) {
+                this.$emit("admin", true);
+            }
 
             // Send this user to its home page and pass the user object to the home page
             this.$router.push({ name: "userhome", params: { currentuser: this.liveuser } });
