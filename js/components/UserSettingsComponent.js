@@ -101,8 +101,8 @@ export default {
                     console.warn(data);
                         swal("Oops!", "There was a problem editing your user settings!", "error");
                     } else {
-                        swal("Success!", "The user was successfully edited!", "success");
-                    }
+                    swal("Success!", "The user was successfully edited!", "success");
+                }
 			})
 			.catch((err) => console.error(err));
         }
