@@ -101,7 +101,6 @@ iframe{
 
     @include for-tablet{
         height: 400px;
-        border-radius: 8px 8px 0px 0px;
     }
 
     @include for-desktop{
@@ -171,4 +170,26 @@ iframe{
 .filter-con{
     display: flex;
     flex-direction: row;
+}
+
+.share-btn{
+    margin-top:30px;
+}
+
+.share-btn a{
+    text-decoration: none;
+    background-color: white;
+    color: $darkPurp;
+    font-size:16px;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.fb-icon{
+    margin-right:6px;
+}
+
+.share-btn a:hover{
+    box-shadow: 0 0 1pt 1pt $lightPurp;
+    opacity: 0.7;
 }

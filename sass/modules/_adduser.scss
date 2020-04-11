@@ -41,26 +41,6 @@
     }
 }
 
-.option-con{
-    margin: 0 auto;
-    max-width: 100%;
-    padding-bottom: 10px;
-}
-
-.icon-option{
-    width:100px;
-    padding: 10px;
-
-    @include for-tablet{
-        width:200px;
-        padding: 20px;
-    }
-
-    @include for-desktop{
-        width:250px;
-    }
-}
-
 .add-user-form label{
     margin-top:20px;
 }

@@ -16,7 +16,9 @@ export default {
                 <span class="media-year">{{currentMediaDetails.song_year}}</span>
                 <span class="media-genre">{{currentMediaDetails.song_genre}}</span>
 
-                <a target="_blank" :href="'https://www.facebook.com/sharer/sharer.php?u=' + currentMediaDetails.song_youtube + ';src=sdkpreparse'" class="fb-xfbml-parse-ignore">Share</a>
+                <div class="share-btn">
+                    <a target="_blank" :href="'https://www.facebook.com/sharer/sharer.php?u=' + currentMediaDetails.song_youtube + ';src=sdkpreparse'" class="fb-xfbml-parse-ignore"><i class="fab fa-facebook-square fb-icon"></i>Share</a>
+                </div>
             </div>
         </div>
 
