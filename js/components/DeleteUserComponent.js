@@ -17,11 +17,11 @@ export default {
 
                 <hr class="my-4">
 
-                <div class="all-account-users">
-                    <div class="edit-info" v-for="user in userList" v-if="user.id !== currentUser">
-                        <img :src="'images/user/' + user.icon" class="icon-selected">
+                <div class="delete-account-users">
+                    <div class="delete-info" v-for="user in userList" v-if="user.id !== currentUser">
+                        <img :src="'images/user/' + user.icon" class="icon-to-delete">
                         <p class="user-name" >{{ user.name }}</p>
-                        <button @click="deleteUser" :value="user.id" class="button">Delete User</button>
+                        <button @click="deleteUser" :value="user.id" class="button delete-btn">Delete User</button>
                     </div>
                     <hr class="my-4">
                 </div>
