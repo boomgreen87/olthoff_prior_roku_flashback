@@ -25,6 +25,14 @@ header{
     }
 }
 
+.user-icon {
+    border: 2px solid $darkPurp;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin-top: -7px;
+}
+
 .user-icon:hover{
     cursor: pointer;
 }
