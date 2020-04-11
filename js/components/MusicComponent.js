@@ -4,9 +4,9 @@ export default {
     template: `
     <section class="media-container">
         <h1 class="hidden">Music Component</h1>
-        <div class="top-section">
+        <div class="top-section" v-bind:class="{ pinkBackground : this.$root.child }">
             <div class="music-container">
-                <img class="selected-music" :src="'images/' + currentMediaDetails.song_cover_art" alt="Album Cover">
+                <img class="selected-music" v-bind:class="{ whiteGlow : this.$root.child }" :src="'images/' + currentMediaDetails.song_cover_art" alt="Album Cover">
             
                 <audio controls :src="'audio/' + currentMediaDetails.song_file" class="audio-player"></audio>
             </div>
@@ -22,7 +22,7 @@ export default {
             </div>
         </div>
 
-        <div class="bottom-section">
+        <div class="bottom-section" v-bind:class="{ pinkBackground : this.$root.child }">
             <div class="filter-con">
             <label class="decade-label">Sort By Decade:</label>
             

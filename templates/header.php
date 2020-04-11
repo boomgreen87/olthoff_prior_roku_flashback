@@ -4,7 +4,7 @@
             <img src="images/roku_logo.svg" alt="Flashback Logo" id="header-logo">
         </router-link>
         <div class="menu head-user-link"> 
-            <div v-if="userAuthenticated" :class="{'active': isActive}" @click="showTopMenu = !showTopMenu, isActive = !isActive"><img class="user-icon" :src="'images/user/' + user.icon" :alt="user.icon"></div>
+            <div v-if="userAuthenticated" :class="{'active': isActive}" @click="showTopMenu = !showTopMenu, isActive = !isActive"><img class="user-icon" v-bind:class="{ pinkOutline : this.$root.child }" :src="'images/user/' + user.icon" :alt="user.icon"></div>
         </div>
     </div>
 

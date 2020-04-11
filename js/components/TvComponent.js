@@ -4,7 +4,7 @@ export default {
     template: `
     <section class="media-container">
         <h1 class="hidden">TV Component</h1>
-        <div class="top-section">
+        <div class="top-section" v-bind:class="{ pinkBackground : this.$root.child }">
             <div class="video-container">
                 <div class="selected-video" v-html="currentMediaDetails.show_link"></div>
             </div>
@@ -25,7 +25,7 @@ export default {
             </div>
         </div>
 
-        <div class="bottom-section">
+        <div class="bottom-section" v-bind:class="{ pinkBackground : this.$root.child }">
             <div class="filter-con">
             <label class="decade-label">Sort By Decade:</label>
             
@@ -38,7 +38,7 @@ export default {
 
             <div class="poster-section">
                 <h2 class="media-title">Most Popular TV Shows</h2>
-                <img onclick="window.scrollTo(0, 0);" class="poster"  v-for="item in allRetrievedShows" :src="'images/' + item.show_poster" alt="Show Poster" @click="loadNewShow(item)">
+                <img onclick="window.scrollTo(0, 0);" class="poster" v-for="item in allRetrievedShows" :src="'images/' + item.show_poster" alt="Show Poster" @click="loadNewShow(item)">
             </div>
         </div>
         
@@ -71,7 +71,7 @@ export default {
 
     methods: {
         retrieveShowContent() {
-            
+
             // Fetches all of the show content
              if(localStorage.getItem("cachedShow")) {
                 this.allRetrievedShows = JSON.parse(localStorage.getItem("cachedShow"));

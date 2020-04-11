@@ -6,7 +6,7 @@ export default {
         <h1 class="hidden">Edit Profile Component</h1>
 
         <div class="back-button">
-                <router-link to="/userhome">
+                <router-link tag="li" to="/userhome">
                     <p class="button-links" >Back to App</p>
                 </router-link>
             </div>
@@ -90,7 +90,7 @@ export default {
 			.then(data => {
                 if(data == false) {
                     console.warn(data);
-                    swal("Oops!", "There was a proplem editing your account!", "error");    
+                    swal("Oops!", "There was a problem editing your account!", "error");    
 
                 } else {
 

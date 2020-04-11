@@ -6,7 +6,7 @@ export default {
         <h1 class="hidden">Manage Account Users Component</h1>
 
         <div class="back-button">
-                <router-link to="/userhome">
+                <router-link tag="li" to="/userhome">
                     <p class="button-links" >Back to App</p>
                 </router-link>
         </div>
@@ -17,17 +17,17 @@ export default {
 
             <div class="manage-users-form">
                 <div class="button">
-                    <router-link to="/adduser">
+                    <router-link tag="li" to="/adduser">
                         <p class="button-links">Add Account User</p>
                     </router-link>
                 </div>
                 <div class="button">
-                    <router-link to="/changepermissions">
+                    <router-link tag="li" to="/changepermissions">
                         <p class="button-links">Change Permissions</p>
                     </router-link>
                 </div>
                 <div class="button">
-                    <router-link to="/deleteuser">
+                    <router-link tag="li" to="/deleteuser">
                         <p class="button-links">Delete Account User</p>
                     </router-link>
                 </div>

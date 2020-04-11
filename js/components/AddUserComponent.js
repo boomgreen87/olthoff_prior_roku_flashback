@@ -6,8 +6,14 @@ export default {
         <h1 class="hidden">Add User Component</h1>
 
         <div class="back-button" v-if="this.cachedUser">
-            <router-link to="/userhome">
+            <router-link tag="li" to="/userhome">
                 <p class="button-links" >Back to App</p>
+            </router-link>
+        </div>
+
+        <div class="back-button" v-else>
+            <router-link tag="li" to="/welcome">
+                <p class="button-links" >Back</p>
             </router-link>
         </div>
 
@@ -147,7 +153,7 @@ export default {
             .then(data => {
                 if (data == false) {
                     console.warn(data);
-                    swal("Oops!", "There was a problem adding the user!", "error"); // TODO: Replace alert
+                    swal("Oops!", "There was a problem adding the user!", "error");
                 } else {
                     this.user = data;
                     swal("Success!", "The user has been added!", "success");
