@@ -51,6 +51,7 @@ import ErrorComponent from "./components/ErrorComponent.js"
       admin: false,
       account: [],
       user: [],
+      child: false,
 
       showTopMenu: false,
       isActive: false,
@@ -64,7 +65,16 @@ import ErrorComponent from "./components/ErrorComponent.js"
         this.authenticated = true;
         this.userAuthenticated = true;
         this.user = JSON.parse(localStorage.getItem("cachedUser"));
-        this.admin = user.admin; // Sets admin if user is admin
+        
+        // Sets admin if user is admin
+        if(user.admin == "1") {
+          this.admin = user.admin; 
+        }
+
+        // Checks if user is child
+        if(JSON.parse(localStorage.getItem("cachedUser")).usertype == "1") {
+          this.child = true;
+        }
         
         this.$router.push({ name: "userhome", params: { currentuser: user }}).catch(err => { });
       } else {
@@ -73,23 +83,37 @@ import ErrorComponent from "./components/ErrorComponent.js"
     },
 
     methods: {
+      // Closes the user menu
       closeMenu(){
         this.showTopMenu = false;
         this.isActive = false;
       },
       
+      // Sets account authenticated status
       setAuthenticated(status, data) {
         this.authenticated = status;
         this.account = data;
       },
 
+      // Sets user authenticated status
       setUserAuthenticated(status) {
         this.userAuthenticated = status;
         this.user = JSON.parse(localStorage.getItem("cachedUser"));
+
+        // Checks if user is child
+        if(localStorage.getItem("cachedUser") && JSON.parse(localStorage.getItem("cachedUser")).usertype == "1") {
+          this.child = true;
+        }
       },
 
+      // Sets user admin status
       setAdmin(status) {
         this.admin = status;
+      },
+
+      // Resets child status
+      resetChild(status) {
+        this.child = status;
       },
 
       logout() {

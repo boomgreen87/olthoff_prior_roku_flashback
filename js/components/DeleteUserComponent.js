@@ -7,7 +7,7 @@ export default {
             <h1 class="hidden">Change Permissions Component</h1>
 
             <div class="back-button">
-                <router-link to="/userhome">
+                <router-link tag="li" to="/userhome">
                     <p class="button-links" >Back to App</p>
                 </router-link>
             </div>
@@ -72,7 +72,6 @@ export default {
                 if(data == false) {
                     console.warn(data);
                     swal("Oops!", "There was a problem deleting the user!", "error");
-                    // TODO: Replace alert
                 } else {
                     swal("Success!", "The account has been deleted!", "success");
 

@@ -5,13 +5,13 @@ export default {
     <div class="user-settings-container">
         <h1 class="hidden">Edit Profile Component</h1>
 
-            <div class="back-button">
-                <router-link to="/userhome">
+            <div class="back-button" v-bind:class="{ purpleBackground : this.$root.child }">
+                <router-link tag="li" to="/userhome">
                     <p class="button-links" >Back to App</p>
                 </router-link>
             </div>
 
-        <div class="roku-jumbotron">
+        <div class="roku-jumbotron" v-bind:class="{ pinkBackground : this.$root.child }">
             <h1 class="form-header">Edit User Settings</h1>
             <hr class="my-4">
 
@@ -30,7 +30,7 @@ export default {
                     <img  class="icon-option" v-for="icon in icons" :id="icon.iconID" v-on:click="setIcon" :src="'images/user/' + icon.iconPath" alt="User Icon" >
                 </div><hr class="my-4">
                 
-                <button type="submit" name="submit" class="button">Edit User</button>
+                <button type="submit" name="submit" class="button" v-bind:class="{ purpleBackground : this.$root.child }">Edit User</button>
             </form>
             <hr class="my-4">
         </div>
@@ -99,7 +99,7 @@ export default {
 			.then(data => {
                 if(data == false) {
                     console.warn(data);
-                    swal("Oops!", "There was a problem editing your user settings!", "error");
+                        swal("Oops!", "There was a problem editing your user settings!", "error");
                     } else {
                     swal("Success!", "The user was successfully edited!", "success");
                 }
