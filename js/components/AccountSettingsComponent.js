@@ -61,7 +61,7 @@ export default {
 			.then(data => {
                 if (data == false) {
                     console.warn(data);
-                    swal("Oops!", "There was a proplem accessing your account!", "error");                } else {
+                    swal("Oops!", "There was a problem accessing your account!", "error");                } else {
                     this.account = data;
                 }
 			})
