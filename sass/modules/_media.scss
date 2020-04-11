@@ -17,11 +17,6 @@
     margin: 0 auto;
     background-color: $darkPurp;
     width: 100%;
-
-    @include for-tablet{
-        border-radius: 5px;
-    }
-
 }
 
 
