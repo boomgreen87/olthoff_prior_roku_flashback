@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Apr 11, 2020 at 12:48 AM
+-- Generation Time: Apr 11, 2020 at 08:16 PM
 -- Server version: 5.7.26
 -- PHP Version: 7.2.18
 
@@ -45,7 +45,7 @@ CREATE TABLE IF NOT EXISTS `tbl_accounts` (
 --
 
 INSERT INTO `tbl_accounts` (`accounts_id`, `accounts_email`, `accounts_first_name`, `accounts_last_name`, `accounts_country`, `accounts_username`, `accounts_password`) VALUES
-(3, 'scott@gmail.com', 'Scott', 'Olthoff', 'Canada', 'scott', '123'),
+(3, 'scotto@gmail.com', 'Scott', 'Olthoff', 'Canada', 'scott', '123'),
 (4, 'bob@gmail.com', 'Bob', 'Thebuilder', 'USA', 'bob', '123'),
 (5, 'ian@gmail.com', 'Ian', 'Blue', 'Canada', 'ian', '123'),
 (7, 'liz@gmail.com', 'Liz', 'Ard', 'Canada', 'liz', '123');
@@ -181,17 +181,18 @@ CREATE TABLE IF NOT EXISTS `tbl_users` (
   `users_vid_rating` int(1) NOT NULL DEFAULT '1',
   `users_explicit_music` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`users_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=26 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=28 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `tbl_users`
 --
 
 INSERT INTO `tbl_users` (`users_id`, `users_accounts_id`, `users_icon`, `users_display_name`, `users_admin`, `users_child_account`, `users_vid_rating`, `users_explicit_music`) VALUES
-(2, 3, 'user1.png', 'Scott', 1, 0, 6, 1),
-(3, 3, 'user4.png', 'Mike', 0, 1, 1, 0),
+(2, 3, 'user5.png', 'Scott', 1, 0, 6, 1),
+(3, 3, 'user1.png', 'Mike', 0, 1, 1, 0),
 (4, 4, 'user2.png', 'Trevor', 0, 0, 1, 0),
 (5, 3, 'user6.png', 'Phil', 0, 0, 1, 0),
+(27, 3, 'user2.png', 'Bobby Boi', 0, 0, 4, 1),
 (25, 7, 'user5.png', 'Liz', 1, 0, 6, 1),
 (17, 4, 'user6.png', 'Brett', 0, 0, 6, 1);
 COMMIT;
