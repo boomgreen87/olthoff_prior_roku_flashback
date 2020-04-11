@@ -71,9 +71,10 @@ export default {
 			.then(data => {
                 if(data == false) {
                     console.warn(data);
-                    alert("There was a problem deleting the user."); // TODO: Replace alert
+                    swal("Oops!", "There was a problem deleting the user!", "error");
+                    // TODO: Replace alert
                 } else {
-                    alert("User successfully deleted."); // TODO: Replace alert
+                    swal("Success!", "The account has been deleted!", "success");
 
                     // Removes deleted user from userList
                     for(let i=0; i < this.userList.length; i++) {

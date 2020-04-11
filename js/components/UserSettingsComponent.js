@@ -72,7 +72,7 @@ export default {
 			.then(data => {
                 if (data == false) {
                     console.warn(data);
-                    alert("There was a problem accessing your user settings."); // TODO: Replace alert
+                    swal("Oops!", "There was a problem accessing your user settings!", "error");
                 } else {
                     this.user = data;
                 }
@@ -99,9 +99,9 @@ export default {
 			.then(data => {
                 if(data == false) {
                     console.warn(data);
-                    alert("There was a problem editing your user settings."); // TODO: Replace alert
-                } else {
-                    alert("User successfully edited."); // TODO: Replace alert
+                    swal("Oops!", "There was a problem editing your user settings!", "error");
+                    } else {
+                        swal("Success!", "The user was successfully deleted!", "success");
                 }
 			})
 			.catch((err) => console.error(err));
