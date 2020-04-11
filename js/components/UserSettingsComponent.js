@@ -102,9 +102,10 @@ export default {
                         swal("Oops!", "There was a problem editing your user settings!", "error");
                     } else {
                         swal("Success!", "The user was successfully edited!", "success");
+                        this.$root.user.icon = this.user.icon;
                     }
 			})
-			.catch((err) => console.error(err));
+            .catch((err) => console.error(err));
         }
 	}
 }
