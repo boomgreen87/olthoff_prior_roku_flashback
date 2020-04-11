@@ -72,7 +72,6 @@ export default {
                 if(data == false) {
                     console.warn(data);
                     swal("Oops!", "There was a problem deleting the user!", "error");
-                    // TODO: Replace alert
                 } else {
                     swal("Success!", "The account has been deleted!", "success");
 

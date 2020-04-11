@@ -141,10 +141,9 @@ export default {
 			.then(data => {
                 if(data == false) {
                     console.warn(data);
-                    swal("Oops!", "We couldn't save your changes! Please try again.", "error"); // TODO: Replace alert
+                    swal("Oops!", "We couldn't save your changes! Please try again.", "error"); 
                 } else {
-                    swal("Success!", "Your Changes have been saved!", "success");
-                    // TODO: Replace alert
+                    swal("Success!", "Your changes have been saved!", "success");
                 }
 			})
 			.catch((err) => console.error(err));

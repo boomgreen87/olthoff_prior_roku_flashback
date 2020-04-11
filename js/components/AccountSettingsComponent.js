@@ -90,7 +90,7 @@ export default {
 			.then(data => {
                 if(data == false) {
                     console.warn(data);
-                    swal("Oops!", "There was a proplem editing your account!", "error");    
+                    swal("Oops!", "There was a problem editing your account!", "error");    
 
                 } else {
 

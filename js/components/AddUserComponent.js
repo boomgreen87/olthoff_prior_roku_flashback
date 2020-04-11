@@ -11,6 +11,12 @@ export default {
             </router-link>
         </div>
 
+        <div class="back-button" v-else>
+            <router-link tag="li" to="/welcome">
+                <p class="button-links" >Back</p>
+            </router-link>
+        </div>
+
         <div class="roku-jumbotron">
             <h1 class="form-header">Add a New User to Your Account</h1>
             <hr class="my-4">
@@ -147,7 +153,7 @@ export default {
             .then(data => {
                 if (data == false) {
                     console.warn(data);
-                    swal("Oops!", "There was a problem adding the user!", "error"); // TODO: Replace alert
+                    swal("Oops!", "There was a problem adding the user!", "error");
                 } else {
                     this.user = data;
                     swal("Success!", "The user has been added!", "success");
