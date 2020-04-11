@@ -18,7 +18,7 @@ export default {
                     <user v-for="(user, index) in userList" :liveuser="user" :key="index" @user-authenticated="emitUserAuthenticated" @admin="emitAdmin"></user>
                 </div><br>
                 <div class="button" id="add-new-user" v-if="userList.length < 4">
-                    <router-link to="/adduser">
+                    <router-link tag="li" to="/adduser">
                          <p class="button-links" >Add a New User</p>
                     </router-link>
 
@@ -36,6 +36,7 @@ export default {
         // Resets user-authenticated and admin so icon button doesn't appear on welcome page
         this.$emit("user-authenticated", false)
         this.$emit("admin", false);
+        this.$emit("child", false);
 	},
 
 	data() {

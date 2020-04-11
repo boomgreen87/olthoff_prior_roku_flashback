@@ -20,3 +20,28 @@
 @import 'modules/_usersettings.scss';
 
 @import 'modules/_media.scss';
+
+.pinkBackground {
+    background-color: $lightPurp;
+}
+
+.purpleBackground {
+    background-color: $darkPurp;
+}
+
+.pinkOutline {
+    border: 2px solid $lightPurp;
+}
+
+li {
+    list-style-type: none;
+}
+
+.back-button:hover {
+    box-shadow: 0 0 1pt 1pt white;
+    cursor: pointer;
+}
+
+.whiteGlow:hover {
+    box-shadow: 0 0 1pt 1pt white;
+}

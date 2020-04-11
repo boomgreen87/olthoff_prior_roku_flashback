@@ -12,13 +12,13 @@ export default {
             <hr class="my-4">
 
             <div class="button">
-                <router-link to="/login">
+                <router-link tag="li" to="/login">
                     <p class="button-links" > Log In to Your Account</p>
                 </router-link>
             </div>
 
             <div class="button">
-                <router-link to="/signup">
+                <router-link tag="li" to="/signup">
                     <p class="button-links" >Create a New Account</p>
                 </router-link>
             </div>

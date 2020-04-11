@@ -6,7 +6,7 @@ export default {
         <h1 class="hidden">Add User Component</h1>
 
         <div class="back-button" v-if="this.cachedUser">
-            <router-link to="/userhome">
+            <router-link tag="li" to="/userhome">
                 <p class="button-links" >Back to App</p>
             </router-link>
         </div>

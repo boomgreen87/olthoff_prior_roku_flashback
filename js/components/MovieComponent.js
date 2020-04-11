@@ -4,7 +4,7 @@ export default {
     template: `
     <section class="media-container">
         <h1 class="hidden">Movie Component</h1>
-        <div class="top-section">
+        <div class="top-section" v-bind:class="{ pinkBackground : this.$root.child }">
             <div class="video-container">
                 <div class="selected-video" v-html="currentMediaDetails.movie_link"></div>
             </div>
@@ -26,7 +26,7 @@ export default {
             </div>
         </div>
          
-        <div class="bottom-section">
+        <div class="bottom-section" v-bind:class="{ pinkBackground : this.$root.child }">
             <label class="decade-label">Sort By Decade:</label>
             <select v-model="yearFilter" v-on:change="filterByYear" name="decadeFilter" required>
                 <option v-for="decade in decades" :value="decade.decadeValue">{{ decade.decade }}</option>

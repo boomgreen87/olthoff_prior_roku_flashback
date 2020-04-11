@@ -10,7 +10,7 @@ export default {
     template: `
     <div class="userhome-container">
         <!-- show media icons here -->
-        <div class="nav-con">
+        <div class="nav-con" v-bind:class="{ pinkBackground : this.$root.child }">
             <div class="media-nav">
                 <div class="icon-con" v-for="media in mediaTypes" :data-type="media.description" @click="switchMedia(media.component)">
                     <img v-bind:src="[media.iconSrc]" class="media-icon-link" v-bind:alt="[media.description]" v-bind:id="[media.iconId]">

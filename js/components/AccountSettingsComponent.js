@@ -6,7 +6,7 @@ export default {
         <h1 class="hidden">Edit Profile Component</h1>
 
         <div class="back-button">
-                <router-link to="/userhome">
+                <router-link tag="li" to="/userhome">
                     <p class="button-links" >Back to App</p>
                 </router-link>
             </div>

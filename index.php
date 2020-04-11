@@ -31,7 +31,7 @@
 
         <div class="router-view">
             <!-- Rendered router view -->
-            <router-view @authenticated="setAuthenticated" @user-authenticated="setUserAuthenticated" @admin="setAdmin"></router-view>
+            <router-view @authenticated="setAuthenticated" @user-authenticated="setUserAuthenticated" @admin="setAdmin" @child="resetChild"></router-view>
         </div>
 
         <!-- Footer -->
