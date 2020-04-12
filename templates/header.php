@@ -1,6 +1,6 @@
 <header>
     <div class="logo-icon-box">
-        <router-link class="head-logo-link" to="/">
+        <router-link class="head-logo-link" to="/userhome">
             <img src="images/roku_logo.svg" alt="Flashback Logo" id="header-logo">
         </router-link>
         <div class="menu head-user-link"> 
