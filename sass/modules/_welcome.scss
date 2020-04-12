@@ -65,8 +65,7 @@
     max-width: 100%;
     padding-top:40px;
 
-    @include for-tablet{
-        flex-direction: row;
+    @include for-desktop{
         margin: 0 auto;
         max-width: 40%;
     }
